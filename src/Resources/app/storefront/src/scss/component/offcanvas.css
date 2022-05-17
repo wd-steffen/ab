@@ -1,0 +1,14 @@
+/*
+Offcanvas
+==============================================
+Styling for offcanvas component.
+
+*/
+.btn.js-offcanvas-close .icon > svg {
+  top: 5px;
+}
+
+.offcanvas.is-left .btn.js-offcanvas-close .icon > svg {
+  top: 0;
+}
+/*# sourceMappingURL=offcanvas.css.map */

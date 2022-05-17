@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA;;;;;;EAME;AAEF,AACI,kBADc,CACd,cAAc,CAAC;EACX,MAAM,EAAE,MAAM;CACjB",
+    "sources": [
+        "finish.scss"
+    ],
+    "names": [],
+    "file": "finish.css"
+}

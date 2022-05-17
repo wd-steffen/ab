@@ -1,0 +1,40 @@
+{
+  "name": "swag/snaptheme-basic",
+  "description": "SnapTheme® Basic | custom",
+  "keywords": [
+    "st",
+    "snaptheme",
+    "theme"
+  ],
+  "version": "v0.1.0",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+
+  "authors": [
+    {
+      "name": "Whatsdigital UG",
+      "homepage": "https://www.whatsdigital.de"
+    }
+  ],
+  "require": {
+		"shopware/core": "6.4.*",
+		"shopware/storefront": "*"
+	},
+  "minimum-stability": "RC",
+  "autoload": {
+    "psr-4": {
+      "SnapThemeBasic\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "SnapThemeBasic\\SnapThemeBasic",
+    "label": {
+      "de-DE": "SnapTheme® Basic | anpassbar",
+      "en-GB": "SnapTheme® Basic | custom"
+    },
+    "description": {
+      "en-GB": "SnapTheme® is a custom theme that also offers you a wide range of additional functions.",
+      "de-DE": "SnapTheme® ist ein anpassbares Theme, welches dir zusätzlich eine große Palette an Funktionen bietet."
+    }
+  }
+}

@@ -1,0 +1,16 @@
+//SnapTheme: Special icons widget
+
+.snap-detail-container{
+    display: flex;
+    justify-content: start;
+
+    .special-icon{
+        height: max-content;
+        width: max-content;
+        svg{
+            height: 90px;
+            width: 90px;
+
+        }
+    }
+}

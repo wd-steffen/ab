@@ -1,0 +1,170 @@
+/*
+
+Aside
+==============================================
+Contains custom styles for the aside component.
+
+*/
+
+.checkout-aside-action {
+    margin-top: 0;
+    padding: 10px 10px 0;
+
+    p{
+        padding: 10px 20px;
+    }
+    button{
+        max-width: 100%;
+    }
+}
+
+.checkout-aside-item-characteristics,
+.checkout-aside-item-link-quantity {
+    color: $sw-link-color;
+    margin: 0 0 $spacer-sm 0;
+    line-height: $line-height-base;
+
+    .checkout-aside-item-characteristics-option {
+        font-weight: $font-weight-normal;
+    }
+}
+
+.checkout-aside-container {
+    padding-top: $spacer;
+    display: flex;
+    flex-direction: column-reverse;
+    height: max-content;
+
+    .checkout-aside-products{
+        padding: 20px;
+    }
+
+
+    .checkout-aside-summary {
+        order: 1;
+        padding: 1rem;
+    }                                                       
+
+    .checkout-aside-action,
+    .checkout-aside-products {
+        order: 0;
+    }
+
+    .promotion-text {
+        display: inline-block;
+        margin-bottom: 0;
+    }
+
+    &.is-sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+}
+
+.checkout-aside-products {
+    padding: 0;
+    margin-bottom: $spacer-xl;
+}
+
+.checkout-aside-product-header {
+    font-size: $snap-font-size-h2;
+    color: $sw-headline-color;
+    margin-bottom: $spacer;
+}
+
+.checkout-aside-item-image {
+    padding-left: 0;
+
+    .cart-item-img {
+        border: none;
+        padding: 0;
+        width: 100%;
+    }
+}
+
+
+
+.checkout-aside-add-code {
+    .input-group-append{
+        .btn-primary-alt{
+            color: #fff;
+            background: $sw-color-brand-primary;
+            border-radius: $snap-btn-border-radius;
+
+        }
+    }
+}
+
+
+
+
+
+// ThemeWare: Checkout adjustments
+// TODO: Shopware Vererbung prüfen...
+.checkout-aside { // TODO: _cart.scss / _finish.scss / _confirm.scss / _register.scss ?! #custom
+	// ThemeWare: As we modify the $font-size-default we have to overwrite some items to work properly
+	.checkout-aside-summary-label:not(.checkout-aside-summary-total) {
+		font-size: .875rem; // ThemeWare: Overwrite body $font-size-default
+	}
+	.checkout-aside-summary-label {
+		 &.checkout-aside-summary-total {
+			font-size: 1rem; // ThemeWare: Overwrite $font-size-lg
+		}
+	}
+
+	// ThemeWare: As we modify the $font-size-default we have to overwrite some items to work properly
+	.checkout-aside-summary-value:not(.checkout-aside-summary-total) {
+		font-size: .875rem; // ThemeWare: Overwrite body $font-size-default
+	}
+	.checkout-aside-summary-value {
+		&.checkout-aside-summary-total {
+			font-size: 1rem; // ThemeWare: Overwrite $font-size-lg
+		}
+	}
+
+	// ThemeWare: As we modify the $font-size-default we have to overwrite some items to work properly
+	.checkout-aside-item-data {
+		font-size: .875rem; // ThemeWare: Overwrite body $font-size-default
+	}
+}
+
+// ThemeWare: As we modify the $font-size-default we have to overwrite some items to work properly
+.product-feature-feature {
+	font-size: .75rem;
+}
+
+
+.checkout-aside-summary-label {
+    &.tax-value {
+        color: $sw-text-color;
+        opacity: 0.5;
+    }
+}
+
+
+
+@media (min-width:1200px) {
+    .checkout-aside-summary-label,
+    .checkout-aside-summary-value {
+        font-size: $font-size-lg;
+    }
+}
+
+@media (max-width:1200px) {
+    .checkout-aside-summary-label,
+    .checkout-aside-summary-value {
+        font-size: $font-size-sm;
+    }
+}
+
+// @media (max-width:576px) {
+
+//     font-size: $font-size-sm;
+
+// }
+
+
+

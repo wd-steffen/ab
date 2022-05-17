@@ -1,0 +1,29 @@
+/*
+Button
+==============================================
+Custom skin styling for bootstrap button component.
+
+*/
+
+.btn {
+    font-family: $btn-font-family;
+    font-weight: $snap-btn-font-weight;
+    border-radius: $snap-btn-border-radius;
+    text-transform: $snap-btn-text-transform;
+    // color: #fff;
+}
+
+.btn-decrement,
+.btn-increment {
+    border-radius: 15px !important;
+    font-size: 21px;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    line-height: 25px;
+    text-align: center;
+}
+
+.btn.btn-block.btn-buy {
+    padding: 1px 12px;
+}

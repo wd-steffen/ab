@@ -1,0 +1,1261 @@
+//Container's variables
+$full-width-boxed-container-width: 100% !default;
+
+// Layout > Main colors
+$snap-color-brand-primary-light: #166d9a;
+$snap-color-brand-primary-dark: #104d6e;
+$snap-color-brand-secondary-light: #4b5867;
+$snap-color-brand-secondary-dark: #353e49;
+$sw-base-text-color-hover: #ff7959;
+
+// HTML base font-size
+$snap-html-font-size-xl: 16px !default;
+$snap-html-font-size-lg: 14.4px !default;
+$snap-html-font-size-xs: 12.8px !default;
+
+//Snap base font-size
+$font-size-xl: $snap-font-size-base !default;
+$font-size-lg: 14.4px !default;
+$font-size-sm: 12.8px !default;
+$font-size-xs: 11.2px !default;
+
+// Layout > Typography
+$snap-font-size-base: 16 !default;
+$snap-font-size-h1: 36 !default;
+$snap-font-size-h2: 28 !default;
+$snap-font-size-h3: 24 !default;
+$snap-font-size-h4: 20 !default;
+$snap-font-size-h5: 16 !default;
+$snap-font-size-h6: 14 !default;
+$snap-font-weight-light: 400 !default;
+$snap-font-weight-normal: 400 !default;
+$snap-font-weight-bold: 600 !default;
+$snap-google-font-import: 1 !default;
+$snap-font-family-base-font-weight: 400,
+600 !default;
+$snap-font-family-headline-font-weight: 400,
+600 !default;
+$snap-sticky-nav-main-logo-image: none !default;
+$snap-shopping-experiences-header-logo-image: none !default;
+
+// Layout > eCommerce
+$snap-color-details-button: #f9f9f9 !default;
+
+// Layout > Layout
+$snap-container-layout: 2 !default;
+$snap-iconset: default !default;
+$snap-border-radius: 2 !default;
+$snap-container-background-color: #f5f6f8 !default;
+// $snap-background-image: none !default;
+$snap-background-image-size: auto !default;
+$snap-background-image-position: left top !default;
+$snap-background-image-repeat: repeat !default;
+$snap-background-image-attachment: none !default;
+
+$snap-container-max-width: 100 !default; // body-container
+$snap-prod-wrapper-max-width: $snap-container-max-width !default;
+
+$snap-container-border-radius: 2 !default;
+$snap-container-background-image: none !default;
+$snap-container-background-image-size: auto !default;
+$snap-container-background-image-position: left top !default;
+$snap-container-background-image-repeat: repeat !default;
+$snap-container-background-image-attachment: scroll !default;
+
+
+
+$snap-container-layout-margin-top-bottom: 30 !default; // body-container, boxed
+$snap-container-layout-box-shadow: 0px 5px 15px !default; // body-container, boxed
+$snap-container-layout-box-shadow-color: rgba(0, 0, 0, 0.35) !default; // body-container, boxed
+// $snap-container-main-box-shadow: false !default;
+$snap-body-container-box-shadow: 0 !default;
+$snap-background-body-image: none !default;
+$snap-background-body-color: #fff !default;
+
+$snap-container-main-margin-top: 20 !default;
+$snap-container-main-margin-bottom: 20 !default;
+$snap-container-main-padding-phone-xs: 8 !default;
+$snap-container-main-padding-phone: 15 !default;
+$snap-container-main-padding-tablet: 20 !default;
+$snap-container-main-padding: 30 !default;
+$snap-container-main-border-color: #eee !default; // $gray-200
+$snap-container-main-box-shadow-enable: 0 !default;
+
+$snap-shadows-enable: 1 !default;
+
+//Product page
+$snap-product-detail-container-background: #fff !default;
+$snap-detail-buybox-background: #fff !default;
+
+// Layout > Badges
+$snap-product-badges-corner-type: 3 !default;
+$snap-product-badges-font-size: 16 !default;
+
+// Layout > Buttons
+$snap-color-primary-button: $sw-color-brand-primary !default;
+$snap-color-secondary-button: $sw-color-brand-secondary !default;
+$snap-color-light-button: #f9f9f9 !default;
+
+// Layout > Modal
+$snap-modal-background-color: rgba(0, 0, 0, 0.5) !default;
+
+// Layout > Rating
+$snap-product-review-point-blank-color: #bcc1c7 !default; // $gray-300
+$snap-product-review-point-color: #fedc70 !default;
+
+// Layout > Tables
+$snap-table-body-color: #333 !default;
+$snap-table-body-border-color: #eee !default; // $gray-200
+$snap-table-body-background-color: #fff !default;
+$snap-table-accent-background-color: rgba(0, 0, 0, 0.05) !default;
+$snap-table-hover-color: $snap-table-body-color !default;
+$snap-table-hover-background-color: rgba(0, 0, 0, 0.075) !default;
+$snap-table-active-background-color: $snap-table-hover-background-color !default;
+
+$snap-table-head-color: #fff !default;
+$snap-table-head-background-color: $sw-color-brand-primary !default;
+
+$snap-table-dark-color: #fff !default;
+$snap-table-dark-border-color: #5b6770 !default;
+$snap-table-dark-background-color: #4a545b !default;
+$snap-table-dark-accent-background-color: rgba(255, 255, 255, 0.05) !default;
+$snap-table-dark-hover-color: $snap-table-dark-color !default;
+$snap-table-dark-hover-background-color: rgba(255, 255, 255, 0.075) !default;
+// table-dark-active-bg ?
+
+$snap-table-border-color: #ddd !default;
+$snap-table-body-border-bottom-color: rgba(0, 0, 0, 0) !default;
+$snap-table-head-border-bottom-color: $snap-table-body-border-color !default;
+$snap-table-dark-head-border-bottom-color: $snap-table-dark-border-color !default;
+
+// Header > Layout
+$snap-header-type: 1 !default;
+$snap-header-fullwidth: 0 !default;
+$snap-header-width: 1 !default;
+$snap-header-height: 40 !default;
+$snap-header-margin-top: 1 !default;
+$snap-header-padding-top: 0 !default;
+$snap-header-padding-bottom: 0 !default;
+$snap-header-side-margin: 30 !default;
+$snap-header-container-box-shadow: 0 !default;
+
+$snap-header-background-color-desktop: #fff !default;
+$snap-header-dropdown-color: #111 !default;
+$snap-header-dropdown-color-hover: #135d84 !default;
+$snap-header-dropdown-border-color: #e0e0e0 !default;
+$snap-header-dropdown-background-color: #fff !default;
+$snap-header-actions-background-color: rgba(255, 255, 255, 0) !default;
+$snap-header-background-image: none !default;
+$snap-header-background-image-size: auto !default;
+$snap-header-background-image-position: left top !default;
+$snap-header-background-image-repeat: repeat !default;
+$snap-header-background-image-attachment: scroll !default;
+
+// Header > Logo
+$snap-header-logo-type: 1 !default;
+$snap-header-logo-width: 220 !default;
+$snap-header-logo-height: auto !default;
+$snap-header-logo-margin-top: 1 !default;
+$snap-header-logo-hover-type: 2 !default;
+
+// Header > Text logo
+//$snap-textlogo-content > no css
+$snap-textlogo-fill: $sw-color-brand-primary !default;
+//$snap-textlogo-font-family > no css
+$snap-textlogo-font-size: 24 !default;
+$snap-textlogo-font-weight: bold !default;
+
+// Header > Top bar
+$snap-header-top-bar-show: 2 !default;
+$snap-header-top-bar-languages-menu-show: 2 !default;
+$snap-header-top-bar-languages-menu-text-show: 2 !default;
+$snap-header-top-bar-currencies-menu-show: 2 !default;
+$snap-header-top-bar-currencies-menu-text-show: 2 !default;
+
+$snap-header-top-bar-service-menu-show: 2 !default;
+$snap-header-top-bar-service-menu-text-show: 2 !default;
+$snap-header-top-bar-color: #555 !default;
+$snap-header-top-bar-color-hover: #135d84 !default;
+$snap-header-top-bar-border-color: #fff !default;
+$snap-header-top-bar-background-color: #fff !default;
+$snap-header-top-bar-font-size: 14 !default;
+$snap-header-top-bar-line-height: 30 !default;
+$snap-header-top-bar-height: $snap-header-top-bar-line-height !default;
+$snap-header-top-bar-justify-content: flex-end !default;
+$snap-header-top-bar-icon-font-size: 1 !default;
+$snap-top-bar-side-padding: 0 !default;
+
+// Header > Search
+$snap-header-search-show: 2 !default;
+$snap-header-search-type: 1 !default;
+$snap-header-search-input-corner-type: 1 !default;
+$snap-header-search-input-border-radius: 10 !default;
+$snap-header-search-width-desktop: 100% !default;
+$snap-header-search-max-width: 500 !default;
+$snap-header-search-text-align: left !default;
+$snap-header-search-flyout-padding: 15 !default;
+$snap-header-search-input-color: #333 !default;
+$snap-header-search-input-border-color: #e4e7ea !default;
+$snap-header-search-input-background-color: #fff !default;
+$snap-header-search-btn-icon-color: #fff !default;
+$snap-header-search-btn-border-color: #135d84 !default;
+$snap-header-search-btn-background-color: #135d84 !default;
+$snap-header-search-flyout-background-color: #0e557b !default;
+
+// Header > Action buttons
+$snap-header-actions-btn-text-show: 5 !default;
+$snap-header-actions-btn-icon-position: 1 !default;
+$snap-header-actions-btn-font-size: 14 !default;
+$snap-header-actions-btn-font-weight: normal !default;
+$snap-header-actions-btn-line-height: 35 !default;
+$snap-header-actions-btn-icon-font-size: 14 !default;
+$snap-header-actions-btn-color: #333 !default;
+$snap-header-actions-btn-color-hover: #135d84 !default;
+$snap-header-actions-btn-icon-color: #333 !default;
+$snap-header-actions-btn-icon-color-hover: #135d84 !default;
+$snap-header-actions-btn-border-color: #e4e7ea !default;
+$snap-header-actions-btn-border-color-hover: #e6e6e6 !default;
+$snap-header-actions-btn-background-color: #fff !default;
+$snap-header-actions-btn-background-color-hover: #f6f6f6 !default;
+$snap-header-actions-cart-btn-total-show: 6 !default;
+$snap-header-actions-cart-btn-badge-show: 3 !default;
+$snap-header-actions-cart-btn-text-show: 5 !default;
+$snap-header-actions-cart-btn-font-weight: normal !default;
+$snap-header-actions-cart-btn-color: #333 !default;
+$snap-header-actions-cart-btn-color-hover: #135d84 !default;
+$snap-header-actions-cart-btn-icon-color: #333 !default;
+$snap-header-actions-cart-btn-icon-color-hover: #135d84 !default;
+$snap-header-actions-cart-btn-border-color: #e4e7ea !default;
+$snap-header-actions-cart-btn-border-color-hover: #e6e6e6 !default;
+$snap-header-actions-cart-btn-background-color: #eef2f5 !default;
+$snap-header-actions-cart-btn-background-color-hover: #fff !default;
+
+// Header > Top navigation
+$snap-nav-main-show: 2 !default;
+$snap-nav-main-home-link-show: 2 !default;
+$snap-nav-main-home-link: 1 !default;
+$snap-nav-main-hover-type: 1 !default;
+$snap-nav-main-height: 60 !default;
+$snap-nav-main-padding: 17 !default;
+$snap-nav-main-padding-bottom: 1 !default;
+$snap-nav-main-margin-left: 1 !default;
+$snap-nav-main-margin-right: 1 !default;
+$snap-nav-main-color: #333 !default;
+$snap-nav-main-color-hover: #135d84 !default;
+$snap-nav-main-color-active: #135d84 !default;
+$snap-nav-main-icon-color: #333 !default;
+$snap-nav-main-icon-color-hover: #135d84 !default;
+$snap-nav-main-icon-color-active: #135d84 !default;
+$snap-nav-main-background-color: #fff !default;
+$snap-nav-main-background-color-hover: #eef2f5 !default;
+$snap-nav-main-background-color-active: #fff !default;
+$snap-nav-main-border: #ccc !default;
+$snap-nav-main-border-bottom-color-hover: #135d84 !default;
+$snap-nav-main-font-family: 1 !default;
+// TODO: border-bottom active ?!
+$snap-nav-main-font-size: 18 !default;
+$snap-nav-main-font-weight: bold !default;
+// TODO: font-weight hover ?!
+$snap-nav-main-font-weight-active: bold !default;
+$snap-nav-main-justify-content: flex-start !default;
+$snap-nav-main-text-transform: none !default;
+$snap-navigation-background-color: #fff !default;
+$snap-navigation-font-size: 14 !default;
+$snap-navigation-text-decoration-hover: none !default;
+$snap-navigation-hover-style: 2 !default;
+
+// Header > Top navigation flyout
+$snap-nav-main-flyout-width: 100% !default;
+$snap-nav-main-flyout-animation: 1 !default;
+$snap-nav-main-flyout-categories-color: #333 !default;
+$snap-nav-main-flyout-categories-color-hover: #135d84 !default;
+$snap-nav-main-flyout-categories-icon-color: #135d84 !default;
+$snap-nav-main-flyout-background-color: #eef2f5 !default;
+$snap-nav-main-flyout-bar-show: 3 !default;
+$snap-nav-main-flyout-bar-padding-top-bottom: 1 !default;
+$snap-nav-main-flyout-bar-color: #135d84 !default;
+$snap-nav-main-flyout-bar-color-hover: #333 !default;
+$snap-nav-main-flyout-bar-background-color: #e3e8ec !default;
+
+$snap-nav-main-flyout-font-size: 18 !default;
+
+// header navigation flyout
+$snap-flyout-navigation-animation: 1 !default;
+// $snap-flyout-navigation-grouping: 0 !default;
+
+$snap-flyout-navigation-bg: #444444 !default;
+$snap-flyout-navigation-color: $sw-color-brand-primary !default;
+$snap-flyout-navigation-bg-opacity: 0.9 !default;
+$snap-flyout-navigation-color-hover: $sw-base-text-color-hover !default;
+$snap-flyout-navigation-width: 2 !default;
+$snap-fly-out-navigation-hover-animation: 1 !default;
+
+
+$snap-flyout-navigation-color: #ffffff !default;
+$snap-flyout-navigation-hover-color: #ffffff !default;
+$snap-flyout-navigation-font-size: 14 !default;
+$snap-flyout-navigation-font-weight: 400 !default;
+
+// Header > Sticky top navigation
+$snap-sticky-nav-main-show: 2 !default;
+$snap-sticky-nav-main-type: 2 !default;
+$snap-sticky-nav-main-scroll-top: 0 !default;
+$snap-sticky-nav-main-breakpoint: 6 !default; // TODO: use "breakpoint" for equal fields...
+$snap-sticky-nav-main-height: 50 !default;
+$snap-sticky-nav-main-justify-content: center !default;
+$snap-sticky-nav-main-toggle: 1 !default; // TODO: "toggle" vs. "show" ?!
+$snap-sticky-nav-main-cart-show: 2 !default;
+$snap-sticky-nav-main-search-show: 1 !default;
+$snap-sticky-nav-main-background-color: #fff !default;
+$snap-sticky-nav-main-logo-show: 2 !default;
+$snap-sticky-nav-main-logo-width: 120 !default;
+$snap-sticky-nav-main-logo-height: auto !default;
+$snap-sticky-nav-main-logo-margin-right: 20 !default;
+
+// Header > Minimal header (Checkout)
+$snap-header-minimal-fixed: 1 !default;
+$snap-header-minimal-height: 90 !default;
+$snap-header-minimal-color: #555 !default;
+$snap-header-minimal-link-color: #555 !default;
+$snap-header-minimal-link-color-hover: #222 !default;
+$snap-header-minimal-border-bottom-color: #eee !default; // $gray-200
+$snap-header-minimal-background-color: #fafafa !default;
+$snap-header-minimal-home-btn-color: #444 !default;
+$snap-header-minimal-home-btn-color-hover: #666 !default;
+$snap-header-minimal-home-btn-border-color: #e9e9e9 !default;
+$snap-header-minimal-home-btn-border-color-hover: #d4d4d4 !default;
+$snap-header-minimal-home-btn-background-color: #fff !default;
+$snap-header-minimal-home-btn-background-color-hover: #f1f1f1 !default;
+
+// Header > Mobile header
+$snap-header-phone-fixed: 2 !default;
+$snap-header-height-mobile: 82 !default; // TODO
+$snap-header-logo-max-width-mobile: 160 !default;
+$snap-header-phone-nav-main-toggle-label-show: 2 !default;
+$snap-header-phone-background-color: #fff !default;
+$snap-header-phone-btn-color: #333 !default;
+$snap-header-phone-btn-color-hover: #135d84 !default;
+$snap-header-phone-btn-icon-color: #333 !default;
+$snap-header-phone-btn-icon-color-hover: #135d84 !default;
+$snap-header-phone-btn-border-color: #fff !default;
+$snap-header-phone-btn-border-color-hover: #fff !default;
+$snap-header-phone-btn-background-color: #fff !default;
+$snap-header-phone-btn-background-color-hover: #fff !default;
+
+//
+
+// Footer > Layout (footer-main)
+
+$snap-footer-container-box-shadow: 0 !default;
+$snap-footer-bottom-font-size: 14 !default;
+
+$snap-footer-margin: 1 !default;
+
+$snap-footer-service-menu-show: 5 !default; // TODO: move to footer-bottom
+
+$snap-footer-background-color: #fff !default;
+
+$snap-footer-background-image: none !default;
+$snap-footer-background-image-size: auto !default;
+$snap-footer-background-image-position: left top !default;
+$snap-footer-background-image-repeat: repeat !default;
+$snap-footer-background-image-attachment: scroll !default;
+
+$snap-footer-column-font-family: text !default;
+$snap-footer-column-font-size: 16 !default;
+$snap-footer-column-headline-font-size: 18 !default;
+$snap-footer-column-headline-font-weight: bold !default;
+$snap-footer-column-headline-text-transform: none !default;
+
+$snap-footer-grid-columns-tablet: 4 !default;
+$snap-footer-grid-columns: 3 !default;
+
+// Footer > Upper section [footerColumnsTop]
+$snap-footer-width-columns-top: 2 !default;
+$snap-footer-columns-top-padding-top: 20 !default;
+$snap-footer-columns-top-padding-right: 1 !default;
+$snap-footer-columns-top-padding-bottom: 1 !default;
+$snap-footer-columns-top-padding-left: 1 !default;
+$snap-footer-columns-top-justify-content: space-around !default;
+
+$snap-footer-column-top-color: #fff !default;
+$snap-footer-column-top-link-color: #fff !default;
+$snap-footer-column-top-link-color-hover: #eee !default; // $gray-200
+$snap-footer-columns-top-background-color: #135d84 !default;
+$snap-footer-column-top-headline-color: #fff !default;
+$snap-footer-column-top-headline-border-color: #fff !default;
+
+$snap-footer-upper-section-background-image: none !default;
+$snap-footer-upper-section-background-image-size: auto !default;
+$snap-footer-upper-section-background-image-position: left top !default;
+$snap-footer-upper-section-background-image-repeat: repeat !default;
+$snap-footer-upper-section-background-image-attachment: scroll !default;
+
+$snap-footer-column-top-text-align: center !default;
+
+// Footer > Main section [footerColumns] (default footer)
+
+$snap-footer-columns-padding-top: 20 !default;
+$snap-footer-columns-padding-right: 1 !default;
+$snap-footer-columns-padding-bottom: 1 !default;
+$snap-footer-columns-padding-left: 1 !default;
+$snap-footer-justify-content: space-between !default;
+
+$snap-footer-column-color: #333 !default;
+$snap-footer-column-link-color: #333 !default;
+$snap-footer-column-link-color-hover: #135d84 !default;
+$snap-footer-columns-background-color: rgba(0, 0, 0, 0) !default;
+$snap-footer-column-headline-color: #135d84 !default;
+$snap-footer-column-headline-border-color: #fff !default;
+
+$snap-footer-main-section-background-image: none !default;
+$snap-footer-main-section-background-image-size: auto !default;
+$snap-footer-main-section-background-image-position: left top !default;
+$snap-footer-main-section-background-image-repeat: repeat !default;
+$snap-footer-main-section-background-image-attachment: scroll !default;
+
+$snap-footer-column-text-align: left !default;
+
+// Footer > Lower section [footerColumnsBottom]
+$snap-footer-width-columns-bottom: 2 !default;
+$snap-footer-columns-bottom-padding-top: 20 !default;
+$snap-footer-columns-bottom-padding-right: 1 !default;
+$snap-footer-columns-bottom-padding-bottom: 20 !default;
+$snap-footer-columns-bottom-padding-left: 1 !default;
+$snap-footer-columns-bottom-justify-content: space-around !default;
+
+$snap-footer-column-bottom-color: #333 !default;
+$snap-footer-column-bottom-link-color: #333 !default;
+$snap-footer-column-bottom-link-color-hover: #135d84 !default;
+$snap-footer-columns-bottom-background-color: #eef2f5 !default;
+$snap-footer-column-bottom-headline-color: #135d84 !default;
+$snap-footer-column-bottom-headline-border-color: #135d84 !default;
+
+$snap-footer-lower-section-background-image: none !default;
+$snap-footer-lower-section-background-image-size: auto !default;
+$snap-footer-lower-section-background-image-position: left top !default;
+$snap-footer-lower-section-background-image-repeat: repeat !default;
+$snap-footer-lower-section-background-image-attachment: scroll !default;
+
+$snap-footer-column-bottom-text-align: center !default;
+
+// Footer > Assigning and arranging content
+$snap-footer-bottom-element-1: none !default;
+$snap-footer-element-1-toggle: 2 !default;
+$snap-footer-element-1-newcol: 2 !default;
+$snap-footer-element-1-position: 3 !default;
+$snap-footer-element-1-order: 100 !default;
+$snap-footer-element-2: hotline !default;
+$snap-footer-element-2-toggle: 2 !default;
+$snap-footer-element-2-newcol: 1 !default;
+$snap-footer-element-2-position: 1 !default;
+$snap-footer-element-2-order: 200 !default;
+$snap-footer-element-3: footernav !default;
+$snap-footer-element-3-toggle: 2 !default;
+$snap-footer-element-3-newcol: 1 !default;
+$snap-footer-element-3-position: 1 !default;
+$snap-footer-element-3-order: 300 !default;
+$snap-footer-element-4: benefits !default;
+$snap-footer-element-4-toggle: 2 !default;
+$snap-footer-element-4-newcol: 1 !default;
+$snap-footer-element-4-position: 1 !default;
+$snap-footer-element-4-order: 400 !default;
+$snap-footer-element-5: shipping !default;
+$snap-footer-element-5-toggle: 2 !default;
+$snap-footer-element-5-newcol: 1 !default;
+$snap-footer-element-5-position: 1 !default;
+$snap-footer-element-5-order: 500 !default;
+$snap-footer-element-6: communities !default;
+$snap-footer-element-6-toggle: 2 !default;
+$snap-footer-element-6-newcol: 2 !default;
+$snap-footer-element-6-position: 3 !default;
+$snap-footer-element-6-order: 600 !default;
+$snap-footer-element-7: none !default;
+$snap-footer-element-7-toggle: 2 !default;
+$snap-footer-element-7-newcol: 1 !default;
+$snap-footer-element-7-position: 1 !default;
+$snap-footer-element-7-order: 700 !default;
+$snap-footer-element-8: payment !default;
+$snap-footer-element-8-toggle: 2 !default;
+$snap-footer-element-8-newcol: 1 !default;
+$snap-footer-element-8-position: 1 !default;
+$snap-footer-element-8-order: 800 !default;
+$snap-footer-element-9: location !default;
+$snap-footer-element-9-toggle: 2 !default;
+$snap-footer-element-9-newcol: 1 !default;
+$snap-footer-element-9-position: 1 !default;
+$snap-footer-element-9-order: 900 !default;
+$snap-footer-element-10: awards !default;
+$snap-footer-element-10-toggle: 2 !default;
+$snap-footer-element-10-newcol: 1 !default;
+$snap-footer-element-10-position: 1 !default;
+$snap-footer-element-10-order: 1000 !default;
+$snap-footer-element-11: newsletter !default;
+$snap-footer-element-11-toggle: 2 !default;
+$snap-footer-element-11-newcol: 3 !default;
+$snap-footer-element-11-position: 2 !default;
+$snap-footer-element-11-order: 1100 !default;
+
+$snap-newsletter-padding-top: 1 !default;
+$snap-newsletter-margin-top: 1 !default;
+$snap-newsletter-padding: 1 !default;
+$snap-newsletter-margin-bottom: 1 !default;
+$snap-newsletter-padding-bottom: 1 !default;
+
+$snap-newsletter-main-box-shadow: 0 !default;
+$snap-newsletter-border: none !default;
+$snap-newsletter-input-height: 44px;
+
+// Footer > Minimal footer (Checkout)
+$snap-footer-minimal-color: #b4b4b4 !default;
+$snap-footer-minimal-link-color: #b4b4b4 !default;
+$snap-footer-minimal-background-color: #555 !default;
+$snap-footer-minimal-service-menu-link-color: #fff !default;
+$snap-footer-minimal-copyright-border-top-color: #5d5d5d !default;
+$snap-footer-minimal-font-size: 14 !default;
+
+// Footer > Social
+$snap-social-media-enable: 1 !default;
+
+// Footer > Logos footer
+$snap-footer-logos-show: none !default;
+
+// Footer > Copyright footer
+//$snap-footer-bottom-shopname > no css
+$snap-footer-bottom-element-1: none !default;
+
+$snap-footer-bottom-color: #666 !default;
+$snap-footer-bottom-link-color: #666 !default;
+$snap-footer-bottom-link-color-hover: #333 !default;
+
+$snap-footer-bottom-background-color: rgba(0, 0, 0, 0) !default;
+$snap-footer-bottom-background-image: none !default;
+$snap-footer-bottom-background-image-size: auto !default;
+$snap-footer-bottom-background-image-position: left top !default;
+$snap-footer-bottom-background-image-repeat: repeat !default;
+$snap-footer-bottom-background-image-attachment: scroll !default;
+
+$snap-footer-bottom-font-size: 14 !default;
+//$snap-footer-lizenzkey > no css
+
+// Content > Breadcrumb
+// $snap-breadcrumb-show-home: 1 !default;
+$snap-breadcrumb-show-cms-shop-pages: 2 !default;
+$snap-breadcrumb-show-cms-landing-pages: 2 !default;
+$snap-breadcrumb-show-cms-category-pages: 2 !default;
+$snap-breadcrumb-show-cms-product-pages: 2 !default;
+$snap-breadcrumb-show-product-detail: 2 !default;
+
+$snap-breadcrumb-style: 1 !default;
+$snap-breadcrumb-separator-style: 1 !default;
+$snap-breadcrumb-further-information: 1 !default;
+
+$snap-breadcrumb-text-color: #999 !default;
+$snap-breadcrumb-link-color: #999 !default;
+$snap-breadcrumb-link-active-color: #135d84 !default;
+$snap-breadcrumb-divider-color: #999 !default;
+
+$snap-breadcrumb-container-styling: 1 !default;
+$snap-breadcrumb-container-corner-type: 2 !default;
+$snap-breadcrumb-width: 1 !default;
+$snap-breadcrumb-margin-top: 10 !default;
+$snap-breadcrumb-margin-bottom: 10 !default;
+$snap-breadcrumb-padding-top-bottom: 1 !default;
+$snap-breadcrumb-padding-left-right: 1 !default;
+$snap-breadcrumb-justify-content: flex-start !default;
+
+$snap-breadcrumb-padding: 0 !default;
+
+$snap-breadcrumb-border-color: rgba(0, 0, 0, 0) !default;
+$snap-breadcrumb-border-top-color: rgba(0, 0, 0, 0) !default;
+$snap-breadcrumb-border-bottom-color: rgba(0, 0, 0, 0) !default;
+$snap-breadcrumb-background-color: rgba(0, 0, 0, 0) !default;
+
+$snap-breadcrumb-list-corner-type: 2 !default;
+$snap-breadcrumb-border-color-list: #bcc1c7 !default; // $gray-300
+$snap-breadcrumb-background-color-list: #eee !default; // $gray-200
+
+$snap-breadcrumb-buttons-corner-type: 2 !default;
+$snap-breadcrumb-buttons-border-color: #bcc1c7 !default;
+$snap-breadcrumb-buttons-background-color: #eee !default;
+$wt-breadcrumb-buttons-border-color-active: #bcc1c7 !default;
+$snap-breadcrumb-buttons-background-color-active: #fff !default;
+
+$snap-breadcrumb-position: 1 !default;
+
+// Content > Cookie permission
+$snap-cookie-permission-show: 2 !default;
+$snap-cookie-permission-position: 1 !default;
+$snap-cookie-permission-padding: 10 !default;
+$snap-cookie-permission-box-shadow: 0 0 30px !default;
+$snap-cookie-permission-box-shadow-color: rgba(0, 0, 0, 0.2) !default;
+$snap-cookie-permission-width: 1 !default;
+$snap-cookie-permission-max-width: 260 !default;
+$snap-cookie-permission-bottom: 80 !default;
+$snap-cookie-permission-right: 25 !default;
+$snap-cookie-permission-color: #555 !default;
+$snap-cookie-permission-border-color: #ccc !default;
+$snap-cookie-permission-background-color: #fff !default;
+$snap-cookie-permission-deny-btn-background-color: $sw-border-color !default;
+$snap-cookie-permission-configuration-btn-background-color: $sw-color-brand-secondary !default;
+$snap-cookie-permission-accept-all-btn-background-color: $sw-color-brand-primary !default;
+
+// Content > Pagination
+$snap-pagination-style: 1 !default;
+$snap-pagination-corner-type: 2 !default;
+$snap-pagination-buttons-corner-type: 2 !default;
+
+$snap-pagination-color: $sw-color-brand-primary !default;
+$snap-pagination-border-color: #bcc1c7 !default; // $gray-300
+$snap-pagination-background-color: #fff !default;
+
+$snap-pagination-hover-color: darken($sw-color-brand-primary, 15%) !default;
+$snap-pagination-hover-border-color: #bcc1c7 !default; // $gray-300
+$snap-pagination-hover-background-color: #eee !default; // $gray-200
+
+$snap-pagination-active-color: #fff !default;
+$snap-pagination-active-border-color: $sw-color-brand-primary !default;
+$snap-pagination-active-background-color: $sw-color-brand-primary !default;
+
+$snap-pagination-disabled-color: #798490 !default; // $gray-600
+$snap-pagination-disabled-border-color: #bcc1c7 !default; // $gray-300
+$snap-pagination-disabled-background-color: #fff !default;
+
+// Content > Scroll up button
+$snap-scroll-up-corner-type: 2 !default;
+$snap-scroll-up-box-shadow: 1px 2px 6px !default;
+$snap-scroll-up-box-shadow-color: rgba(0, 0, 0, 0.3) !default;
+
+$snap-scroll-up-color: #fff !default;
+$snap-scroll-up-border-color: #135d84 !default;
+$snap-scroll-up-background-color: #135d84 !default;
+$snap-scroll-up-color-hover: #fff !default;
+$snap-scroll-up-border-color-hover: #135d84 !default;
+$snap-scroll-up-background-color-hover: #135d84 !default;
+
+// Content > Sliders
+$snap-base-slider-controls-style: 1 !default;
+$snap-base-slider-controls-corner-type: 2 !default;
+$snap-base-slider-controls-hover-type: 2 !default;
+$snap-base-slider-controls-color: $sw-color-brand-primary !default;
+$snap-base-slider-controls-color-hover: $sw-color-brand-secondary !default;
+$snap-base-slider-controls-border-color: transparent !default;
+$snap-base-slider-controls-border-color-hover: darken($snap-base-slider-controls-border-color, 10%) !default;
+$snap-base-slider-controls-background-color: transparent !default;
+$snap-base-slider-controls-background-color-hover: darken($snap-base-slider-controls-background-color, 7.5%) !default;
+
+$snap-base-slider-navigation-dots-style: 2 !default;
+$snap-base-slider-navigation-dots-type: 1 !default;
+$snap-base-slider-navigation-dots-hover-type: 1 !default;
+$snap-base-slider-navigation-dots-alignment: 3 !default;
+$snap-base-slider-navigation-dots-background-color: #bcc1c7 !default; // $gray-300
+$snap-base-slider-navigation-dots-background-color-active: #798490 !default; // $gray-600
+
+$snap-banner-slider-autoplay: none !default;
+$snap-banner-slider-autoplay-enable: false !default;
+$snap-banner-slider-mousedrag-enable: true !default;
+
+//Gallery Slider
+$snap-gallery-slider-thumbnails-col-enable: 0 !default;
+// $snap-gallery-slider-padding-col-enable: "off" !default;
+// Shopping Experiences > All types
+$snap-shopping-experiences-header-position: 3 !default;
+$snap-cms-layout-adjustments-landing-pages: 1 !default;
+$snap-cms-layout-adjustments-category-pages: 1 !default;
+$snap-cms-layout-adjustments-product-pages: 1 !default;
+$snap-cms-layout-adjustments-shop-pages: 1 !default;
+
+$snap-cms-section-boxed-sidebar-combined: 2 !default;
+$snap-cms-section-boxed-margin-top-home: 1 !default;
+$snap-cms-section-boxed-margin-top: 20 !default;
+$snap-cms-section-margin-bottom: 1 !default;
+$snap-cms-section-padding-top-bottom: 20 !default;
+$snap-cms-section-background-color: rgba(0, 0, 0, 0) !default;
+$snap-cms-section-boxed-border-color: #eee !default; // $gray-200
+$snap-cms-section-boxed-background-color: #fff !default;
+
+$snap-cms-animations-name: none !default;
+$snap-cms-animations-name-headlines: none !default;
+
+// Shopping Experiences > CMS block 'Image slider'
+$snap-image-slider-controls-individual: 1 !default;
+$snap-image-slider-controls-style: 1 !default;
+$snap-image-slider-controls-corner-type: 2 !default;
+$snap-image-slider-controls-hover-type: 2 !default;
+$snap-image-slider-controls-color: $sw-color-brand-primary !default;
+$snap-image-slider-controls-color-hover: $sw-color-brand-secondary !default;
+$snap-image-slider-controls-border-color: transparent !default;
+$snap-image-slider-controls-border-color-hover: darken($snap-image-slider-controls-border-color, 10%) !default;
+$snap-image-slider-controls-background-color: transparent !default;
+$snap-image-slider-controls-background-color-hover: darken($snap-image-slider-controls-background-color, 7.5%) !default;
+
+$snap-image-slider-navigation-dots-alignment: 3 !default;
+$snap-cms-block-slider-border: 0 !default;
+
+// Shopping Experiences > CMS block 'Gallery slider'
+$snap-gallery-slider-controls-individual: 2 !default;
+$snap-gallery-slider-controls-style: 1 !default;
+$snap-gallery-slider-controls-corner-type: 2 !default;
+$snap-gallery-slider-controls-hover-type: 1 !default;
+$snap-gallery-slider-controls-color: $sw-color-brand-primary !default;
+$snap-gallery-slider-controls-color-hover: $sw-color-brand-secondary !default;
+$snap-gallery-slider-controls-border-color: transparent !default;
+$snap-gallery-slider-controls-border-color-hover: darken($snap-gallery-slider-controls-border-color, 10%) !default;
+$snap-gallery-slider-controls-background-color: #fff !default;
+$snap-gallery-slider-controls-background-color-hover: darken($snap-gallery-slider-controls-background-color,
+    7.5%) !default;
+
+$snap-gallery-slider-navigation-dots-alignment: 3 !default;
+
+// Shopping Experiences > CMS block 'Two columns, boxed image & text'
+$snap-cms-block-image-position-mobile: 1 !default;
+$snap-cms-block-image-position-desktop: 1 !default;
+$snap-cms-block-image-font-size: 16 !default;
+$snap-cms-block-image-align-items: flex-start !default;
+
+// Shopping Experiences > CMS block 'Product slider'
+$snap-product-slider-controls-individual: 1 !default;
+$snap-product-slider-controls-style: 1 !default;
+$snap-product-slider-controls-corner-type: 2 !default;
+$snap-product-slider-controls-hover-type: 2 !default;
+$snap-product-slider-controls-color: $sw-color-brand-primary !default;
+$snap-product-slider-controls-color-hover: $sw-color-brand-secondary !default;
+$snap-product-slider-controls-border-color: transparent !default;
+$snap-product-slider-controls-border-color-hover: darken($snap-product-slider-controls-border-color, 10%) !default;
+$snap-product-slider-controls-background-color: transparent !default;
+$snap-product-slider-controls-background-color-hover: darken($snap-product-slider-controls-background-color,
+    7.5%) !default;
+
+// Shopping Experiences > CMS block 'Product filter'
+$snap-filter-panel-item-color: #333 !default;
+$snap-filter-panel-item-border-color: #eee !default; // $gray-200
+$snap-filter-panel-item-background-color: #fff !default;
+$snap-filter-panel-content-padding-top: 20 !default;
+$snap-filter-panel-content-padding-right: 1 !default;
+$snap-filter-panel-content-padding-bottom: 1 !default;
+$snap-filter-panel-content-padding-left: 20 !default;
+$snap-filter-panel-content-border: 1px solid !default;
+$snap-filter-panel-content-border-color: #eee !default; // $gray-200
+$snap-filter-panel-content-background-color: #eee !default; // $gray-200
+
+$snap-toggle-filter-panel-item-color: #444 !default;
+$snap-toggle-filter-panel-item-border-color: none !default;
+$snap-toggle-filter-panel-item-background-color: #fff !default;
+$snap-toggle-filter-panel-background-color-active: #fff !default;
+
+$snap-toggle-filter-panel-background-color-hover: #f46036 !default;
+$snap-filter-select-list-item-hover-background-color: #f34d1e !default;
+
+
+//is--sidebar
+$snap-sidebar-filter-panel-item-color: #444 !default;
+$snap-sidebar-filter-panel-item-border-color: none !default;
+$snap-sidebar-filter-panel-item-background-color: #fff !default;
+$snap-sidebar-filter-panel-background-color-active: #fff !default;
+
+$snap-sidebar-filter-panel-background-color-hover: #f46036 !default;
+$snap-filter-select-list-item-hover-background-color: #f34d1e !default;
+
+// Shopping Experiences > CMS Category 'Commerce'
+$snap-product-box-image-background-color: rgba(0, 0, 0, 0) !default;
+
+$snap-cms-element-product-box: rgba(0, 0, 0, 0) !default;
+$snap-product-box-show-variants: 0 !default;
+
+// Listing > Layout
+$snap-listing-column-count-xs: 12 !default;
+$snap-listing-column-count-sm: 6 !default;
+$snap-listing-column-count-md: 6 !default;
+$snap-listing-column-count-lg: 4 !default;
+$snap-listing-column-count-xl: 3 !default;
+$snap-listing-column-count-sidebar-xs: 12 !default;
+$snap-listing-column-count-sidebar-sm: 6 !default;
+$snap-listing-column-count-sidebar-md: 6 !default;
+$snap-listing-column-count-sidebar-lg: 6 !default;
+$snap-listing-column-count-sidebar-xl: 4 !default;
+$snap-listing-column-count-xs-image: 12 !default;
+$snap-listing-column-count-sm-image: 6 !default;
+$snap-listing-column-count-md-image: 6 !default;
+$snap-listing-column-count-lg-image: 4 !default;
+$snap-listing-column-count-xl-image: 3 !default;
+$snap-listing-column-count-sidebar-xs-image: 12 !default;
+$snap-listing-column-count-sidebar-sm-image: 6 !default;
+$snap-listing-column-count-sidebar-md-image: 6 !default;
+$snap-listing-column-count-sidebar-lg-image: 6 !default;
+$snap-listing-column-count-sidebar-xl-image: 4 !default;
+$snap-listing-column-count-xs-minimal: 12 !default;
+$snap-listing-column-count-sm-minimal: 6 !default;
+$snap-listing-column-count-md-minimal: 6 !default;
+$snap-listing-column-count-lg-minimal: 4 !default;
+$snap-listing-column-count-xl-minimal: 3 !default;
+$snap-listing-column-count-sidebar-xs-minimal: 12 !default;
+$snap-listing-column-count-sidebar-sm-minimal: 6 !default;
+$snap-listing-column-count-sidebar-md-minimal: 6 !default;
+$snap-listing-column-count-sidebar-lg-minimal: 6 !default;
+$snap-listing-column-count-sidebar-xl-minimal: 4 !default;
+
+//custom
+$snap-card-border-radius-enable: 0 !default;
+$snap-listing-custom-hover: 3 !default;
+
+// Listing > Product box
+$snap-product-box-layout-type: 1 !default;
+$snap-product-box-hover-type: 1 !default;
+$snap-product-box-hover-apply: 1 !default;
+$snap-product-box-text-align: center !default;
+$snap-product-box-variant-characteristics-show: 2 !default;
+$snap-product-box-ordernumber-show: 1 !default;
+$snap-product-box-manufacturer-show: 1 !default;
+$snap-product-box-price-unit-show: 2 !default;
+$snap-product-box-cheapest-price-show: 2 !default;
+$snap-product-box-list-price-price-show: 2 !default;
+$snap-product-box-list-price-percentage-show: 2 !default;
+$snap-product-box-action-buy-btn-show: 2 !default;
+$snap-product-box-action-buy-btn-hover: 1 !default;
+$snap-product-box-border-color: transparent !default;
+$snap-product-box-border-color-hover: #008490 !default;
+$snap-product-box-background-color: #fff !default;
+$snap-product-box-background-color-hover: #f7f7f7 !default;
+$snap-product-box-image-hover-type: 3 !default;
+$snap-product-box-image-height: 200 !default;
+$snap-product-box-image-object-fit: contain !default;
+$snap-product-box-image-align-items: center !default;
+$snap-product-box-image-background-color: rgba(0, 0, 0, 0) !default;
+$snap-product-box-product-review-rating-position: 1 !default;
+$snap-product-box-border-enable: 0 !default;
+
+$snap-product-box-filter-blur-enable: 1 !default;
+$snap-product-box-filter-gray-enable: 1 !default;
+$snap-listing-product-box-disable-sidepadding: 1 !default;
+
+// Listing > Category navigation
+$snap-category-navigation-border-color: #eee !default; // $gray-200
+$snap-category-navigation-link-color: #111 !default;
+$snap-category-navigation-link-color-hover: #135d84 !default;
+$snap-category-navigation-link-color-active: #135d84 !default;
+$snap-category-navigation-link-background-color: #fff !default;
+$snap-category-navigation-link-background-color-hover: #fff !default;
+$snap-category-navigation-link-background-color-active: #fff !default;
+
+// Listing > Sidebar
+$snap-sidebar-block-upper-section-margin-top: 0 !default;
+$snap-sidebar-block-lower-section-margin-top: 0 !default;
+$snap-sidebar-block-headline-layout-type: 1 !default;
+$snap-sidebar-block-content-layout-type: 1 !default;
+$snap-sidebar-filter-headline-show: 1 !default;
+$snap-sidebar-block-headline-padding-top: 7 !default;
+$snap-sidebar-block-headline-padding-bottom: 7 !default;
+
+$snap-sidebar-block-headline-color: #000 !default;
+$snap-sidebar-block-headline-background-color: #eee !default; // $gray-200
+$snap-sidebar-block-content-color: #000 !default;
+$snap-sidebar-block-content-background-color: #fff !default;
+
+$snap-sidebar-block-headline-font-family: 1 !default;
+$snap-sidebar-block-headline-font-size: 16 !default;
+$snap-sidebar-block-headline-font-weight: normal !default;
+$snap-sidebar-block-headline-text-transform: none !default;
+
+$snap-sidebar-block-container-padding-top: 1 !default;
+$snap-sidebar-block-container-padding-bottom: 30 !default;
+$snap-sidebar-block-container-padding-left: 1 !default;
+$snap-sidebar-block-container-padding-right: 1 !default;
+
+// Listing > Sidebar widgets
+// $snap-sidebar-element-1: none !default;
+// $snap-sidebar-element-1-toggle: 1 !default;
+// $snap-sidebar-element-1-position: 2 !default;
+// $snap-sidebar-element-1-order: 100 !default;
+// $snap-sidebar-element-2: none !default;
+// $snap-sidebar-element-2-toggle: 1 !default;
+// $snap-sidebar-element-2-position: 3 !default;
+// $snap-sidebar-element-2-order: 200 !default;
+// $snap-sidebar-element-3: none !default;
+// $snap-sidebar-element-3-toggle: 1 !default;
+// $snap-sidebar-element-3-position: 3 !default;
+// $snap-sidebar-element-3-order: 300 !default;
+
+// Detail > Layout
+$snap-product-detail-prices-table-style: 2 !default;
+$snap-product-detail-properties-table-style: 2 !default;
+
+// Detail > Gallery
+$snap-product-detail-slider-image-object-fit: contain !default;
+$snap-product-detail-slider-image-align-items: center !default;
+$snap-product-detail-badges: 1 !default;
+$snap-product-detail-slider-image-similar-note-show: 1 !default;
+
+// Detail > Gallery > Thumbnails
+$snap-product-detail-thumbnails-position: 2 !default;
+$snap-product-detail-thumbnails-image-object-fit: none !default;
+$snap-product-detail-thumbnails-image-align-items: center !default; // #unused
+
+// Detail > Buybox
+$snap-product-detail-manufacturer-show: 1 !default;
+$snap-product-detail-manufacturernumber-show: 1 !default;
+$snap-product-detail-ean-show: 1 !default;
+$snap-product-detail-weight-show: 1 !default;
+$snap-product-detail-length-show: 1 !default;
+$snap-product-detail-width-show: 1 !default;
+$snap-product-detail-height-show: 1 !default;
+$snap-product-detail-availablestock-show: 1 !default;
+$snap-product-detail-minpurchase-show: 1 !default;
+$snap-product-detail-maxpurchase-show: 1 !default;
+
+$snap-detail-manufacturer-enable: 0 !default;
+$snap-detail-buybox-reviews: 0 !default;
+
+
+// Detail > Tabs
+$snap-product-detail-tabs-layout-type: 2 !default;
+$snap-product-detail-tabs-background-border-bottom: 2px solid !default;
+$snap-product-detail-tabs-container-background-color: #fafafa !default;
+$snap-product-detail-tabs-color: #333 !default;
+$snap-product-detail-tabs-color-hover: #111 !default;
+$snap-product-detail-tabs-color-active: #fff !default;
+$snap-product-detail-tabs-border-bottom-color: #eee !default; // $gray-200
+$snap-product-detail-tabs-border-bottom-color-hover: #dcdcdc !default;
+$snap-product-detail-tabs-border-bottom-color-active: #135d84 !default;
+$snap-product-detail-tabs-background-color: #eee !default; // $gray-200
+$snap-product-detail-tabs-background-color-hover: #f5f5f5 !default;
+$snap-product-detail-tabs-background-color-active: #135d84 !default;
+
+// Detail > Tab 'Description'
+$snap-product-detail-description-title-show: 2 !default;
+$snap-product-detail-properties-headline-show: 1 !default;
+$snap-product-detail-properties-info-show: 1 !default;
+
+// Detail > Tab 'Properties'
+$snap-product-detail-properties-position: 2 !default;
+$snap-product-detail-tab-properties-info-show: 1 !default;
+
+// Detail > Tab 'Manufacturer'
+$snap-product-detail-tab-manufacturer-show: 2 !default;
+$snap-product-detail-tab-manufacturer-link-products-show: 1 !default;
+$snap-product-detail-tab-manufacturer-link-website-show: 2 !default;
+
+// Detail > Sharing links
+$snap-product-detail-sharing-links-show: 1 !default;
+$snap-product-detail-sharing-links-icon-style: 4 !default;
+$snap-product-detail-sharing-links-icon-size: 45 !default;
+
+$snap-product-detail-sharing-links-icon-coloration: 1 !default;
+$snap-product-detail-sharing-links-icon-color: #135d84 !default;
+
+//$snap-product-detail-sharing-links-facebook-show > no css
+//$snap-product-detail-sharing-links-twitter-show > no css
+//$snap-product-detail-sharing-links-pinterest-show > no css
+//$snap-product-detail-sharing-links-whatsapp-show > no css
+//$snap-product-detail-sharing-links-email-show > no css
+
+// Detail > Stock label
+$snap-product-detail-stock-label-show: 1 !default;
+$snap-product-detail-stock-label-threshold-lowstock: 10 !default;
+$snap-product-detail-stock-label-threshold-highstock: 500 !default;
+
+// Detail > Sold out label
+$snap-product-detail-sold-label-show: 1 !default;
+
+// Widgets > Footer navigation
+$snap-footer-footernav-list-style: 2 !default;
+$snap-footer-footernav-padding-left: 17 !default;
+$snap-footer-footernav-link-color: #111 !default;
+$snap-footer-footernav-link-color-hover: #104d6e !default;
+$snap-footer-footernav-marker-color: #104d6e !default;
+$snap-footer-footernav-border-bottom-color: #111 !default;
+$snap-footer-footernav-text-transform: none !default;
+
+// Widgets > Awards
+$snap-widget-awards-image-max-width: 100 !default;
+$snap-widget-awards-text-show: 2 !default;
+$snap-widget-awards-standard-ssl: 2 !default;
+//$snap-widget-awards-custom-image-1 > no c
+// Widgets > Benefits
+$snap-widget-benefits-content-type: 1 !default;
+$snap-widget-benefits-icons-show: 2 !default;
+$snap-widget-benefits-content-max-items: 6 !default;
+$snap-widget-benefits-font-size-item: 16 !default;
+$snap-widget-benefits-font-size-icon: 16 !default;
+
+// Widgets > Communities
+$snap-widget-communities-layout-type: 1 !default;
+$snap-widget-communities-icon-style: 3 !default;
+$snap-widget-communities-icon-size: 45 !default;
+$snap-widget-communities-additional-text-show: 1 !default;
+$snap-widget-communities-label-show: 2 !default;
+$snap-widget-communities-label-position: 1 !default;
+$snap-widget-communities-icon-coloration: 2 !default;
+$snap-widget-communities-icon-color: #135d84 !default;
+$snap-widget-communities-icon-coloration-sidebar: 2 !default;
+$snap-widget-communities-icon-color-sidebar: #135d84 !default;
+$snap-widget-communities-facebook: 2 !default;
+$snap-widget-communities-instagram: 2 !default;
+$snap-widget-communities-twitter: 2 !default;
+$snap-widget-communities-youtube: 2 !default;
+$snap-widget-communities-vimeo: 2 !default;
+$snap-widget-communities-flickr: 2 !default;
+$snap-widget-communities-pinterest: 2 !default;
+$snap-widget-communities-tiktok: 2 !default;
+$snap-widget-communities-blogger: 2 !default;
+$snap-widget-communities-blog: 2 !default;
+$snap-widget-communities-whatsapp: 2 !default;
+$snap-widget-communities-linkedin: 2 !default;
+$snap-widget-communities-website: 2 !default;
+
+// Widgets > Hotline
+$snap-widget-hotline-contact-form-show: 2 !default;
+$snap-widget-hotline-font-size: 16 !default;
+$snap-widget-hotline-font-size-phone-number: 20 !default;
+
+// Widgets > Location
+$snap-widget-location-route-button-show: 1 !default;
+$snap-widget-location-route-button-color: #111 !default;
+$snap-widget-location-route-button-color-hover: #333 !default;
+$snap-widget-location-route-button-border-color: #fff !default;
+$snap-widget-location-route-button-border-color-hover: #eee !default; // $gray-200
+$snap-widget-location-route-button-background-color: #ccc !default;
+$snap-widget-location-route-button-background-color-hover: #ddd !default;
+
+// Widgets > Newsletter
+$snap-widget-newsletter-input-corner-type: 1 !default;
+$snap-widget-newsletter-input-border-radius: 10 !default;
+$snap-widget-newsletter-input-color: #333 !default;
+$snap-widget-newsletter-button-border-color: #fff !default;
+$snap-widget-newsletter-input-background-color: #fff !default;
+$snap-widget-newsletter-button-color: #fff !default;
+$snap-widget-newsletter-button-color-hover: #eee !default; // $gray-200
+$snap-widget-newsletter-input-border-color: #eee !default; // $gray-200
+$snap-widget-newsletter-button-border-color-hover: #fff !default;
+$snap-widget-newsletter-button-background-color: #0e557b !default;
+$snap-widget-newsletter-button-background-color-hover: #104d6e !default;
+$snap-widget-newsletter-input-text-align: left !default;
+$snap-newsletter-width: 1 !default;
+$snap-newsletter-border-enable: 2 !default;
+$snap-newsletter-border-color: #dedede !default;
+$snap-newsletter-enable: 1 !default;
+
+$snap-newsletter-background-color: #fff !default;
+$snap-newsletter-background-image: none !default;
+$snap-newsletter-background-image-size: auto !default;
+$snap-newsletter-background-image-position: left top !default;
+$snap-newsletter-background-image-repeat: repeat !default;
+$snap-newsletter-background-image-attachment: scroll !default;
+
+// Widgets > Payment
+$snap-widget-payment-logo-max-height: 45 !default;
+$snap-widget-payment-logo-corner-type: 2 !default;
+$snap-widget-payment-logo-link: 2 !default;
+$snap-widget-payment-logo-fallback-badge: 2 !default;
+//$snap-widget-payment-logo-custom-images-only > no css
+$snap-widget-payment-logo-coloration: 1 !default;
+$snap-widget-payment-logo-fallback-badge-color: #333 !default;
+$snap-widget-payment-logo-border-color: #e9f2f9 !default;
+$snap-widget-payment-logo-fallback-badge-border-color: #e9f2f9 !default;
+$snap-widget-payment-logo-fallback-badge-background-color: #eef2f5 !default;
+$snap-widget-payment-logo-fallback-badge-font-size: 10 !default;
+$snap-widget-payment-logo-fallback-badge-text-transform: none !default;
+$snap-widget-payment-logo-fallback-badge-font-weight: bold !default;
+
+// Widgets > Shipping
+$snap-widget-shipping-logo-max-height: 45 !default;
+$snap-widget-shipping-logo-corner-type: 2 !default;
+$snap-widget-shipping-logo-link: 2 !default;
+$snap-widget-shipping-logo-fallback-badge: 2 !default;
+//$snap-widget-shipping-logo-custom-images-only > no css
+$snap-widget-shipping-logo-coloration: 1 !default;
+$snap-widget-shipping-logo-fallback-badge-color: #333 !default;
+$snap-widget-shipping-logo-border-color: #e9f2f9 !default;
+$snap-widget-shipping-logo-fallback-badge-border-color: #e9f2f9 !default;
+$snap-widget-shipping-logo-fallback-badge-background-color: #eef2f5 !default;
+$snap-widget-shipping-logo-fallback-badge-font-size: 10 !default;
+$snap-widget-shipping-logo-fallback-badge-text-transform: none !default;
+$snap-widget-shipping-logo-fallback-badge-font-weight: bold !default;
+
+// Widgets > Payment
+$span-widget-payment-logo-max-height: 45 !default;
+$span-widget-payment-logo-corner-type: 2 !default;
+$span-widget-payment-logo-link: 2 !default;
+$span-widget-payment-logo-fallback-badge: 2 !default;
+//$span-widget-payment-logo-custom-images-only > no css
+$span-widget-payment-logo-coloration: 1 !default;
+$span-widget-payment-logo-fallback-badge-color: #333 !default;
+$span-widget-payment-logo-border-color: #e9f2f9 !default;
+$span-widget-payment-logo-fallback-badge-border-color: #e9f2f9 !default;
+$span-widget-payment-logo-fallback-badge-background-color: #eef2f5 !default;
+$span-widget-payment-logo-fallback-badge-font-size: 10 !default;
+$span-widget-payment-logo-fallback-badge-text-transform: none !default;
+$span-widget-payment-logo-fallback-badge-font-weight: bold !default;
+
+// Extensions > Announcement banner
+$snap-annoncement-banner-show: 1 !default;
+$snap-annoncement-banner-link: 2 !default;
+//$snap-announcement-banner-start-date > no css
+//$snap-announcement-banner-end-date > no css
+$snap-annoncement-banner-color: #fff !default;
+$snap-annoncement-banner-background-color: #135d84 !default;
+$snap-annoncement-banner-font-size: 14 !default;
+$snap-annoncement-banner-text-transform: none !default;
+$snap-annoncement-banner-font-weight: normal !default;
+
+// Extensions > Custom announcement
+$snap-custom-announcement-show: 1 !default;
+//$snap-custom-announcement-start-date > no css
+//$snap-custom-announcement-end-date > no css
+$snap-custom-announcement-border-color: #ffe79a !default;
+$snap-custom-announcement-background-color: #fff3cd !default;
+$snap-custom-announcement-font-size: 14 !default;
+
+// Extensions > Floating slideout widget
+$snap-floating-widget-show: 1 !default;
+$snap-floating-widget-mobile: 1 !default;
+$snap-floating-widget-position: 1 !default;
+//$snap-floating-widget-show-opened > no css
+$snap-floating-widget-hover-type: 2 !default;
+//$snap-floating-widget-link > no css
+//$snap-floating-widget-animation > no css
+//$snap-floating-widget-backdrop > no css
+//snap-floating-widget-link > no css
+//snap-floating-widget-link > no css
+$snap-floating-widget-width: 400 !default;
+$snap-floating-widget-height: 200 !default;
+$snap-floating-widget-title-width: 200 !default;
+$snap-floating-widget-title-height: 40 !default;
+$snap-floating-widget-padding: 20 !default;
+$snap-floating-widget-side-distance: 20% !default;
+$snap-floating-widget-color: #333 !default;
+$snap-floating-widget-link-color: $sw-color-brand-primary !default;
+$snap-floating-widget-link-color-hover: $snap-color-brand-primary-dark !default;
+$snap-floating-widget-background-color: #fff !default;
+$snap-floating-widget-title-color: #fff !default;
+$snap-floating-widget-title-background-color: $sw-color-brand-primary !default;
+$snap-floating-widget-font-size: 16 !default;
+$snap-floating-widget-title-font-size: 18 !default;
+$snap-floating-widget-background-image: none !default;
+$snap-floating-widget-background-image-object-fit: none !default;
+
+// Extensions > Product badges
+$snap-product-badges-shipping-free-badge-show: 1 !default;
+$snap-product-badges-shipping-free-badge-background-color: #4aa3df !default;
+$snap-product-badges-sold-badge-show: 1 !default;
+$snap-product-badges-sold-badge-background-color: #4aa3df !default;
+$snap-product-badges-discount-badge-type: 1 !default;
+$snap-product-badges-discount-badge-coloration: 1 !default;
+$snap-product-badges-discount-badge-background-color: #e74d3c !default;
+// ... snap-product-badges-topseller-badge-show
+// ... snap-product-badges-new-badge-show
+$snap-product-badges-stock-badge-show: 1 !default;
+//$snap-product-badges-stock-badge-threshold-lowstock > no css
+//$snap-product-badges-stock-badge-threshold-highstock > no css
+$snap-product-badges-stock-badge-coloration: 1 !default;
+$snap-product-badges-stock-badge-background-color: #f1c40f !default;
+
+// Others > Advanced
+//$snap-body-class > no css
+$snap-custom-cms-spacing-classes: 2 !default;
+$snap-custom-cms-spacing-classes-more: 1 !default;
+$snap-cms-animations-more: 1 !default;
+
+// Others > Compatibility
+$snap-header-account-btn-compatibility: 2 !default;
+$snap-header-cart-btn-compatibility: 2 !default;
+$snap-header-wishlist-btn-compatibility: 2 !default;
+$snap-nav-main-home-link-compatibility: 2 !default;
+//$snap-cms-form-newsletter-select-salutation: 2 !default;
+$snap-breadcrumb-compatibility: 2 !default;
+$snap-footer-type: 2 !default;
+$snap-footer-logos-compatibility: 2 !default;
+
+// Others > Beta
+$snap-product-box-sold: 1 !default;
+$snap-product-box-sold-style: 1 !default;
+
+// Others > Deprecated
+$snap-breadcrumb-show: 1 !default;
+// $snap-breadcrumb-home: 0 !default;
+$snap-breadcrumb-height: 20 !default;
+$snap-product-detail-breadcrumb-show: 1 !default;
+$snap-cookie-permission-btn-color-weighting: 1 !default;
+$snap-cookie-permission-btn-primary-background-color: #fff !default;
+$snap-cookie-permission-btn-primary-border-color: #eee !default; // $gray-200
+$snap-cookie-permission-btn-primary-color: #333 !default;
+$snap-cookie-permission-btn-secondary-background-color: #eee !default; // $gray-200
+$snap-cookie-permission-btn-secondary-border-color: #ccc !default;
+$snap-cookie-permission-btn-secondary-color: #333 !default;
+$snap-breadcrumb-arrow-icon-color: #999 !default;
+// $snap-breadcrumb-size: 0 !default;
+
+// Forms > Layout Type
+$snap-forms-layout-type: 2 !default;
+
+// Forms > Group
+$snap-forms-group-margin-bottom: 10px !default;
+
+// Forms > Label
+$snap-forms-label-show: 1 !default;
+$snap-forms-label-font-size: 12px !default;
+$snap-forms-label-color: #666 !default;
+$snap-forms-label-margin-bottom: 1px !default;
+$snap-forms-label-font-family: 1 !default;
+
+// Forms > Input & Select
+$snap-forms-input-font-size: 15px !default;
+$snap-forms-input-color: #222 !default;
+$snap-forms-input-color-hover: $sw-color-brand-primary !default;
+$snap-forms-input-background-color: #fafafa !default;
+$snap-forms-input-placeholder-color: #444;
+$snap-forms-input-border-color: #ccc !default;
+$snap-forms-input-border-color-hover: $sw-color-brand-primary !default;
+$snap-forms-input-focus-background-color: #e7e7e7 !default;
+$snap-forms-input-focus-border-color: $sw-color-brand-primary !default;
+$snap-forms-input-focus-color: $sw-color-brand-primary !default;
+$snap-forms-input-font-family: 1 !default;
+
+// Forms > Feedback
+$snap-forms-feedback-valid-color: $sw-color-success !default;
+$snap-forms-feedback-icon-valid-color: $snap-forms-feedback-valid-color !default;
+$snap-forms-feedback-invalid-color: $sw-color-danger !default;
+$snap-forms-feedback-icon-invalid-color: $snap-forms-feedback-invalid-color !default;
+
+// Alerts
+$snap-alert-font-size: 15px !default;
+
+
+$snap-seqrch-btn-class: "btn header-actions-btn search-toggle-btn js-search-toggle-btn collapsed";
+
+//header custom bar variables
+$snap-custom-bar-small-height-header: auto !default;
+$snap-custom-bar-large-height-header: auto !default;
+
+//icons
+$snap-custom-bar-header-item-icon-1: none !default;
+$snap-custom-bar-header-item-icon-2: none !default;
+$snap-custom-bar-header-item-icon-3: none !default;
+$snap-custom-bar-header-item-icon-4: none !default;
+$snap-custom-bar-header-item-icon-5: none !default;
+
+//labels
+$snap-custom-bar-header-label-item-1: none !default;
+$snap-custom-bar-header-label-item-2: none !default;
+$snap-custom-bar-header-label-item-3: none !default;
+$snap-custom-bar-header-label-item-4: none !default;
+$snap-custom-bar-header-label-item-5: none !default;
+
+//footer custom bar variables
+
+//icons
+$snap-custom-bar-footer-item-icon-1: none !default;
+$snap-custom-bar-footer-item-icon-2: none !default;
+$snap-custom-bar-footer-item-icon-3: none !default;
+$snap-custom-bar-footer-item-icon-4: none !default;
+$snap-custom-bar-footer-item-icon-5: none !default;
+
+//labels
+$snap-custom-bar-footer-label-item-1: none !default;
+$snap-custom-bar-footer-label-item-2: none !default;
+$snap-custom-bar-footer-label-item-3: none !default;
+$snap-custom-bar-footer-label-item-4: none !default;
+$snap-custom-bar-footer-label-item-5: none !default;
+
+//SEO adjust
+$snap-custom-seo-text-color: #000 !default;
+$snap-custom-seo-text-bg-color: #fff !default;

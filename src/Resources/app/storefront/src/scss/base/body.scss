@@ -1,0 +1,29 @@
+// Body background settings
+
+html {
+   scroll-behavior: smooth;
+
+	.content-main {
+		@if $snap-background-image-show == 2 and $snap-background-body-image != "" and $snap-background-body-image != "none" {
+
+			-webkit-background-size: $snap-background-image-size !important;
+			background-size: $snap-background-image-size !important;
+			background-position: $snap-background-image-position !important;
+			background-repeat: $snap-background-image-repeat !important;
+			background-attachment: $snap-background-image-attachment !important;
+         background-color: $snap-background-body-color !important;
+      }
+	}
+
+   //  Set HTML base font size
+   @include media-breakpoint-up(xl) { // min 1200px
+      font-size: $snap-html-font-size-xl;
+   }
+   @include media-breakpoint-down(lg) { // max 1199.98px
+      font-size: $snap-html-font-size-lg;
+   }
+   @include media-breakpoint-down(xs) { // max 575.98px
+      font-size: $snap-html-font-size-xs;
+   }
+}
+

@@ -1,0 +1,132 @@
+/*
+	snap: Widget > Payment
+	==================================================
+*/
+
+// TODO: sh. layout/_footer.scss
+
+// snap: General widget styling
+.snap-widget-payment {
+  .is-payment-logo {
+    margin: 0 10px 10px 0;
+  }
+}
+
+.snap-widget-payment,
+.snap-widget-paymentshipping {
+
+  .is-payment-logo {
+    -o-transition: 0.2s ease-out 0s;
+    -webkit-transition: 0.2s ease-out 0s;
+    transition: 0.2s ease-out 0s;
+
+    img.footer-logo-image {
+      display: inline-block;
+      max-width: inherit;
+      height: ($snap-widget-payment-logo-max-height + px); // snap: SVG fix
+      max-height: ($snap-widget-payment-logo-max-height + px);
+      border: 1px solid $snap-widget-payment-logo-border-color;
+
+      @if $snap-widget-payment-logo-corner-type == 2 {
+        border-radius: $snap-border-radius-light;
+      } @else if $snap-widget-payment-logo-corner-type == 3 {
+        border-radius: $snap-border-radius-bold;
+      }
+
+      @if $snap-widget-payment-logo-coloration == 2 { // snap: Grayscale
+        @include snap-grayscale(100%);
+      }
+    }
+
+    // snap: Shipping logo #linked
+    // TODO: Add configuration
+    a:hover {
+      img {
+        //-webkit-transform: scale(1.1);
+        //-ms-transform: scale(1.1);
+        //transform: scale(1.1);
+
+        @if $snap-widget-shipping-logo-coloration == 2 {
+          @include snap-grayscale(0%); // snap: Grayscale
+        } @else {
+          //-webkit-filter: brightness(95%);
+          //filter: brightness(95%);
+        }
+
+        opacity: .75;
+      }
+    }
+
+    // snap: Fallback badge
+    &.is-fallback-badge {
+      display: inline-flex;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+
+      height: ($snap-widget-payment-logo-max-height + px); // snap: SVG fix
+      max-height: ($snap-widget-payment-logo-max-height + px);
+
+      @if $snap-widget-payment-logo-corner-type == 2 {
+        border-radius: $snap-border-radius-light;
+      } @else if $snap-widget-payment-logo-corner-type == 3 {
+        border-radius: $snap-border-radius-bold;
+      }
+
+      snap {
+        // @include snap-font-size($snap-widget-payment-logo-fallback-badge-font-size);
+        font-weight: fontWeight($snap-widget-payment-logo-fallback-badge-font-weight);
+        line-height: ($snap-widget-payment-logo-max-height / 2);
+        display: inline-block;
+        padding: 10px;
+        text-transform: $snap-widget-payment-logo-fallback-badge-text-transform;
+
+        color: $snap-widget-payment-logo-fallback-badge-color;
+        border: 1px solid $snap-widget-payment-logo-fallback-badge-border-color;
+        background-color: $snap-widget-payment-logo-fallback-badge-background-color;
+
+        // snap: Grayscale
+        @if $snap-widget-payment-logo-coloration == 2 {
+          @include snap-grayscale(100%);
+        }
+      }
+
+      // snap: Fallback badge #linked
+      a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: none;
+
+          snap {
+            color: $snap-widget-payment-logo-fallback-badge-color;
+
+            /*@if $snap-widget-payment-logo-coloration == 2 {
+              @include snap-grayscale(0%); // snap: Grayscale
+            }*/
+            //-webkit-filter: brightness(95%);
+            //filter: brightness(95%);
+
+            opacity: .75;
+          }
+        }
+      }
+
+    }
+
+  }
+
+}
+
+// snap: Sidebar specific styling
+/*.cms-section-sidebar-sidebar-content {
+  .snap-widget-payment {
+  }
+}*/
+
+
+
+.payment-container{
+  display: flex;
+  flex-wrap: wrap;
+}

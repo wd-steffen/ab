@@ -1,0 +1,336 @@
+
+@mixin snap-google-font($family, $weight) {
+	@if $family != null {
+		@if $weight != null {
+			/*@import url("https://fonts.googleapis.com/css2?family=#{$family}:wght@#{$weight}&display=swap");*/
+			@import url("https://fonts.googleapis.com/css?family=#{$family}:#{$weight}&display=swap");
+
+		} @else {
+			/*@import url("https://fonts.googleapis.com/css2?family=#{$family}&display=swap");*/
+			@import url("https://fonts.googleapis.com/css?family=#{$family}&display=swap");
+		}
+	} @else {
+		@content;
+	}
+}
+
+
+@mixin snap-font-size($size) {
+	font-size: strip-unit($size) + px; // Fallback in px
+	font-size: rem($size);
+}
+
+
+
+@mixin snap-font-size-rem($size) {
+	font-size: strip-unit($size) * 16 + px; // Fallback in px
+	font-size: $size;
+}
+
+
+
+@mixin snap-opacity($value) {
+	-webkit-filter: #{"opacity(#{$value})"};
+	-moz-filter: #{"opacity(#{$value})"};
+	filter: #{"opacity(#{$value})"};
+}
+
+
+/*
+ * ThemeWare: Grayscale element
+ * Example: @include snap-grayscale(100%);
+ */
+
+@mixin snap-grayscale($value) {
+	-webkit-filter: #{"grayscale(#{$value})"};
+	-moz-filter: #{"grayscale(#{$value})"};
+	filter: #{"grayscale(#{$value})"};
+}
+
+
+/*
+ * ThemeWare: Grayscale element
+ * Example: @include snap-grayscale-opacity(95%, .4);
+ */
+
+@mixin snap-grayscale-opacity($value1, $value2) {
+	-webkit-filter: #{"grayscale(#{$value1})"} #{"opacity(#{$value2})"};
+	-moz-filter: #{"grayscale(#{$value1})"} #{"opacity(#{$value2})"};
+	filter: #{"grayscale(#{$value1})"} #{"opacity(#{$value2})"};
+}
+
+
+/*
+ * ThemeWare: Blur element
+ * Example: @include snap-blur(5px);
+ */
+
+@mixin snap-blur($value) {
+	-webkit-filter: #{"blur(#{$value})"};
+	-moz-filter: #{"blur(#{$value})"};
+	filter: #{"blur(#{$value})"};
+}
+
+
+/*
+ * ThemeWare: Box-shadows
+ * Example: @include snap-box-shadow(1);
+ */
+
+@mixin snap-box-shadow($value) {
+	@if $value != null {
+		@if $value == 1 {
+			//box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+			box-shadow: 0 1px 3px rgba(0, 0, 0, .10), 0 1px 2px rgba(0, 0, 0, .10);
+		} @else if $value == 2 {
+			//box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+			box-shadow: 0 3px 6px rgba(0, 0, 0, .10), 0 3px 6px rgba(0, 0, 0, .10);
+		} @else if $value == 3 {
+			//box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+			box-shadow: 0 10px 20px rgba(0, 0, 0, .10), 0 6px 6px rgba(0, 0, 0, .10);
+		} @else if $value == 4 {
+			//box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+			box-shadow: 0 14px 28px rgba(0, 0, 0, .10), 0 10px 10px rgba(0, 0, 0, .10);
+		} @else {
+			//box-shadow: 0 19px 38px rgba(0, 0, 0, .30), 0 15px 12px rgba(0, 0, 0, .22);
+			box-shadow: 0 19px 38px rgba(0, 0, 0, .10), 0 15px 12px rgba(0, 0, 0, .10);
+		}
+	} @else {
+		@content;
+	}
+}
+
+/*
+- Material shadow 1
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+- :hover
+  box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+
+- Material shadow 2
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+
+- Material shadow 3
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+
+- Material shadow 4
+  box-shadow: 0 14px 28px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .22);
+
+- Material shadow 5
+  box-shadow: 0 19px 38px rgba(0, 0, 0, .30), 0 15px 12px rgba(0, 0, 0, .22);
+*/
+
+
+@mixin snap-icon-color-blog($color) {
+	color: $color !important;
+
+	.icon {
+		color: $color;
+	}
+}
+
+@mixin snap-icon-color-blogger($color) {
+	color: $color !important;
+
+	.icon {
+		color: $color;
+	}
+}
+
+@mixin snap-icon-color-facebook($color) {
+	color: $color !important;
+
+	.icon {
+		color: $color;
+	}
+}
+
+@mixin snap-icon-color-flickr($color) {
+	color: $color !important;
+
+	.icon {
+		color: $color;
+
+		// Multicolor adjustments
+		.color3 {
+			color: $color;
+		}
+	}
+}
+
+@mixin snap-icon-color-instagram($color) {
+	color: $color !important;
+
+	.icon {
+		color: $color;
+	}
+}
+
+@mixin snap-icon-color-linkedin($color) {
+	color: $color !important;
+
+	.icon {
+		color: $color;
+	}
+}
+
+@mixin snap-icon-color-pinterest($color) {
+	color: $color !important;
+
+	.icon {
+		color: $color;
+	}
+}
+
+@mixin snap-icon-color-tiktok($color) {
+	color: $color !important;
+
+	.icon {
+		color: $color;
+
+		// Multicolor adjustments
+		.color3 {
+			color: $color;
+		}
+
+		// Multicolor adjustments
+		.color4 {
+			color: $color;
+		}
+	}
+}
+
+@mixin snap-icon-color-twitter($color) {
+	color: $color !important;
+
+	.icon {
+		color: $color;
+	}
+}
+
+@mixin snap-icon-color-vimeo($color) {
+	color: $color !important;
+
+	.icon {
+		color: $color;
+	}
+}
+
+@mixin snap-icon-color-whatsapp($color) {
+	color: $color !important;
+
+	.icon {
+		color: $color;
+	}
+}
+
+@mixin snap-icon-color-xing($color) {
+	color: $color !important;
+
+	.icon {
+		color: $color;
+
+		// Multicolor adjustments
+		.color3 {
+			color: $color;
+		}
+	}
+}
+
+@mixin snap-icon-color-youtube($color) {
+	color: $color !important;
+
+	.icon {
+		color: $color;
+	}
+}
+
+@mixin snap-icon-color-website($color) {
+	color: $color !important;
+
+	.icon {
+		color: $color;
+	}
+}
+
+@mixin snap-icon-color-email($color) {
+	color: $color !important;
+
+	.icon {
+		color: $color;
+	}
+}
+
+@mixin snap-input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #ccc;
+    border-radius: $snap-btn-border-radius;
+    transition: 0ms;
+	background: #fafafa; 
+    position: relative;
+
+    &:hover{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2px solid;
+        border-color: $sw-color-brand-primary;
+        border-radius: $snap-btn-border-radius;
+        transition: 0ms;
+
+    }
+
+    &:focus {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2px solid $sw-color-brand-primary;
+    }
+	
+	&::placeholder{
+		color: #000;
+	}
+}
+
+@mixin snap-select{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #ccc;
+    border-radius: $snap-btn-border-radius;
+    transition: 0ms;
+	background: #fafafa url("data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 4 5\'%3e%3cpath fill=\'%23222222\' d=\'M2 0L0 2h4zm0 5L0 3h4z\'/%3e%3c/svg%3e") no-repeat right .5625rem center/8px 10px; 
+    position: relative;
+
+    &:hover{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2px solid;
+        border-color: $sw-color-brand-primary;
+        border-radius: $snap-btn-border-radius;
+        transition: 0ms;
+
+    }
+
+    &:focus {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2px solid $sw-color-brand-primary;
+    }
+
+	&::placeholder{
+		color: #000;
+	}
+}
+
+@mixin newsletter-input {
+	border: 1px solid #fff;
+	&::placeholder{
+		color: #000;
+	}
+}

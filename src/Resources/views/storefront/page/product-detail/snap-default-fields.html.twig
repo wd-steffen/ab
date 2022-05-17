@@ -1,0 +1,100 @@
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# Set theme variables #}
+{% set snapDefaultProductDetailWeightShow = theme_config('snap-default-product-detail-weight-show') %}
+{% set snapDefaultProductDetailLengthShow = theme_config('snap-default-product-detail-length-show') %}
+{% set snapDefaultProductDetailHeightShow = theme_config('snap-default-product-detail-height-show') %}
+{% set snapDefaultProductDetailWidthShow = theme_config('snap-default-product-detail-width-show') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+    {# SnapTheme: Add weight #}
+    {% if page.product.weight and snapDefaultProductDetailWeightShow == 2 %}
+        <div class="snap-detail-container snap-product-detail-weight-container">
+            {% block snap_page_product_detail_weight_label %}
+                <span class="product-detail-label snap-product-detail-weight-label">
+                    {{ "snap.detail.weightLabel"|trans|sw_sanitize }}
+                </span>
+            {% endblock %}
+
+            {% block snap_page_product_detail_weight %}
+                <span class="product-detail-value snap-product-detail-weight"
+                    itemprop="sku">
+                    {{ page.product.weight }} kg
+                </span>
+            {% endblock %}
+        </div>
+    {% endif %}
+
+    {# SnapTheme: Add length #}
+    {% if page.product.length and snapDefaultProductDetailLengthShow == 2 %}
+        <div class="snap-detail-container snap-product-detail-length-container">
+            {% block snap_page_product_detail_length_label %}
+                <span class="product-detail-label snap-product-detail-length-label">
+                    {{ "snap.detail.lengthLabel"|trans|sw_sanitize }}
+                </span>
+            {% endblock %}
+
+            {% block snap_page_product_detail_length %}
+                <span class="product-detail-value snap-product-detail-length"
+                    itemprop="sku">
+                    {{ page.product.length }} cm
+                </span>
+            {% endblock %}
+        </div>
+    {% endif %}
+
+    {# SnapTheme: Add width #}
+    {% if page.product.width and snapDefaultProductDetailWidthShow == 2 %}
+        <div class="snap-detail-container snap-product-detail-width-container">
+            {% block snap_page_product_detail_width_label %}
+                <span class="product-detail-label snap-product-detail-width-label">
+                    {{ "snap.detail.widthLabel"|trans|sw_sanitize }}
+                </span>
+            {% endblock %}
+
+            {% block snap_page_product_detail_width %}
+                <span class="product-detail-value snap-product-detail-width"
+                    itemprop="sku">
+                    {{ page.product.width }} cm
+                </span>
+            {% endblock %}
+        </div>
+    {% endif %}
+
+    {# SnapTheme: Add height #}
+    {% if page.product.height and snapDefaultProductDetailHeightShow == 2 %}
+        <div class="snap-detail-container snap-product-detail-height-container">
+            {% block snap_page_product_detail_height_label %}
+                <span class="product-detail-label snap-product-detail-height-label">
+                    {{ "snap.detail.heightLabel"|trans|sw_sanitize }}
+                </span>
+            {% endblock %}
+
+            {% block snap_page_product_detail_height %}
+                <span class="product-detail-value snap-product-detail-height"
+                    itemprop="sku">
+                    {{ page.product.height }} cm
+                </span>
+            {% endblock %}
+        </div>
+    {% endif %}
+
+    {# SnapTheme: Add availableStock #}
+    {% if page.product.availableStock > 0 and snapDefaultProductDetailAvailablestockShow == 2 %}
+        <div class="snap-detail-container snap-product-detail-availablestock-container">
+            {% block snap_page_product_detail_availablestock_label %}
+                <span class="product-detail-label snap-product-detail-availablestock-label">
+                    {{ "snap.detail.availableStockLabel"|trans|sw_sanitize }}
+                </span>
+            {% endblock %}
+
+            {% block snap_page_product_detail_availablestock %}
+                <span class="product-detail-value snap-product-detail-availablestock"
+                    itemprop="sku">
+                    {{ page.product.availableStock }}
+                </span>
+            {% endblock %}
+        </div>
+    {% endif %}
+

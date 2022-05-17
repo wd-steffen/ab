@@ -1,0 +1,9 @@
+{% sw_extends '@Storefront/storefront/layout/meta.html.twig' %}
+
+{% block layout_head_stylesheet %}
+	{# Default block #}
+	{{ parent() }}
+
+	{# ThemeWare: Styles ergänzen. #}
+	{% sw_include '@Storefront/storefront/snaptheme/snap-base-meta-styles.html.twig' ignore missing %}
+{% endblock %}

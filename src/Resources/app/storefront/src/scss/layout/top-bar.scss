@@ -1,0 +1,189 @@
+// ==================================================
+// Contains styles for the top bar located at the top of the page.
+// The top bar contains the language switcher, the currency switcher and the service menu.
+
+@include media-breakpoint-up(lg) { // min 992px
+
+    .top-bar{
+		padding: 0;
+		background-color: $snap-header-top-bar-background-color;
+        @if $snap-header-top-bar-border-color != $snap-header-top-bar-background-color {
+			//  No border if header-margin-top = 0
+			@if($snap-header-margin-top >= 1) {
+				border-top: 1px solid $snap-header-top-bar-border-color;
+			}
+			border-bottom: 1px solid $snap-header-top-bar-border-color;
+			border-left: none;
+			border-right: none;
+			border-top: none;
+		}
+
+        //  Border-radius for boxed layout
+		@if $snap-header-type == 4 {
+			@if($snap-border-radius > 1) {
+				border-radius: ($snap-border-radius + px);
+			}
+		}
+		display: flex !important;
+		@if $snap-header-type == 4 {
+			justify-content: flex-start;
+		} @else {
+			justify-content: $snap-header-top-bar-justify-content;
+		}
+
+		.top-bar-wrapper{
+			display: flex;
+            justify-content: $snap-header-top-bar-justify-content;
+            width: 100%;
+            margin: 0 auto;
+			z-index: 1010;
+			padding: 0 20px;
+			.top-bar-nav {
+				min-height: auto;
+				line-height: ($snap-header-top-bar-line-height + px);
+				height: ($snap-header-top-bar-line-height + px);
+				align-items: center;
+				margin: 0;
+				width: max-content;
+
+					.top-bar-nav-item {
+						line-height: 1.2;
+						margin-right: 10px;
+						padding-right: 10px;
+						color: $snap-header-top-bar-color;
+						border-right: 1px solid shade($snap-header-top-bar-background-color, 10%);
+
+						&:last-of-type {
+							margin-right: 0;
+							padding-right: 0;
+							border-right: none;
+						}
+
+						&:hover{
+							color: $snap-header-top-bar-color-hover;
+						}
+
+						.top-bar-nav-btn{
+							font-size: ($snap-header-top-bar-font-size + px);
+							line-height:($snap-header-top-bar-line-height + px);
+
+						}
+					}
+
+
+			}
+		}
+
+        .dropdown.show .top-bar-nav-btn {
+            &, .icon {
+                color: $snap-header-top-bar-color;
+            }
+        }
+
+        .top-bar-nav-btn {
+            &.btn {
+                color: $snap-header-top-bar-color;
+						
+                &:hover {
+                    &, .icon {
+                        color: $snap-header-top-bar-color-hover;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+	//  Languages menu text show/hide
+	@if $snap-header-top-bar-languages-menu-text-show == 2 {
+		.languages-menu .top-bar-nav-text { display: inline; }
+	} @else if $snap-header-top-bar-languages-menu-text-show == 6 {
+		@include media-breakpoint-up(lg) { // min 992px
+			.languages-menu .top-bar-nav-text { display: inline; }
+		}
+		@include media-breakpoint-down(md) { // max 991.98px
+			.languages-menu .top-bar-nav-text { display: none; }
+		}
+	} @else if $snap-header-top-bar-languages-menu-text-show == 7 {
+		@include media-breakpoint-up(xl) { // min 1200px
+			.languages-menu .top-bar-nav-text { display: inline; }
+		}
+		@include media-breakpoint-down(lg) { // max 1199.98px
+			.languages-menu .top-bar-nav-text { display: none; }
+		}
+	} @else if $snap-header-top-bar-languages-menu-text-show == 8 {
+		@include media-breakpoint(min,$snap-container-max-width) {
+			.languages-menu .top-bar-nav-text { display: inline; }
+		}
+		@include media-breakpoint(max,$snap-container-max-width -1) {
+			.languages-menu .top-bar-nav-text { display: none; }
+		}
+	} @else if $snap-header-top-bar-languages-menu-text-show == 1 {
+		.languages-menu .top-bar-nav-text { display: none; }
+	}
+	
+	//  Currencies menu text show/hide
+	@if $snap-header-top-bar-currencies-menu-text-show == 2 {
+		.currencies-menu .top-bar-nav-text { display: inline; }
+	} @else if $snap-header-top-bar-currencies-menu-text-show == 6 {
+		@include media-breakpoint-up(lg) { // min 992px
+			.currencies-menu .top-bar-nav-text { display: inline; }
+		}
+		@include media-breakpoint-down(md) { // max 991.98px
+			.currencies-menu .top-bar-nav-text { display: none; }
+		}
+	} @else if $snap-header-top-bar-currencies-menu-text-show == 7 {
+		@include media-breakpoint-up(xl) { // min 1200px
+			.currencies-menu .top-bar-nav-text { display: inline; }
+		}
+		@include media-breakpoint-down(lg) { // max 1199.98px
+			.currencies-menu .top-bar-nav-text { display: none; }
+		}
+	} @else if $snap-header-top-bar-currencies-menu-text-show == 8 {
+		@include media-breakpoint(min,$snap-container-max-width) {
+			.currencies-menu .top-bar-nav-text { display: inline; }
+		}
+		@include media-breakpoint(max,$snap-container-max-width -1) {
+			.currencies-menu .top-bar-nav-text { display: none; }
+		}
+	} @else if $snap-header-top-bar-currencies-menu-text-show == 1 {
+		.currencies-menu .top-bar-nav-text { display: none; }
+	}
+	
+	//  Service menu text show/hide
+	@if $snap-header-top-bar-service-menu-text-show == 2 {
+		.service-menu .top-bar-nav-text { display: inline; }
+	} @else if $snap-header-top-bar-service-menu-text-show == 6 {
+		@include media-breakpoint-up(lg) { // min 992px
+			.service-menu .top-bar-nav-text { display: inline; }
+		}
+		@include media-breakpoint-down(md) { // max 991.98px
+			.service-menu .top-bar-nav-text { display: none; }
+		}
+	} @else if $snap-header-top-bar-service-menu-text-show == 7 {
+		@include media-breakpoint-up(xl) { // min 1200px
+			.service-menu .top-bar-nav-text { display: inline; }
+		}
+		@include media-breakpoint-down(lg) { // max 1199.98px
+			.service-menu .top-bar-nav-text { display: none; }
+		}
+	} @else if $snap-header-top-bar-service-menu-text-show == 8 {
+		@include media-breakpoint(min,$snap-container-max-width) {
+			.service-menu .top-bar-nav-text { display: inline; }
+		}
+		@include media-breakpoint(max,$snap-container-max-width -1) {
+			.service-menu .top-bar-nav-text { display: none; }
+		}
+	} @else if $snap-header-top-bar-service-menu-text-show == 1 {
+		.service-menu .top-bar-nav-text { display: none; }
+	}
+}
+
+
+
+.service-menu{
+	.icon-help{
+		display: none;
+	}
+}

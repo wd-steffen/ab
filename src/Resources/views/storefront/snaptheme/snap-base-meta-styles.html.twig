@@ -1,0 +1,49 @@
+{# SnapTheme meta content #}
+{# TODO: Check theme vars #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# SnapTheme: Set theme variables #}
+{# {% set snapBackgroundImage = theme_config('snap-background-image') %}
+{% set snapCustomCss = theme_config('snap-custom-css') %}
+{% set snapCustomCssCode = theme_config('snap-custom-css-code') %}
+{% set snapFooterLowerSectionBackgroundImage = theme_config('snap-footer-lower-section-background-image') %}
+{% set snapFooterMainSectionBackgroundImage = theme_config('snap-footer-main-section-background-image') %} #}
+
+{% set snapBodyBgImage = theme_config('snap-background-body-image') %}
+{% set snapBodyBgImageShow = theme_config('snap-background-image-show') %}
+{% set snapNewsletterBgImage = theme_config('snap-newsletter-background-image') %}
+{% set snapNewsletterBgImageShow = theme_config('snap-newsletter-image-show') %}
+{% set snapFooterMainSectionBgImage = theme_config('snap-footer-main-section-background-image') %}
+{% set snapFooterMainSectionBgImageShow = theme_config('snap-footer-main-section-background-image-show') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# SnapTheme: Inline styles #}
+{% block snap_layout_head_style %}
+
+	{% if  
+		snapBodyBgImageShow == 2 or 
+		snapNewsletterBgImageShow == 2 or 
+		snapFooterMainSectionBgImageShow == 2 %}
+
+		<style>
+			{% apply spaceless %}
+				{# SnapTheme: Add background image to body #}
+				{% if snapBodyBgImageShow == 2 and snapBodyBgImage != "" and snapBodyBgImage != "none" %}
+					.content-main{background-image:url({{ snapBodyBgImage|sw_encode_url }});}
+				{% endif %}
+
+				{# SnapTheme: Add background image to newsletter #}
+				{% if snapNewsletterBgImageShow == 2 and snapNewsletterBgImage != "" and snapNewsletterBgImage != "none" %}
+					div.main-newsletter{background-image:url({{ snapNewsletterBgImage|sw_encode_url }});}
+				{% endif %}
+
+				{# SnapTheme: Add background image to footer #}
+				{% if snapFooterMainSectionBgImageShow == 2 and snapFooterMainSectionBgImage != "" and snapFooterMainSectionBgImage != "none" %}
+					footer.footer-main{background-image:url({{ snapFooterMainSectionBgImage|sw_encode_url }});}
+				{% endif %}
+			{% endapply %}
+		</style>
+	{% endif %}
+{% endblock %}

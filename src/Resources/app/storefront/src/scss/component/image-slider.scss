@@ -1,0 +1,18 @@
+/*
+Image slider
+==============================================
+Styling for image slider component.
+Displays images in a reusable slider component.
+based on "base-slider" component and "tiny-slider" (https://github.com/ganlanyuan/tiny-slider)
+*/
+
+@if $snap-gallery-slider-thumbnails-col-enable == 1 {
+    .gallery-slider-thumbnails-col {
+        display: block;
+        height: 100%;
+    }
+}@else if $snap-gallery-slider-thumbnails-col-enable == 0 {
+    .gallery-slider-thumbnails-col {
+        display: none;
+    }
+}

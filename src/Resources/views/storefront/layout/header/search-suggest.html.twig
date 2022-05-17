@@ -1,0 +1,29 @@
+{% sw_extends '@Storefront/storefront/layout/header/search-suggest.html.twig' %}
+
+{% block layout_search_suggest_result_total_link %}
+    <div class="col">
+        <a href="{{ path('frontend.search.page') }}?search={{ page.searchTerm }}"
+           title="{{ "header.searchAllResults"|trans|striptags }}"
+           class="search-suggest-total-link">
+            {{ "header.searchAllResults"|trans|sw_sanitize }}
+        </a>
+    </div>
+{% endblock %}
+
+{% block layout_search_suggest_result_total %}
+    {{ parent() }}
+
+    {% if theme_config('snap-customer-support') == 1 %}
+        <li class="search-suggest-not-found text-center">
+
+                    {{ "snap.header.searchHelpText"|trans|sw_sanitize }}
+
+            <a 
+                href="{{ "snap.header.searchHelpTextUrl"|trans|sw_sanitize }}"
+                class="search-suggest-not-found-link"
+                title="">
+                {{ "snap.header.searchHelpTextUrl"|trans|sw_sanitize }}
+            </a>
+        </li>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,38 @@
+
+//advanced price widget 
+.snap-custom-price-detail{
+    padding: 10px;
+    margin: 5px 0; 
+    background: $snap-buy-widget-bg-color;
+    color: $snap-buy-widget-color;
+
+    .custom-price-text{
+        display: flex;
+        flex-direction: column;
+
+        .price-detail-text{
+            color: $snap-buy-widget-color;
+            display: flex;
+            flex-wrap: wrap;
+            width: 70%;
+
+            .opening-days{
+                color: $snap-buy-widget-color;
+                padding-right: 5px;
+                width: 100%;
+            }
+        
+            a{
+                margin-right: 10px;
+                color: $snap-buy-widget-color;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+

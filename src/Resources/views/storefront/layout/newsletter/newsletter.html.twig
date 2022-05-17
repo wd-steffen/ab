@@ -1,0 +1,35 @@
+{# newsletter widget #}
+{# set variables: start #}
+{% set newsletterBtnClass = theme_config('snap-newsletter-btn') %}
+{# {% set newsletterVariant = theme_config('snap-newsletter-columns') %} #}
+{% set newsletterHeadline = theme_config('snap-newsletter-headline') %}
+{% set newsletterText = theme_config('snap-newsletter-text') %}
+{% set newsletterSubmit = theme_config('snap-newsletter-submit') %}
+{# set vaarriables: end #}
+
+
+{% block layout_footer_navigation_hotline %}
+    <div class="col-md-12 js-footer-column">
+        {% block layout_newsletter_inner_container %}
+            <div class="col-12 col-md-8 footer-newsletter-above footer-newsletter-col">
+                {# <div class="row"> #}
+                    <div class="col-12 order-2 heading">
+                        <div class="footer-newsletter-heading">
+                            <h3 class="newsletter-headline">{{ "snap.widget.newsletter.headline"|trans|striptags }}</h3>
+                            <p class="newsletter-inner-text">{{ "snap.widget.newsletter.content"|trans|striptags }}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 md-6 align-self-center cms-element-form order-2">
+                        {% sw_include '@Storefront/storefront/layout/newsletter/newsletter-widget.html.twig'
+                            with {
+                                action: 'frontend.form.newsletter.register.handle',
+                                submitText: "snap.widget.newsletter.formSubmit"|trans|striptags
+                            }
+                        %}
+                    </div>
+                {# </div> #}
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

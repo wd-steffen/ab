@@ -1,0 +1,63 @@
+
+{# Set theme variables #}
+{# icons #}
+{% set specialIcon1 = source('@SnapThemeBasic/../app/storefront/src/assets/stuhlwerk/special-icons/gastronomie.svg') %}
+{% set specialIcon2 = source('@SnapThemeBasic/../app/storefront/src/assets/stuhlwerk/special-icons/begrenzt.svg') %}
+{% set specialIcon3 = source('@SnapThemeBasic/../app/storefront/src/assets/stuhlwerk/special-icons/sonderangebot.svg') %}
+{% set specialIcon4 = source('@SnapThemeBasic/../app/storefront/src/assets/stuhlwerk/special-icons/topqualitaet.svg') %}
+{% set specialIcon5 = source('@SnapThemeBasic/../app/storefront/src/assets/stuhlwerk/special-icons/versandkosten.svg') %}
+
+{% set snapProductDetailQualityShow = theme_config('snap-product-detail-quality-show') %}
+{% set snapProductDetailFreeshippingShow = theme_config('snap-product-detail-freeshipping-show') %}
+{% set snapProductDetailSpecialOfferShow = theme_config('snap-product-detail-special-offer-show') %}
+{% set snapProductDetailLimitedAvailabilityShow = theme_config('snap-product-detail-limited-availability-show') %}
+
+
+{% block snap_special_icons %}
+    <div class="special-icons-container">
+
+        {# SnapTheme: Add quality as Icon 1 #}
+      
+      
+        {# SnapTheme: Add limited availability as Icon 2 #}
+        {% if page.product.translated.customFields.stuhlwerk_eigene_begrenzt and snapProductDetailLimitedAvailabilityShow == 2 %}
+            <div class="snap-detail-container snap-product-detail-limited-availability-container">
+                {% block snap_page_product_detail_limited_availability %}
+                    {# {{ page.product.translated.customFields.stuhlwerk_eigene_begrenzt }} #}
+                    <span class="special-icon">{{ specialIcon2|raw }}</span>
+                {% endblock %}
+            </div>
+        {% endif %}
+
+
+        {# SnapTheme: Add special offer as Icon 3 #}
+        {% if page.product.translated.customFields.stuhlwerk_eigene_sonderangebot and snapProductDetailSpecialOfferShow == 2 %}
+            <div class="snap-detail-container snap-product-detail-speciial-offer-container">
+                {% block snap_page_product_detail_special_offer %}
+                    {# {{ page.product.translated.customFields.stuhlwerk_eigene_sonderangebot }} #}
+                    <span class="special-icon">{{ specialIcon3|raw }}</span>
+                {% endblock %}
+            </div>
+        {% endif %}
+
+
+
+        {# SnapTheme: Add free shipping as Icon 4 #}
+        {% if page.product.translated.customFields.stuhlwerk_eigene_quality and snapProductDetailQualityShow == 2 %}
+            <div class="snap-detail-container snap-product-detail-quality-container">
+                <span class="special-icon">{{ specialIcon4|raw }}</span>
+            </div>
+        {% endif %}
+
+
+        {# SnapTheme: Add free shipping as Icon 5 #}
+        {% if page.product.translated.customFields.stuhlwerk_eigene_freeshipping and snapProductDetailFreeshippingShow == 2 %}
+            <div class="snap-detail-container snap-product-detail-freeshipping-container">
+                {% block snap_page_product_detail_freeshipping %}
+                    {# {{ page.product.translated.customFields.stuhlwerk_eigene_freeshipping }} #}
+                    <span class="special-icon">{{ specialIcon5|raw }}</span>
+                {% endblock %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

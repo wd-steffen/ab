@@ -1,0 +1,46 @@
+.offcanvas-filter{
+    .filter-sidebar-headline{
+        display: none;
+    }   
+
+
+    .filter-panel-items-container{
+        margin: 0 20px;
+
+        .filter-range,
+        .filter-multi-select{
+            border: 1px solid #eee;
+            margin-bottom: 10px;
+
+            .filter-multi-select-dropdown{
+                transition: all 0.2s;
+            }
+            .filter-panel-item-toggle{
+                justify-content: space-between;
+                transition: all 0.2s;
+                border-bottom: none;
+                .btn-container{
+                    width: 100%;
+                }
+            }
+
+            .filter-panel-item-toggle {
+                &[aria-expanded="true"] {
+                    transition: all 0.2s;
+                    border: 1px solid $sw-color-brand-primary;
+                    border-bottom: none;
+                    color: $sw-color-brand-primary;
+
+                    .btn-container{
+                        color: $sw-color-brand-primary;
+                    }
+        
+                }
+            }
+        }
+
+        .filter-multi-select-item-label{
+            font-size: 12.8px;
+        }
+    }
+}

@@ -1,0 +1,304 @@
+/*
+Footer
+==============================================
+Contains custom styles for the footer at the end of the page.
+*/
+
+.footer-main {
+    color: $snap-footer-text-color;
+
+    //Background settings
+    background: $snap-footer-background-color;
+    background-image: url($snap-footer-main-section-background-image);
+    background-size: $snap-footer-main-section-background-image-size;
+    background-position: $snap-footer-main-section-background-image-position;
+    background-repeat: $snap-footer-main-section-background-image-repeat;
+    background-attachment: $snap-footer-main-section-background-image-attachment;
+
+
+    @if $snap-footer-border-enable == 1 {
+        border-top: 1px solid $snap-footer-border-color;
+    }
+    //Footer box-shadow
+    @if $snap-footer-container-box-shadow == 1 {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        
+    }@else if $snap-footer-container-box-shadow == 0 {
+        box-shadow: none;
+    }
+
+    a, a:hover {
+        color: $snap-footer-text-color;
+    }
+
+    //footer adaptive width
+    .container{
+        max-width: 1400px;
+    }
+}
+
+@include media-breakpoint-down(xl){
+    .footer-main{
+        .container{
+            width: 100% !important;
+        }
+    }
+}
+
+.footer-columns {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.footer-column {
+    border-bottom-color: rgba($snap-footer-text-color, .1);
+}
+
+.footer-column-content-inner {
+    .list-unstyled {
+        margin-bottom: 0;
+    }
+}
+
+.footer-column-headline {
+    color: $sw-headline-color;
+    font-family: "Open Sans",sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-transform: none;
+    display: inline-block;
+    // border-bottom: 2px solid #eee;
+    padding: 0.5rem 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    a{
+        color: $sw-headline-color;
+    }
+}
+
+.footer-shipping-column,
+.footer-payment-column {
+    .footer-column-content-inner {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+    }
+}
+
+.footer-column-content-inner{
+    img{
+        &:hover{
+            opacity: .7;
+        }
+    }
+}
+    
+
+
+.footer-link {
+    &, &:hover {
+        color: $snap-footer-text-color;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.footer-social-item {
+    &, &:hover {
+        color: $snap-footer-text-color;
+        text-decoration: none;
+    }
+
+    .icon {
+        margin-right: $spacer-sm;
+    }
+}
+
+.footer-bottom {
+    color: $snap-footer-text-color;
+    background: $snap-footer-bottom-background;
+    width: 100%;
+    .footer-social-line{
+        .footer-line-headline{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    }
+
+}
+
+.footer-main{
+    h5{
+        color: $sw-headline-color;
+        text-decoration: none;
+    }
+
+
+    a {
+        color: $sw-link-color;
+        text-decoration: none;
+
+        &:hover{
+            color: $sw-base-text-color-hover;
+        }
+    }
+}
+
+.first-row_container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    // padding: 16px 0;
+}
+
+.service-container{
+    display: flex;
+    justify-content: center;
+}
+
+@include media-breakpoint-down(md){
+    .footer-social-line{
+        text-align: center;
+        margin: 0 auto;
+
+        .footer-social-content{
+            .footer-line-content-inner{
+                align-items: center;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .footer-social-column {
+        padding-top: $spacer-sm;
+        padding-bottom: $spacer-sm;
+
+        .footer-column-headline {
+            padding-top: $spacer;
+            padding-bottom: $spacer;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+
+    .footer-social-item {
+        display: flex;
+        flex-direction: row;
+        // margin-bottom: $spacer;
+
+        .icon > svg {
+            top: 0;
+        }
+    }
+}
+
+//social media 
+@include media-breakpoint-down(sm){
+    .footer-main{
+        margin-bottom: 0;
+    }
+
+    .footer-column-headline{
+        border: none;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .footer-main{
+        width: 100%;
+    }
+}
+
+
+
+.footer-main{
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+//foter shipping and payment logos
+.footer-logos{
+    align-items: start;
+    justify-content: start;
+    padding-right: 0;
+    padding-left: 0;
+    
+}
+
+.footer-service-menu-list{
+    margin: 0 auto;
+}
+
+.second-row_container{
+    width: 100%;
+}
+
+
+
+
+
+.footer-bottom {
+    @include snap-font-size($snap-footer-bottom-font-size);
+
+}
+
+
+@media (min-width:1200px) {
+    .footer-contact-hotline{
+        font-size: $font-size-xl;
+        a{
+            font-size: 20px;
+        }
+    }
+
+    .footer-contact-form{
+        font-size: $font-size-xl;
+    }
+    .footer-link{
+        font-size: $font-size-xl;
+    }
+}
+
+@media (max-width:1200px) {
+    .footer-contact-hotline{
+        font-size: $font-size-lg;
+        a{
+            font-size: 20px;
+        }
+    }
+
+    .footer-contact-form{
+        font-size: $font-size-lg;
+    }
+    .footer-link{
+        font-size: $font-size-lg;
+    }
+}
+
+@media (max-width:576px) {
+    .footer-contact-hotline{
+        font-size: $font-size-sm;
+        a{
+            font-size: 16px;
+        }
+    }
+
+    .footer-contact-form{
+        font-size: $font-size-sm;
+    }
+    
+
+    .footer-link{
+        font-size: $font-size-sm;
+    }
+}

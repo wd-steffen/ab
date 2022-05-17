@@ -1,0 +1,195 @@
+/*
+Tabs
+==============================================
+Contains custom styles for the tabs.
+*/
+
+.product-detail-tabs {
+    background: #fff;
+    padding: 0;
+    // margin-bottom: 20px;
+    .container{
+        .detail-accordion{
+            .card-accordion{
+                .collapse {
+                    .card-body{
+                        height: max-content;
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.product-detail-tabs{
+    .container{
+        padding: 0;
+        .card {
+            .card-body{
+                height: max-content;
+                border-radius:0;
+            }
+        }
+    }
+}
+
+// .jumbotron {
+    .nav-tabs{
+
+        border: none;
+        .nav-item{
+            margin-right: 0;   
+        }
+    }
+// }
+
+
+.product-detail-tab-navigation-link {
+    margin-right: 0;   
+    background: #dcdcdc; 
+}
+
+
+@include  media-breakpoint-up(md) {
+    .product-detail-tab-navigation-list {
+        .product-detail-tab-navigation-link {
+
+            &, &.active, &:hover {
+                background: transparent;
+            }
+        }
+    }
+}
+
+
+
+
+// .product-detail-review-content{
+//     .col-sm-4{
+//         padding: 0;
+
+//     }
+// }
+
+@media (max-width:470px) {
+    .product-detail-tab-preview{
+        display: none;
+    }
+}
+
+
+
+@if $snap-detail-tabs == 1 {
+    .product-detail-tab-navigation-list {
+        .product-detail-tab-navigation-link {
+            padding: 0 20px;
+            border-bottom: none;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            background: #eee;
+            &:hover {
+                background: #eee;
+                border-bottom: none;
+
+                .product-detail-tab-navigation-icon{
+                    svg{
+                        color: $sw-headline-color;
+                    }
+                }
+            }
+            &.active{
+                background: $sw-headline-color;
+                border-bottom: none;
+                color: #fff;
+                &:hover{
+                    background: #f5f5f5; 
+                    color: $sw-color-brand-primary;
+                    border-bottom: 2px solid #dcdcdc;
+
+                    .product-detail-tab-navigation-icon{
+                        svg{
+                            color: $sw-headline-color;
+                        }
+                    }
+                }
+                .product-detail-tab-navigation-icon{
+                    svg{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .product-detail-tabs-content{
+        border: 1px solid #eee;
+        padding-top: 20px;
+    }
+}
+
+
+
+
+
+@media (min-width:1200px) {
+    .product-detail-properties-table{
+        .properties-label,
+        .properties-value{
+            font-size: $font-size-xl;
+
+        }
+    }
+    .product-detail-tab-navigation-link,
+    .product-detail-description-text{
+        font-size: $font-size-xl;     
+    }
+    .nav-tabs{
+        span{
+            font-size: $font-size-xl;
+            font-weight: 500;
+        }
+    }
+}
+
+@media (max-width:1200px) {
+    .product-detail-properties-table{
+        .properties-label,
+        .properties-value{
+            font-size: $font-size-lg;
+        }
+    }
+    .product-detail-tab-navigation-link,
+    .product-detail-description-text{
+        font-size: $font-size-lg;
+    }   
+    .nav-tabs{
+        span{
+            font-size: $font-size-lg;
+            font-weight: 500;
+        }
+    }
+    
+}
+
+@media (max-width:576px) {
+    .product-detail-properties-table{
+        .properties-label,
+        .properties-value{
+            font-size: $font-size-sm;
+        }
+    }
+    .product-detail-tab-navigation-link,
+    .product-detail-description-text{
+        font-size: $font-size-sm;
+    }
+    .nav-tabs{
+        span{
+            font-size: $font-size-sm;
+            font-weight: 500;
+        }
+    }
+}
+

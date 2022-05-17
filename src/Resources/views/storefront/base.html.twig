@@ -1,0 +1,190 @@
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{% set snapContainerLayout = theme_config('snap-container-layout') %}
+{% set snapContainerMaxWidth = theme_config('snap-container-max-width') %}
+
+    {% block base_body_inner %}
+        {# Add additional wrapper in the body for boxed layout #}
+        {% if snapContainerLayout == 3 %}
+            <div class="container body-container">{{ parent() }}</div>
+        {% else %}
+
+            {% block base_noscript %}
+                <noscript class="noscript-main">
+                    {% sw_include '@Storefront/storefront/utilities/alert.html.twig' with {
+                        type: 'info',
+                        content: 'general.noscriptNotice'|trans|sw_sanitize
+                    } %}
+                </noscript>
+            {% endblock %}
+
+            {% block base_header %}
+                {# <div class="sticky-container"> #}
+                    {% if theme_config('snap-custom-bar-header-position') == 1 %}
+                        {% sw_include '@Storefront/storefront/layout/header/snap-custom-bar-header.html.twig' %}
+                    {% endif %}
+{# 
+                    {% if theme_config('snap-header-top-bar-show') == 1 %}
+                        {% sw_include '@Storefront/storefront/layout/header/top-bar.html.twig' %}
+                    {% endif %} #}
+
+                    <header class="header-main{% if theme_config('snap-header-layout') == 1 %} header-main-advanced{% endif %}" data-flyout-menu="true">
+                        {% block base_header_inner %}
+                            <div class="container">
+                                {% sw_include '@Storefront/storefront/layout/header/header.html.twig' %}
+                            </div>
+                            {# large search on click #}
+                            {% if theme_config('snap-header-layout') == 1 %}
+                                {% sw_include '@Storefront/storefront/layout/header/search.html.twig' %}
+                            {% endif %}
+                
+                            {% if theme_config('snap-custom-bar-header-position') == 3 %}
+                                {% sw_include '@Storefront/storefront/layout/header/snap-custom-bar-header.html.twig' %}
+                            {% endif %}
+
+                        {% endblock %}
+
+                        {% block base_header_flyout %}
+                            {% if theme_config('snap-header-layout') == 1 %}
+                                {% set navigationChildrenCount = 0 %}
+                                {% for treeItem in page.header.navigation.tree %}
+                                    {% if treeItem.category.childCount > 0 %}
+                                        {% set navigationChildrenCount = navigationChildrenCount + 1 %}
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% if navigationChildrenCount > 0 %}
+                                    <div class="navigation-flyouts">
+                                        {% for treeItem in page.header.navigation.tree %}
+                                            {% if treeItem.children|length > 0 %}
+                                                <div class="navigation-flyout" data-flyout-menu-id="{{ treeItem.category.id }}">
+                                                    <div class="container">
+                                                        {% sw_include '@Storefront/storefront/layout/navigation/flyout.html.twig' with {navigationTree: treeItem, level: level+1} only %}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        {% endblock %}
+                    </header>
+                                    
+                    {% if theme_config('snap-custom-bar-header-position') == 2 %}
+                        {% sw_include '@Storefront/storefront/layout/header/snap-custom-bar-header.html.twig' %}
+                    {% endif %}
+                {# </div> #}
+            {% endblock %}
+
+            {% block custom_bar_under_header %}
+                {% if theme_config('snap-custom-bar-header-position') == 3 %}
+                    {% sw_include '@Storefront/storefront/layout/header/snap-custom-bar-header.html.twig' %}
+                {% endif %}
+            {% endblock %}
+
+            {% block base_offcanvas_navigation %}
+                {% if page.header.navigation %}
+                    <div class="d-none js-navigation-offcanvas-initial-content{% if context.salesChannel.navigationCategoryId == page.header.navigation.active.id %} is-root{% endif %}">
+                        {% block base_offcanvas_navigation_inner %}
+                            {% sw_include '@Storefront/storefront/layout/navigation/offcanvas/navigation.html.twig' with { navigation: page.header.navigation } %}
+                        {% endblock %}
+                    </div>
+                {% endif %}
+            {% endblock %}
+
+            {% block base_main %}
+                <main class="content-main">
+                    {% block base_flashbags %}
+                        <div class="flashbags container">
+                            {% for type, messages in app.flashes %}
+                                {% sw_include '@Storefront/storefront/utilities/alert.html.twig' with { type: type, list: messages } %}
+                            {% endfor %}
+                        </div>
+                    {% endblock %}
+
+                    {% block base_main_inner %}
+                        {# <div class="container"> #}
+                            {% block base_main_container %}
+                                <div class="container-main">
+                                    {% block base_breadcrumb %}
+                                        {% sw_include '@Storefront/storefront/layout/breadcrumb.html.twig' with {
+                                            context: context,
+                                            category: page.product.seoCategory
+                                        } only %}
+                                    {% endblock %}
+
+                                    {% block base_content %}{% endblock %}
+                                </div>
+                            {% endblock %}
+                        {# </div> #}
+                    {% endblock %}
+                </main>
+            {% endblock %}
+
+            {% block base_footer %}
+                {# <div class="seo-container">
+                    {% block footer_seo_text %}
+                        {% sw_include '@Storefront/storefront/layout/footer/seo-text.html.twig' %}
+                    {% endblock %}
+                </div> #}
+
+                {% if theme_config('snap-custom-bar-footer-position') == 1 and theme_config('snap-custom-bar-footer') == 1 %}
+                    {% sw_include '@Storefront/storefront/layout/footer/snap-custom-bar-footer.html.twig' %}
+                {% endif %}
+
+                {% if theme_config('snap-newsletter-position') == 1 and theme_config('snap-newsletter-enable') == 1 %}
+                    <div class="main-newsletter">
+                        {% block base_newsletter_inner %}
+                            {% sw_include '@Storefront/storefront/layout/newsletter/newsletter.html.twig' %}
+                        {% endblock %}
+                    </div>
+                {% endif %}
+                
+
+                <footer class="footer-main">
+                    {% block base_footer_inner %}
+                        {% sw_include '@Storefront/storefront/layout/footer/footer.html.twig' %}
+                    {% endblock %}
+                    
+  
+
+                    {% block custom_bar_under_footer %}
+                        {% if theme_config('snap-custom-bar-footer-position') == 2 and theme_config('snap-custom-bar-footer') == 1 %}
+                            {% sw_include '@Storefront/storefront/layout/footer/snap-custom-bar-footer.html.twig' %}
+                        {% endif %}
+                    {% endblock %}  
+                    
+                    {% block layout_footer_bottom %}
+                        <div class="footer-bottom">
+                            {% block layout_footer_vat %}
+                                <div class="footer-vat">
+                                    {% if context.taxState == "gross" %}
+                                        <p>
+                                            {{ "footer.includeVat"|trans({
+                                                '%url%': path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') })
+                                            })|raw }}
+                                        </p>
+                                    {% else %}
+                                        <p>
+                                            {{ "footer.excludeVat"|trans({
+                                                '%url%': path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') })
+                                            })|raw }}
+                                        </p>
+                                    {% endif %}
+                                </div>
+                            {% endblock %}
+
+                            {% block layout_footer_copyright %}
+                                <div class="footer-copyright">
+                                {% set copyrightInfosnap = theme_config('snap-footer-copyright-infosnap') %}
+                                    {% sw_icon 'shopware' style {'size':'xs'} %}
+                                    {{ copyrightInfosnap|trans|sw_sanitize }}
+                                </div>
+                            {% endblock %}
+                        </div>
+                    {% endblock %}
+                </footer>
+            {% endblock %}
+
+        {% endif %}
+    {% endblock %}

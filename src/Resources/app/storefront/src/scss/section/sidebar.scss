@@ -1,0 +1,93 @@
+.cms-section-sidebar-sidebar-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    .cms-block-category-navigation{
+        order: $snap-sidebar-nav-element-order-position;
+    }
+
+    .cms-block-sidebar-filter{
+        order: $snap-sidebar-filter-element-order-position;
+    }
+
+}
+
+.snap-element-sidebar-content{
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+
+    .sidebar-image,
+    .snap-sidebar-1,
+    .snap-sidebar-2,
+    .snap-sidebar-3,
+    .snap-sidebar-4 {
+        width: 100%;   
+        height: 100%;
+
+        .snap-image-link{
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &:hover {
+            opacity: .7;
+        }
+    }
+}
+
+.snap-element-sidebar-content {
+    background: $snap-sidebar-custom-elements-background;
+
+    &.sidebar-content-1{
+        margin: $snap-sidebar-element-margin-1;
+        background: $snap-sidebar-custom-elements-background;
+        order: $snap-sidebar-element-1-order-position;
+
+        .element-1 {
+            object-fit: $snap-sidebar-object-fit-element-1;
+        }
+    }
+
+    &.sidebar-content-2{
+        margin: $snap-sidebar-element-margin-2;
+        background: $snap-sidebar-custom-elements-background;
+        order: $snap-sidebar-element-2-order-position;
+        
+        .element-2 {
+            object-fit: $snap-sidebar-object-fit-element-2;
+        }
+    }
+
+    &.sidebar-content-3{
+        margin: $snap-sidebar-element-margin-3;
+        background: $snap-sidebar-custom-elements-background;
+        order: $snap-sidebar-element-3-order-position;
+        
+        .element-3 {
+            object-fit: $snap-sidebar-object-fit-element-3;
+        }
+    }
+
+    &.sidebar-content-4{
+        margin: $snap-sidebar-element-margin-4;
+        background: $snap-sidebar-custom-elements-background;
+        order: $snap-sidebar-element-4-order-position;
+        
+    }
+}
+
+.cms-section-sidebar{
+    .snap-sidebar-communities {
+        background: $snap-sidebar-custom-elements-background;
+        order: $snap-sidebar-social-widget-element-order-position;
+    }
+}
+
+
+.sidebar-widget-text{
+    font-size: 16px;
+
+}

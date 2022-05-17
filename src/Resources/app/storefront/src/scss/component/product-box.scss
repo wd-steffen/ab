@@ -1,0 +1,277 @@
+                        /*
+Product Box
+==============================================
+Custom styling for product box component.
+*/
+                        
+                        .product-box {
+                            background-color: $snap-product-box-background-color;
+                            height: 544px;
+                            //Border Color / Border Enabled
+                            @if $snap-product-box-border-enable==1 {
+                                border: 1px solid $snap-product-box-border-color;
+                            }
+                            @else {
+                                border-style: hidden;
+                            }
+                            transition: all 0.2s;
+                            // @if $snap-product-box-border-enable == 1 {
+                            //     border: 1px solid #eee;
+                            // }
+                            &:hover {
+                                opacity: 0.9;
+                                transition: all 0.2s;
+                                // border: 1px solid $snap-product-box-border-color;
+                                opacity: 0.8;
+                            }
+                            @if $snap-product-box-second-btn==1 {
+                                &:hover .product-info {
+                                    .product-action {
+                                        position: absolute;
+                                        bottom: 0 !important;
+                                        transition: all 0.2s ease !important;
+                                        .buy-widget {
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                            @else if $snap-product-box-second-btn==2 {
+                                &:hover .product-info {
+                                    .product-action {
+                                        position: absolute;
+                                        bottom: -5px !important;
+                                        transition: all 0.2s ease !important;
+                                        .buy-widget {
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                            .product-info {
+                                position: relative;
+                                overflow: hidden;
+                                height: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                // justify-content: space-between;
+                                .product-name {
+                                    height: 44px;
+                                    margin: 0 auto 10px;
+                                }
+                                .product-rating {
+                                    margin-top: 10px;
+                                    .product-review-rating {
+                                        margin: 0;
+                                    }
+                                }
+                                .product-description {
+                                    position: absolute;
+                                    bottom: 30%;
+                                }
+                                .product-variant-characteristics-text {
+                                    padding-right: 0;
+                                    &::before,
+                                    &::after {
+                                        display: none;
+                                    }
+                                }
+                                .product-action {
+                                    position: absolute;
+                                    @if $snap-product-box-second-btn==1 {
+                                        bottom: -50px;
+                                    }
+                                    @else if $snap-product-box-second-btn==2 {
+                                        bottom: -110px;
+                                    }
+                                    width: 100%;
+                                    &.wishlist-button {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        align-items: center;
+                                        position: absolute;
+                                        @if $snap-product-box-second-btn==1 {
+                                            bottom: -50px;
+                                        }
+                                        @else if $snap-product-box-second-btn==2 {
+                                            bottom: -110px;
+                                        }
+                                        transition: all 0.2s ease;
+                                        margin: 0;
+                                        width: 100%;
+                                        .buy-widget {
+                                            width: 100%;
+                                            .btn {
+                                                border-radius: 0%;
+                                                height: 40px;
+                                            }
+                                        }
+                                        .product-wishlist {
+                                            margin-top: 0px;
+                                            button {
+                                                position: relative;
+                                                bottom: 0px;
+                                                right: 0px;
+                                                border-radius: 0%;
+                                                margin-left: 2px;
+                                                width: 100%;
+                                                height: 100%;
+                                                padding-bottom: 3px;
+                                                // background: #eee;
+                                                border: 1px solid rgb(243, 237, 237);
+                                                &:hover {
+                                                    background: #e6e6e6;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .product-image-wrapper {
+                                background-color: $snap-product-box-image-background-color;
+                                overflow: hidden;
+                                min-height: 200px;
+                                .product-image-link {
+                                    img {
+                                        height: 100%;
+                                        max-height: 100%;
+                                        object-fit: contain;
+                                    }
+                                }
+                            }
+                            .card-body {
+                                display: flex;
+                                flex-direction: column;
+                                height: 544px;
+                            }
+                            .snap-product-deliverytime {
+                                @if bool($snap-listing-product-box-disable-deliverytime)==0 {
+                                    display: none;
+                                }
+                            }
+                            .snap-product-number {
+                                @if $snap-listing-product-box-disable-productnumber==2 {
+                                    display: none;
+                                }
+                            }
+                        }
+                        
+                        .product-name {
+                            font-weight: 600;
+                            color: $sw-color-brand-primary;
+                            margin-bottom: 0;
+                            height: auto;
+                            font-size: 18px;
+                            &:hover {
+                                color: #000;
+                            }
+                        }
+                        
+                        .price-unit-reference,
+                        .product-price-unit,
+                        .product-description {
+                            color: $sw-text-color;
+                            // opacity: 0.5;
+                        }
+                        
+                        .product-description {
+                            margin: 40px 0 10px;
+                        }
+                        
+                        .product-price-unit {
+                            height: auto;
+                            margin-bottom: $spacer-sm;
+                        }
+                        
+                        .product-price {
+                            font-size: $snap-font-size-base + px;
+                            font-size: 18px;
+                            overflow: visible;
+                            position: absolute;
+                            right: 0;
+                            left: 0;
+                            bottom: 0;
+                            @if $snap-listing-product-box-simple-reference-price==simple {
+                                display: inline-block;
+                            }
+                        }
+                        
+                        .price-unit-reference {
+                            display: inline-block;
+                            margin-left: $spacer;
+                        }
+                        
+                        .product-price {
+                            .list-price {
+                                opacity: 0.5;
+                            }
+                        }
+                        
+                        .product-badges {
+                            top: $spacer-sm;
+                            left: 0;
+                            .badge {
+                                padding: 0 20px;
+                                height: auto;
+                                margin-bottom: $spacer-sm;
+                                margin-left: 0;
+                                margin-right: 0;
+                                line-height: rem(16px);
+                                font-size: $font-size-sm;
+                                border-radius: 0;
+                                display: block;
+                            }
+                            .badge-discount {
+                                color: #fff;
+                                background: #e74c3c;
+                            }
+                            .badge-topseller {
+                                color: #fff;
+                                background: #f1c40f;
+                            }
+                            .badge-new {
+                                color: #fff;
+                                background: #2ecc71;
+                            }
+                        }
+                        
+                        .box-single-column {
+                            .product-info {
+                                text-align: left;
+                                padding-top: $spacer;
+                            }
+                            .product-image-link {
+                                img {
+                                    max-height: unset;
+                                }
+                            }
+                            .product-price-info {
+                                .product-price {
+                                    font-size: 1.5rem;
+                                }
+                            }
+                        }
+                        
+                        @if $snap-product-box-center-text==1 {
+                            .product-variant-characteristics-text,
+                            .product-info {
+                                text-align: center !important;
+                            }
+                        }
+                        
+                        @else {
+                            .product-variant-characteristics-text,
+                            .product-info {
+                                text-align: left;
+                            }
+                        }
+                        
+                        .product-review-rating {
+                            .product-review-point {
+                                svg {
+                                    path {
+                                        stroke: $sw-color-brand-primary;
+                                    }
+                                }
+                            }
+                        }

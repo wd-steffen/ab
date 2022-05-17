@@ -1,0 +1,32 @@
+
+.border-none {
+     border: none !important;
+}
+
+.full-width{
+    width: 100% !important;
+}
+
+.mt-20px{
+    margin-top: 20px !important;
+}
+
+.mt-0px{
+    margin-top: 0 !important;
+}
+
+
+//additional class for elements
+@if $snap-prod-wrapper-max-width==1 {
+    .prod-wrapper {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+  
+  @else if $snap-prod-wrapper-max-width>150 {
+    .prod-wrapper {
+      max-width: ($snap-prod-wrapper-max-width + px) !important;
+      margin: 0 auto;
+    }
+  }

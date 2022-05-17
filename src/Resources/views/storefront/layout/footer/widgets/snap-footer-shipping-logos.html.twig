@@ -1,0 +1,15 @@
+{# ThemeWare "Footer logos" container #}
+{# Create container and include payment/shipping widgets #}
+{# 
+{% block snap_layout_footer_logos %}
+    <div class="container">
+        {% if page.salesChannelPaymentMethods.elements %}
+            <div class="snap-footer-logos-payment-methods">
+                <div class="snap-footer-logos-headline is--payment-method">
+                    {{ "snap.widget.payment.headline"|trans|sw_sanitize }}
+                </div>
+                {% sw_include '@Storefront/storefront/snaptheme/widgets/snap-payment-include.html.twig' %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %} #}

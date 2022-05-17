@@ -1,0 +1,15 @@
+
+{% block layout_seo_text %}
+
+    {# {% set mainText = theme_config('snap-footer-seo-text-input') %} #}
+    {# {% set headlineText = theme_config('snap-footer-seo-text-headline-input') %} #}
+        <div class="seo-text-main">
+            {% block layout_seo_text_body %}
+                <div class="snap-custom-seo-text-container">
+                    {# <h5 class="snap-custom-seo-text-headline">{{ headlineText|trans|striptags }}</h5>
+                    <div class="snap-seo-text">{{ mainText|trans|striptags }}</div> #}
+
+                </div>
+            {% endblock %}
+        </div>
+{% endblock %}

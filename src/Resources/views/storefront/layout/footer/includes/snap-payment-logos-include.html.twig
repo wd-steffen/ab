@@ -1,0 +1,100 @@
+{# SpanTheme "Payment logos" #}
+{% set spanWidgetPaymentLogoLink = theme_config('span-widget-payment-logo-link') %}
+{% set spanCustomPaymentImage1 = theme_config('span-widget-payment-logo-custom-image-1') %}
+{% set spanCustomPaymentImage2 = theme_config('span-widget-payment-logo-custom-image-2') %}
+{% set spanCustomPaymentImage3 = theme_config('span-widget-payment-logo-custom-image-3') %}
+{% set spanWidgetPaymentLogoFallbackBadge = theme_config('span-widget-payment-logo-fallback-badge') %}
+
+{% set spanCustomPaymentImagesOnly = theme_config('span-widget-payment-logo-custom-images-only') %} {# 1 = no | 2 = yes #}
+{% if spanCustomPaymentImagesOnly is empty %}
+	{% set spanCustomPaymentImagesOnly = 1 %}
+{% endif %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# SpanTheme: Add payment logos #}
+{% block span_payment_logos_content %}
+	{% if spanCustomPaymentImagesOnly == 1 %}
+		{% for paymentMethod in page.salesChannelPaymentMethods %}
+			{% if paymentMethod.media %}
+				{# SpanTheme: Add logo #}
+				<div class="footer-logo is-payment-logo">
+					{% if spanWidgetPaymentLogoLink == 2 %}
+						<a href="{{ "span.widget.payment.link"|trans }}" title="{{ paymentMethod.name }}">
+					{% endif %}
+						{% sw_thumbnails 'footer-payment-image-thumbnails' with {
+							media: paymentMethod.media,
+							sizes: {
+								 'default': '100px'
+							},
+							attributes: {
+								 'class': 'footer-logo-image',
+								 'alt': (paymentMethod.media.translated.alt ?: paymentMethod.translated.name),
+								 'title': (paymentMethod.media.translated.title ?: paymentMethod.translated.name)
+							}
+						} %}
+					{% if spanWidgetPaymentLogoLink == 2 %}
+						</a>
+					{% endif %}
+				</div>
+			{% else %}
+				{# SpanTheme: Add fallback badge #}
+				{% if spanWidgetPaymentLogoFallbackBadge == 2 %}
+					<div  class="footer-logo is-payment-logo is-fallback-badge">
+						{% if spanWidgetPaymentLogoLink == 2 %}
+							<a href="{{ "span.widget.payment.link"|trans }}" title="{{ paymentMethod.name }}">
+								<span>{{ paymentMethod.name }}</span>
+							</a>
+						{% else %}
+							<div title="{{ paymentMethod.name }}">
+								<span>{{ paymentMethod.name }}</span>
+							</div>
+						{% endif %}
+					</div>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+{% endblock %}
+
+{# SpanTheme: Add custom payment logos #}
+{% block span_payment_logos_custom %}
+	{# SpanTheme: Add custom image 1 #}
+	{% if spanCustomPaymentImage1 %}
+		<div class="footer-logo is-payment-logo is-custom-logo">
+			{% if spanWidgetPaymentLogoLink == 2 %}
+				<a href="{{ "span.widget.payment.link"|trans }}" title="{{ "span.widget.payment.customImages.title1"|trans }}">
+			{% endif %}
+				<img src="{{ spanCustomPaymentImage1 |sw_encode_url }}" class="footer-logo-image" alt="{{ "span.widget.payment.customImages.title1"|trans }}" title="{{ "span.widget.payment.customImages.title1"|trans }}"/>
+			{% if spanWidgetPaymentLogoLink == 2 %}
+				</a>
+			{% endif %}
+		</div>
+	{% endif %}
+
+	{# SpanTheme: Add custom image 2 #}
+	{% if spanCustomPaymentImage2 %}
+		<div class="footer-logo is-payment-logo is-custom-logo">
+			{% if spanWidgetPaymentLogoLink == 2 %}
+				<a href="{{ "span.widget.payment.link"|trans }}" title="{{ "span.widget.payment.customImages.title2"|trans }}">
+			{% endif %}
+				<img src="{{ spanCustomPaymentImage2 |sw_encode_url }}" class="footer-logo-image" alt="{{ "span.widget.payment.customImages.title2"|trans }}" title="{{ "span.widget.payment.customImages.title2"|trans }}"/>
+			{% if spanWidgetPaymentLogoLink == 2 %}
+				</a>
+			{% endif %}
+		</div>
+	{% endif %}
+
+	{# SpanTheme: Add custom image 3 #}
+	{% if spanCustomPaymentImage3 %}
+		<div class="footer-logo is-payment-logo is-custom-logo">
+			{% if spanWidgetPaymentLogoLink == 2 %}
+				<a href="{{ "span.widget.payment.link"|trans }}" title="{{ "span.widget.payment.customImages.title3"|trans }}">
+			{% endif %}
+				<img src="{{ spanCustomPaymentImage3 |sw_encode_url }}" class="footer-logo-image" alt="{{ "span.widget.payment.customImages.title3"|trans }}" title="{{ "span.widget.payment.customImages.title3"|trans }}"/>
+			{% if spanWidgetPaymentLogoLink == 2 %}
+				</a>
+			{% endif %}
+		</div>
+	{% endif %}
+{% endblock %}

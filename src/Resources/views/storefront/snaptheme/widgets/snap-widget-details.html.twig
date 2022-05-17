@@ -1,0 +1,23 @@
+{# SnapTheme: Detail widget on ptoduct page #}
+
+{% set openingDaysFrom = theme_config('snap-opening-days-from') %}
+{% set openingDaysUntil = theme_config('snap-opening-days-until') %}
+{% set openingHoursFrom = theme_config('snap-opening-hours-from') %}
+{% set openingHoursUntil = theme_config('snap-opening-hours-until') %}
+{% set snapBuyWidgetEmail = theme_config('snap-buy-widget-email') %}
+{% set snapBuyWidgetPhone = theme_config('snap-buy-widget-phone') %}
+
+{% block snap_custom_price_detail %}
+    <div class="snap-custom-price-detail">
+        <h6>Lieferung in {{ context.shippingMethod.deliveryTime.name }} </h6>
+
+        <div class="custom-price-text"> 
+        <h5>Fragen zum Artikel?</h5>
+            <div class="price-detail-text">
+                <div class="opening-days">{{ openingDaysFrom|trans }} - {{ openingDaysUntil|trans }} ab {{ openingHoursFrom|trans }} - {{ openingHoursUntil|trans }}:</div>
+                <a href="tel:{{ snapBuyWidgetPhone }}" class="telefon-">{{ snapBuyWidgetPhone }}</a> 
+                <a href="{{ snapBuyWidgetEmail }}" class="email-">{{ snapBuyWidgetEmail }}</a> 
+            </div>         
+        </div>
+    </div>
+{% endblock %}

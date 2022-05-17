@@ -1,0 +1,19 @@
+/*
+Product Box
+==============================================
+Custom styling for product box component.
+
+*/
+
+.product-feature {
+    &-list {
+        &-list {
+            color: $sw-text-color;
+            opacity: .5;
+        }
+    }
+
+    &-value {
+        font-weight: $font-weight-normal;
+    }
+}

@@ -1,0 +1,134 @@
+/*
+    Copyright (c) TC-Innovations GmbH
+
+	SnapTheme: Widget > Shipping
+	==================================================
+
+*/
+
+// TODO: sh. layout/_footer.scss
+
+// SnapTheme: General widget styling
+.snap-widget-shipping {
+  .is-shipping-logo {
+    margin: 0 10px 10px 0;
+  }
+}
+
+.snap-widget-shipping,
+.snap-widget-paymentshipping {
+
+  .is-shipping-logo {
+    -o-transition: 0.2s ease-out 0s;
+    -webkit-transition: 0.2s ease-out 0s;
+    transition: 0.2s ease-out 0s;
+
+    img.footer-logo-image {
+      display: inline-block;
+      max-width: inherit;
+      height: ($snap-widget-payment-logo-max-height + px); // SnapTheme: SVG fix
+      max-height:($snap-widget-shipping-logo-max-height + px);
+      border: 1px solid $snap-widget-shipping-logo-border-color;
+
+      @if $snap-widget-shipping-logo-corner-type == 2 {
+        border-radius: $snap-border-radius-light;
+      } @else if $snap-widget-shipping-logo-corner-type == 3 {
+        border-radius: $snap-border-radius-bold;
+      }
+
+      @if $snap-widget-shipping-logo-coloration == 2 {
+        @include snap-grayscale(100%);
+      }
+    }
+
+    // SnapTheme: Shipping logo #linked
+    // TODO: Add configuration
+    a:hover {
+      img {
+        //-webkit-transform: scale(1.1);
+        //-ms-transform: scale(1.1);
+        //transform: scale(1.1);
+
+        @if $snap-widget-shipping-logo-coloration == 2 {
+          @include snap-grayscale(0%); // SnapTheme: Grayscale
+        } @else {
+          //-webkit-filter: brightness(95%);
+          //filter: brightness(95%);
+        }
+
+        opacity: .75;
+      }
+    }
+
+    // SnapTheme: Fallback badge
+    &.is-fallback-badge {
+      display: inline-flex;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+
+      height: $snap-widget-shipping-logo-max-height px ; // SnapTheme: SVG fix
+      max-height: $snap-widget-shipping-logo-max-height px;
+
+      @if $snap-widget-shipping-logo-corner-type == 2 {
+        border-radius: $snap-border-radius-light;
+      } @else if $snap-widget-shipping-logo-corner-type == 3 {
+        border-radius: $snap-border-radius-bold;
+      }
+
+      span {
+        // @include snap-font-size($snap-widget-shipping-logo-fallback-badge-font-size);
+        font-weight: fontWeight($snap-widget-shipping-logo-fallback-badge-font-weight);
+        line-height: auto-pixel-unit($snap-widget-shipping-logo-max-height / 2);
+        display: inline-block;
+        padding: 10px;
+        text-transform: $snap-widget-shipping-logo-fallback-badge-text-transform;
+
+        color: $snap-widget-shipping-logo-fallback-badge-color;
+        border: 1px solid $snap-widget-shipping-logo-fallback-badge-border-color;
+        background-color: $snap-widget-shipping-logo-fallback-badge-background-color;
+
+        // SnapTheme: Grayscale
+        @if $snap-widget-shipping-logo-coloration == 2 {
+          @include snap-grayscale(100%);
+        }
+      }
+
+      // SnapTheme: Fallback badge #linked
+      a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: none;
+
+          span {
+            color: $snap-widget-shipping-logo-fallback-badge-color;
+
+            /*@if $snap-widget-shipping-logo-coloration == 2 {
+              @include snap-grayscale(0%); // SnapTheme: Grayscale
+            }*/
+            //-webkit-filter: brightness(95%);
+            //filter: brightness(95%);
+
+            opacity: .75;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+// SnapTheme: Sidebar specific styling
+/*.cms-section-sidebar-sidebar-content {
+  .snap-widget-shipping {
+  }
+}*/
+
+
+
+
+.shipping-container{
+  display: flex;
+  flex-wrap: wrap;
+}

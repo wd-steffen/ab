@@ -1,0 +1,11 @@
+
+{% block snap_custom_footer_bar %}
+	{# SnapTheme: custom in Header #}
+	<section class="snap-custom-bar-footer">
+		{% block snap_custom_footer_bar_container %}
+			<div class="container">
+				{% sw_include '@Storefront/storefront/layout/footer/includes/snap-custom-bar-footer-include.html.twig' %}
+			</div>
+		{% endblock %}
+	</section>
+{% endblock %}

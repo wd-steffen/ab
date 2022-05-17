@@ -1,0 +1,31 @@
+/*
+Form
+==============================================
+Custom skin styling for bootstrap forms.
+
+*/
+.form-group{
+    .form-label {
+        margin-bottom: 1px;
+        color: #666;
+        font-size: $snap-forms-label-font-size;
+        font-family: "Inter",sans-serif;
+    }
+}
+
+.input-group {
+    .form-control{
+        border-radius: $btn-border-radius;
+        height: auto;
+    }
+}
+
+@if $snap-account-showpassword-enable == 1 {
+    .form-control[type="password"] {
+        &:valid, &.is-valid,
+        &:invalid, &.is-invalid {
+            background-image: none;
+            background: transparent;
+        }
+    }
+}

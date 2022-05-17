@@ -1,0 +1,25 @@
+{# SnapTheme: Sidebar banner widget first #}
+
+{% set snapSidebarElement3 = theme_config('snap-sidebar-element-3') %}
+{% set element3OnClick = theme_config('snap-sidebar-link-element-3') %}
+
+{% set snapSidebarImageElement3 = theme_config('snap-sidebar-image-element-3') %}
+
+{# SnapTheme: Custom image 3 #}
+{% block snap_third_element_sidebar_content %} 
+    <div class="snap-element-sidebar-content sidebar-content-3">
+        <div class="snap-sidebar-3">
+            {% if snapSidebarElement3 == 1 %}
+                {% if element3OnClick  == 1 %}
+                    <a href="{{ "snap.widget.sidebar.element3.url"|trans|sw_sanitize }}" target="_blank" rel="noopener" class="snap-image-link">
+                {% endif %}
+
+                <img src="{{ snapSidebarImageElement3|sw_encode_url }}" class="sidebar-image element-3"/>
+                {% if element3OnClick == 1 %}
+                    </a>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+

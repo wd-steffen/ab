@@ -1,0 +1,56 @@
+/*
+
+Navigation offcanvas
+==============================================
+Custom skin styling for navigation offcanvas which replaces main navigation on smaller screens.
+Based on custom offcanvas component.
+
+*/
+
+.navigation-offcanvas-headline {
+    font-weight: 600;
+    font-size: 12.8px;
+    color: $sw-text-color;
+}
+
+.navigation-offcanvas-list-item {
+    border-top: 1px solid $sw-border-color;
+
+    &:last-child {
+        border-bottom: 1px solid $sw-border-color;
+    }
+}
+
+.offcanvas-content-container{
+    .navigation-offcanvas-overlay-content{
+        .nav-link,
+            span{
+            font-size: 12.8px;
+        }
+    }
+}
+
+
+
+.navigation-offcanvas-link {
+    color: $sw-text-color;
+    font-size: 12.8px;
+
+    &.is-home-link {
+        &,
+        .icon {
+            color: $sw-text-color;
+        }
+    }
+
+    &.is-back-link {
+        border-top: 1px solid $sw-border-color;
+        font-weight: 600;
+        color: $sw-text-color;
+    }
+
+    &.is-current-category {
+        color: $sw-color-brand-primary;
+        font-weight: $font-weight-bold;
+    }
+}

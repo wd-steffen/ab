@@ -1,0 +1,75 @@
+/*
+Search suggest
+==================================================
+Contains styles for the search suggest popover in the shop header.
+*/
+
+.search-suggest-container {
+    top: 52px;
+    border: 1px solid $sw-border-color;
+    box-shadow: none;
+    border-radius: $border-radius;
+    width: 1400px;
+
+    &::after {
+        display: none;
+    }
+}
+
+.search-suggest-product-image-container {
+    margin-left: 0;
+}
+
+.search-suggest-product-link {
+    color: $sw-text-color;
+}
+
+.search-suggest-total {
+    padding: $spacer-sm 0;
+}
+
+.search-suggest-total-link {
+    color: $sw-text-color;
+    text-decoration: underline;
+
+    &:hover {
+        color: $sw-text-color;
+        text-decoration: none;
+    }
+}
+
+.search-suggest-total-count,
+.search-suggest-product-price {
+    color: $gray-300;
+    text-align: right;
+}
+
+.search-suggest-not-found {
+    margin-top: $spacer-sm;
+
+    .search-suggest-not-found-link {
+        color: $snap-customer-support-color;
+    }
+}
+
+@include media-breakpoint-up(md) {
+
+    .search-suggest-not-found {
+        margin-top: $spacer;
+    }
+}
+
+
+@media (max-width:1380px){
+    @if $snap-header-layout == 1{
+        .search-suggest-container{
+            width: 100%;
+        }
+    }
+}
+
+@if $snap-header-layout == 2 {
+    .search-suggest-container{
+        width: 560px;
+    }
+}

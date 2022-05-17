@@ -1,0 +1,303 @@
+{% sw_extends '@Storefront/storefront/component/buy-widget/buy-widget.html.twig' %}
+
+{% set kindelLength = page.product.translated.customFields.kindel_length  %}
+{% set kindelTime = page.product.translated.customFields.kindel_time  %}
+
+{% block snap_buy_widget_detail_reviews %}
+    <h4 class="snap-netto-price">netto ab {{ page.product.calculatedCheapestPrice.unitPrice|currency }}</h4>
+    {% if theme_config('snap-detail-buybox-reviews') == 1 %}
+            {% block snap_buy_widget_component_review_box %}
+                <div class="snap-component-review-box">
+                    {% sw_include '@Storefront/storefront/component/review/rating.html.twig' with {
+                        points: page.product.ratingAverage,
+                        style: 'text-primary'
+                    } %}
+                    <div class="snap-reviews-count">
+                        {{ page.reviews.totalReviews}}
+                    </div>
+                </div>
+            {% endblock %}  
+        {% endif %}
+{% endblock %}
+
+{% block buy_widget %}
+    <div class="product-detail-buy js-magnifier-zoom-image-container">
+        {% block buy_widget_detail_rich_snippets %}
+            {{ parent() }}
+        {% endblock %}
+
+        {# snap start #}
+        {% block snap_buy_widget_special_icons_widget %}
+            {% sw_include '@Storefront/storefront/page/product-detail/special-icons-stuhlwerk.html.twig' %}
+        {% endblock %}
+            
+        {% block page_buy_widget_headline %}
+            {% if theme_config('snap-detail-headline-position') == 1 %}
+                {% sw_include '@Storefront/storefront/page/product-detail/headline.html.twig' %}
+            {% endif %}
+        {% endblock %}
+        {# snap end #}
+
+        {% if not feature('FEATURE_NEXT_16992') %}
+            {# @deprecated tag:v6.5.0 tag:)(FEATURE_NEXT_16992) - Block will be removed in v6.5.0 #}
+            {% block buy_widget_not_available %}
+            {% endblock %}
+        {% endif %}
+
+        <div class="price-tax-container">
+            {% block buy_widget_price %}
+                <div class="product-detail-price-container">
+                    {% sw_include '@Storefront/storefront/component/buy-widget/buy-widget-price.html.twig' %}
+                </div>
+            {% endblock %}
+
+            {% block buy_widget_tax %}
+                <div class="product-detail-tax-container">
+                    {% if context.taxState == "gross" %}
+                        {% set taxText = "general.grossTaxInformation"|trans|sw_sanitize %}
+                    {% else %}
+                        {% set taxText = "general.netTaxInformation"|trans|sw_sanitize %}
+                    {% endif %}
+
+                    <p class="product-detail-tax">
+                        {% block buy_widget_tax_link %}
+                            <a class="product-detail-tax-link"
+                                href="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}"
+                                title="{{ taxText }}"
+                                data-toggle="modal"
+                                data-url="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}">
+                                {{ taxText }}
+                            </a>
+                        {% endblock %}
+                    </p>
+                </div>
+            {% endblock %}
+        </div>
+
+        {% block page_buy_widget_configurator_include %}
+            {% if page.product.parentId and page.configuratorSettings|length > 0 %}
+                <div class="product-detail-configurator-container">
+                    {% sw_include '@Storefront/storefront/page/product-detail/configurator.html.twig' %}
+                </div>
+            {% endif %}
+        {% endblock %}
+
+        {# length on reqest #}
+        {% block snap_buy_widget_length_content %}
+            {% if  theme_config('snap-detail-length-request') == 1 and kindelLength == true %}
+                <div class="on-request-container">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseLength" aria-expanded="true" aria-controls="collapseLength">
+                                        {{ "snap.detail.customLength.title"|trans|sw_sanitize }}
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="collapseLength" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <a href="mailto:{{ "snap.detail.customLength.email"|trans|sw_sanitize }}" class="request-price">{{ "snap.detail.customLength.email"|trans|sw_sanitize }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                {# emty block #}
+            {% endif %}
+        {% endblock %}
+
+        {# time on reqest #}
+        {% block snap_buy_widget_time_content %}
+            {% if kindelTime == true %}
+                <div class="on-request-container">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        {{ "snap.detail.customTime.title"|trans|sw_sanitize }}
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <a href="mailto:{{"snap.detail.customTime.email"|trans|sw_sanitize }}" class="request-price">{{ "snap.detail.customTime.email"|trans|sw_sanitize }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                {# emty block #}
+            {% endif %}
+        {% endblock %}
+
+        {% if theme_config('snap-working-details-widget') == 1 %}
+            {% block snap_buy_widget_custom_price_detail_widget %}
+                <div class="snap-advanced-price-container">
+                    {% sw_include '@Storefront/storefront/snaptheme/widgets/snap-widget-details.html.twig' %}
+                </div>
+            {% endblock %} 
+        {% endif %}
+
+        {% block buy_widget_buy_container %}
+            <div itemprop="offers"
+                 itemscope
+                 itemtype="{% if product.calculatedPrices|length > 1 %}http://schema.org/AggregateOffer{% else %}http://schema.org/Offer{% endif %}">
+               
+                {% block buy_widget_data %}
+                    {% block buy_widget_data_rich_snippet_url %}
+                        <meta itemprop="url"
+                              content="{{ seoUrl('frontend.detail.page', { productId: product.id }) }}"/>
+                    {% endblock %}
+
+                    {% block buy_widget_data_rich_snippet_price_range %}
+                        {% if product.calculatedPrices|length > 1 %}
+                            {% set lowestPrice = false %}
+                            {% set highestPrice = false %}
+
+                            {% for price in product.calculatedPrices %}
+                                {% if not lowestPrice or price.unitPrice < lowestPrice %}
+                                    {% set lowestPrice = price.unitPrice %}
+                                {% endif %}
+                                {% if not highestPrice or price.unitPrice > highestPrice %}
+                                    {% set highestPrice = price.unitPrice %}
+                                {% endif %}
+                            {% endfor %}
+
+                            <meta itemprop="lowPrice" content="{{ lowestPrice }}"/>
+                            <meta itemprop="highPrice" content="{{ highestPrice }}"/>
+                            <meta itemprop="offerCount" content="{{ product.calculatedPrices|length }}"/>
+                        {% endif %}
+                    {% endblock %}
+
+                    {% block buy_widget_data_rich_snippet_price_currency %}
+                        <meta itemprop="priceCurrency"
+                              content="{{ context.currency.translated.shortName }}"/>
+                    {% endblock %}
+
+                    {% set remoteClickOptions = {
+                        selector: "#review-tab-" ~ product.id,
+                        scrollToElement: true
+                    } %}
+
+                    {% set reviewTabHref = "#review-tab-" ~ product.id ~ "-pane" %}
+
+                    {% block buy_widget_reviews %}
+                        {% if product.ratingAverage > 0 and totalReviews > 0 and config('core.listing.showReview') %}
+                            <div class="product-detail-reviews">
+
+                                {% sw_include '@Storefront/storefront/component/review/rating.html.twig' with {
+                                    points: product.ratingAverage,
+                                    style: 'text-primary'
+                                } %}
+                                <a data-toggle="tab"
+                                   class="product-detail-reviews-link"
+                                   data-offcanvas-tabs="true"
+                                   data-remote-click="true"
+                                   data-remote-click-options='{{ remoteClickOptions|json_encode }}'
+                                   href="{{ reviewTabHref }}"
+                                   aria-controls="review-tab-pane">
+                                    {{ totalReviews }}
+                                    {{ "detail.reviewLinkText"|trans({'%count%': totalReviews})|sw_sanitize }}
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endblock %}
+
+                    {% block buy_widget_delivery_informations %}
+                        <div class="product-detail-delivery-information">
+                            {% sw_include '@Storefront/storefront/component/delivery-information.html.twig' %}
+                        </div>
+                    {% endblock %}
+                {% endblock %}
+
+                {# snap start #}
+                {# ... add short description #}
+                {% block snap_buy_widget_short_description %}
+                    {% if page.product.translated.customFields.custom_description_short and theme_config('snap-detail-show-short-description') == 1 %}
+                        <div class="product-detail-short-description"
+                            itemprop="description">
+                            <div class="text-wrapper">
+                                <div class="product-detail-short-description">
+                                    {{ page.product.translated.customFields.custom_description_short }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endblock %}
+                {# snap end #}
+
+                {% block buy_widget_buy_form %}
+                    {% if page.product.active %}
+                        <div class="product-detail-form-container {% if theme_config('snap-detail-wishlist-position') == 'buy-button' %}product-detail-wishlist{% endif %}">
+                            {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-form.html.twig' %}
+                            
+                            {% if config('core.cart.wishlistEnabled') %}
+
+                                {% if theme_config('snap-detail-wishlist-position') == 'buy-button' %}
+                                    {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
+                                        size: 'md',
+                                        productId: page.product.id
+                                    } %}
+                                {% endif %}
+
+                                {% if theme_config('snap-detail-wishlist-position') == 'button' or theme_config('snap-detail-wishlist-position') == 'link'  %}
+                                    <div class="wishlist {% if theme_config('snap-detail-wishlist-position') == 'button'  %}wishlist-button{% endif %}">
+                                        {% block buy_widget_detail_wishlist %}
+                                            {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
+                                        showText: true,
+                                        size: 'md',
+                                        productId: page.product.id
+                                    } %}
+                                        {% endblock %}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% endblock %}
+            </div>
+        {% endblock %}
+
+        {% block buy_widget_ordernumber_container %}
+            {% if product.productNumber %}
+                <div class="product-detail-ordernumber-container">
+                    {% block buy_widget_ordernumber_label %}
+                        <span class="product-detail-ordernumber-label">
+                            {{ "detail.productNumberLabel"|trans|sw_sanitize }}
+                        </span>
+                    {% endblock %}
+
+                    {% block buy_widget_ordernumber %}
+                        <meta itemprop="productID"
+                              content="{{ product.id }}"/>
+                        <span class="product-detail-ordernumber"
+                              itemprop="sku">
+                            {{ product.productNumber }}
+                        </span>
+                    {% endblock %}
+                </div>
+            {% endif %}
+
+            {# these custom fields created just for stuhlwerk shop  #}
+            {% block page_product_detail_additional_fields %}
+                {% block snap_custom_fields_forSthulwerk %}
+                    <div class="snap-custom-fields-container">
+                        {% sw_include '@Storefront/storefront/page/product-detail/snap-custom-fields-stuhlwerk.html.twig' %}
+                    </div>
+                {% endblock %}
+                
+                {% block snap_custom_fields_default %}
+                    <div class="snap-property-fields-container">
+                        {% sw_include '@Storefront/storefront/page/product-detail/snap-default-fields.html.twig' %}
+                    </div>
+                {% endblock %}
+            {% endblock %}
+        {% endblock %}
+    </div>
+{% endblock %}

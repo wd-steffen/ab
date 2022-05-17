@@ -1,0 +1,78 @@
+/*
+
+Cart Item
+==============================================
+Contains custom styles for the cart item component.
+
+*/
+.checkout-product-table{
+    .checkout {
+        .cart-item-product{
+            @if $snap-cart-itemborder-enable == 1 {
+                border-bottom: 1px solid #eee;
+            }
+        } 
+    }
+}
+
+.checkout-product-table{
+    @include media-breakpoint-up(sm) {
+        .checkout {
+            .cart-item-product {
+                margin-bottom: $spacer;
+
+                .cart-item-details-container {
+                    padding-top: $spacer-sm;
+                    padding-bottom: $spacer-sm;
+
+                    .cart-item-label {
+                        font-size: $snap-font-size-h2;
+                    }
+                }
+
+                .cart-item-details-characteristics {
+                    color: $sw-link-color;
+                    margin-top: $spacer;
+                    margin-bottom: $spacer-sm;
+
+                    .cart-item-details-characteristics-option {
+                        font-weight: $font-weight-normal;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+
+
+
+.checkout-product-table{
+    .cart-item-details{
+
+        .cart-item-label {
+            font-size: $snap-font-size-h5;
+            font-weight: $headings-font-weight;
+        }
+    }
+}
+
+.checkout-aside-add-code{
+    input{
+        @include snap-input;
+    }
+}
+
+.checkout-button-container{
+    padding: 0 30px;
+}
+
+@media (max-width:992px) {
+    .checkout-aside-action{
+        .begin-checkout-btn{
+            max-width: 100%;
+        }
+    }
+}

@@ -1,0 +1,153 @@
+
+.category-navigation-link {
+	color: $snap-sidebar-navigation-link-color; // $sw-text-color;
+	background-color: $snap-sidebar-navigation-link-bg-color;
+	// font-size: $snap-font-size-base + px;
+	
+	&:hover {
+		color: $snap-sidebar-navigation-color-hover;
+		background-color: $snap-sidebar-navigation-bg-color-hover;
+	}
+
+	&.is-active {
+		color: $snap-sidebar-navigation-color-active; // $sw-color-brand-primary;
+		background-color: $snap-sidebar-navigation-background-color-active;
+
+		&:hover {
+			background: $snap-sidebar-navigation-bg-active-hover;
+			color: $snap-sidebar-navigation-color-hover;
+		}
+	}
+}
+
+// SnapTheme: Category navigation in cms element
+.cms-element-category-navigation {
+	.category-sidebar-headline{
+			font-size: 16px;
+			font-weight: 600;
+			padding: 10px 13px 10px 13px;
+			border: 1px solid;
+			border-bottom: none;
+			border-color: $snap-sidebar-filter-panel-item-border-color;
+			width: 100%;
+			background:  $snap-sidebar-filter-panel-item-border-color;
+	}
+
+
+@if $snap-sidebar-navigation-view == 1 { //just icons 
+		.category-navigation-box {
+			> .category-navigation.level-0 {
+				> .category-navigation-entry {
+					// SnapTheme: Level 0
+					> .category-navigation-link {
+						padding: 7px 13px;
+					}
+
+					// SnapTheme: Level 1
+					> .category-navigation.level-1 {
+						padding-left: 0;
+
+						> .category-navigation-entry {
+							> .category-navigation-link {
+								padding: 7px 13px 7px 25px;
+							}
+							// SnapTheme: Level 2
+							> .category-navigation.level-2 {
+								padding-left: 0;
+
+								> .category-navigation-entry {
+									> .category-navigation-link {
+										padding: 7px 13px 7px 40px;
+
+										// SnapTheme: Level 3
+										> .category-navigation.level-3 {
+											padding-left: 0 !important		 ;
+
+											> .category-navigation-entry {
+												> .category-navigation-link {
+													padding: 7px 13px 7px 40px;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@if $snap-sidebar-navigation-view  == 2 {
+	.category-navigation-box {
+
+		> .category-navigation.level-0 {
+			display: block;
+			> .category-navigation-entry {
+				display: block;
+				border-bottom: none;
+				> .category-navigation-link.is-active{
+					display: block;
+				}
+			}
+			
+		}
+		> .category-navigation {
+			// display: none;
+			> .category-navigation-entry {
+				display: none;
+				> .category-navigation-link {
+					display: none;
+				}
+
+		
+			}
+		}
+	}
+}
+
+// SnapTheme: Category navigation in navigation box
+.category-navigation-box {
+	border: 1px solid $snap-sidebar-navigation-border-color;
+	border-radius: 0;
+
+	.category-navigation.level-0 {
+		> .category-navigation-entry {
+			&:last-of-type {
+				border-bottom: none;
+			}
+		}
+	}
+}
+
+.is-act-home{
+	.category-navigation-box {
+		border: none;
+	}
+
+}
+
+@if $snap-sidebar-navigation-view == 2 { //just 
+	> .category-navigation.level-0 {
+		.category-navigation-link{
+			display: none;
+			&.is-active{
+				display: block;
+			}	
+		} 
+	}
+}
+
+@media (min-width:1200px) {
+	.category-navigation-link {
+		font-size: $font-size-xl;
+	}
+}
+
+@media (max-width:1200px) {
+	.category-navigation-link {
+		font-size: $font-size-lg;
+	}
+}

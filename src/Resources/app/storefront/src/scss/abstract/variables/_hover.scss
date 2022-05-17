@@ -1,0 +1,252 @@
+//hover effects
+//hover slide in
+@if $snap-navigation-hover-style == 2 {
+        .main-navigation-link-text{
+            overflow: hidden; 
+            border: none;
+            &:hover{
+                position: relative;     
+                transition: transform .2s;
+                border: none;
+            }
+            &:hover .navigation-flyout{
+                transition: transform .8s;
+                transform: transformY(20px);
+                // top: 40px;
+            }
+            span{
+                position: relative;
+                display: inline-block;
+                transition: -ms-transform .2s;
+                transition: -webkit-transform .2s;
+                transition: transform .2s;
+                transform: translate3d(0,0,0);
+                -webkit-transition: -webkit-transform .2s;
+                padding: 10px 21.5px;
+                height: 40px;
+                &:hover{
+                    position: relative;     
+                    text-decoration: none;
+                    transition: transform .3s;
+                    transform: translateY(-100%);
+                }
+                &::after{
+                    position: absolute;
+                    top: 100%;
+                    left: 40px;
+                    content: attr(data-hover);
+                    -ms-transform: translate3d(0, 0, 0);
+                    -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0);
+                    color: $snap-navigation-text-color-hover;
+                    margin: 0 -40px;
+                    height: 40px;
+                    padding: 10px 21.5px ;
+                }
+            }
+        }
+    
+}
+
+//slide horisontal
+@if $snap-navigation-hover-style == 3 {
+        .main-navigation-link-text{
+            overflow: hidden; 
+            border: none;
+            width: max-content;
+            &:hover{
+                position: relative;     
+                transition: transform .2s;
+                border: none;
+            }
+            &:hover .navigation-flyout{
+                transition: transform .8s;
+                transform: transformY(20px);
+                // top: 40px;
+            }
+
+            span{
+                position: relative;
+                display: inline-block;
+                transition: -ms-transform .2s;
+                transition: -webkit-transform .2s;
+                transition: transform .4s;
+                transform: translate3d(0,0,0);
+                -webkit-transition: -webkit-transform .2s;
+                padding: 10px 10.5px;
+                height: 40px;
+                width: 100%;
+                text-align: center;
+                &:hover{
+                    position: relative;     
+                    text-decoration: none;
+                    transition: transform .3s;
+                    transform: translateX(100%);
+                }
+                &::after{
+                    position: absolute;
+                    // right: 100%;
+                    right: 136%;
+                    content: attr(data-hover);
+                    -ms-transform: translate3d(0, 0, 0);
+                    -webkit-transform: translate3d(0, 0, 0);
+                    transform: translate3d(0, 0, 0);
+                    margin: 0 -40px;
+                    height: 40px;
+                    padding: 10px 10.5px ;
+                    width: 100%;
+                    bottom: 0;
+                }
+            }
+        }
+}
+
+//fall down
+@if $snap-navigation-hover-style == 4 {
+    .main-navigation-link{
+        width: 100px;
+        text-align: center;
+        height: 40px;
+        width: max-content;
+        // padding: 0 10px !important;
+
+        .main-navigation-link-text{
+            width: 100%;
+            display: block;
+            padding: 10px !important;
+            position: relative;
+
+
+            &::after {
+                position: absolute;
+                content: attr(data-hover);
+                transition: transform .3s, opacity .3s;
+                transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+                pointer-events: none;
+                opacity: 0;
+                // padding: 10px 20px;
+                width: 100%;
+                left: 0;
+                bottom: 10px;
+                }
+
+            &:hover::after {
+                transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+                opacity: 1;
+                }
+
+        }
+        &.is-open {
+            .main-navigation-link-text {
+                text-decoration: none;
+                border: none;
+            }
+        }
+        
+        
+    }
+}
+
+//text shadow
+@if $snap-navigation-hover-style == 5 {
+    .main-navigation-link{
+        width: 100px;
+        text-align: center;
+        height: 40px;
+        width: max-content;
+        // padding: 0 10px !important;
+        transition: text-shadow .5s ease;
+        // text-shadow: 0 0 0 $snap-container-layout-box-shadow;
+        
+        .main-navigation-link-text{
+            width: 100%;
+            display: block;
+            padding: 10px !important;
+            height: 100%;
+            position: relative;
+
+
+            &:hover,
+            &.is-open,
+            &.active {
+
+                color: $snap-navigation-text-color-hover;
+                text-shadow: 0 0 10px $snap-navigation-text-color-hover;
+                // text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+                // text-shadow: 0 0 10px $sw-color-brand-primary;
+                background: $snap-flyout-navigation-bg;
+
+            }
+
+        }
+        &.is-open {
+            .main-navigation-link-text {
+                text-decoration: none;
+                border: none;
+            }
+        }
+    }
+}
+
+.main-navigation-link-text{
+    display: flex;
+    align-items: center;
+}
+
+// @hover
+@if $snap-navigation-hover-style == 6 {
+    .main-navigation-link{
+        width: 100px;
+        text-align: center;
+        height: 40px;
+        width: max-content;
+        transition: text-shadow .5s ease;
+        text-shadow: 0 0 0 $snap-container-layout-box-shadow;
+        transition: all 0.3s;
+        background: $snap-navigation-background-color;
+        
+        .main-navigation-link-text{
+            width: 100%;
+            padding: 10px 15px;
+            height: 100%;
+            position: relative;
+            color: $snap-navigation-text-color;
+            font-weight: 400;
+
+            &:hover{
+                color: $snap-navigation-text-color-hover;
+            }
+        }
+
+        &.is-open{
+            text-decoration: none;
+            color: $snap-flyout-navigation-bg;
+        }
+
+        &:hover {
+            background: $snap-navigation-background-color-hover;
+            color: $snap-navigation-text-color-hover;
+        }
+
+        @if $snap-header-layout == 1{
+            &.active{
+                .main-navigation-link-text{
+                    span{
+                        color: $snap-navigation-text-color-hover;
+                    }
+                }
+            }
+        }@else{
+            &.active{
+                background: $snap-navigation-text-color-hover;
+        
+                .main-navigation-link-text{
+                    span{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+

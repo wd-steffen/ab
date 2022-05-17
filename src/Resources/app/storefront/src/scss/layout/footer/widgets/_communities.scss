@@ -1,0 +1,244 @@
+﻿/*
+    Copyright (c) TC-Innovations GmbH
+	ThemeWare: Widget > Communities
+	==================================================
+*/
+
+// ThemeWare: General widget styling
+.snap-widget-communities {
+
+	// ThemeWare: Communities list
+	ul.snap-communities-list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	// ThemeWare: Communities item > link
+	a.snap-communities-link {
+		text-decoration: none !important;
+
+		// ThemeWare: Communities item > link > icon
+		.icon {
+			-o-transition: 0.2s ease-out 0s;
+			-webkit-transition: 0.2s ease-out 0s;
+			transition: 0.2s ease-out 0s;
+			vertical-align: middle;
+
+			fill: currentColor;
+
+			svg {
+				top: 0;
+			}
+
+			// Add circle-, rect- and polygon-Element to Shopware SVG-Elements
+			> svg circle,
+			> svg polygon,
+			> svg rect {
+				fill: currentColor;
+			}
+
+		}
+
+
+		// ThemeWare: Communities item > link:hover
+		&:hover {
+			// ThemeWare: Communities item > link:hover > label
+			span.snap-communities-label {
+				// ThemeWare: Label unterstreichen
+				text-decoration: underline !important;
+			}
+		}
+	}
+}
+
+.snap-communities-list{
+	display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+
+// ThemeWare: Footer widget styling
+// TODO: snap-widget-communities-label-position
+.snap-widget-communities:not(.is--floating):not(.is--sidebar):not(.is--detail) {
+
+
+	// ThemeWare: Communities item > link
+	a.snap-communities-link {
+		// ThemeWare: Communities nebeneinander oder untereinenader
+		display: flex;
+		align-items: center;
+
+		// ThemeWare: Communities item > link > icon
+
+		.icon {
+			// ThemeWare: Grayscale
+			@if $snap-widget-communities-icon-coloration == 3 {
+				@include snap-grayscale(100%);
+			}
+		}
+
+		// ThemeWare: Communities item > link > label
+		span.snap-communities-label {
+			// ThemeWare: Show/hide label
+			@if $snap-widget-communities-label-show == 1 {
+				display: none;
+			} @else {
+				display: inline-block;
+			}
+		}
+
+		// ThemeWare: Communities item > link:hover
+		&:hover {
+			// TODO: Add configuration
+			.icon {
+				//-webkit-transform: scale(1.1);
+				//-ms-transform: scale(1.1);
+				//transform: scale(1.1);
+
+				//opacity: .75;
+
+				@if $snap-widget-communities-icon-coloration == 3 {
+					@include snap-grayscale(0%); // ThemeWare: Grayscale
+				} @else {
+					-webkit-filter: brightness(85%);
+					filter: brightness(85%);
+				}
+			}
+		}
+
+		/* ThemeWare: Color icons */
+		/* TODO: Include as function? */
+		&.link-blog {
+			@if $snap-widget-communities-icon-coloration == 2 {
+				@include snap-icon-color-blog($snap-widget-communities-icon-color);
+			}@else{
+				@include snap-icon-color-blog($snap-color-blog);
+			}
+		}
+
+		&.link-blogger {
+			@if $snap-widget-communities-icon-coloration == 2 {
+				@include snap-icon-color-blogger($snap-widget-communities-icon-color);
+			}@else{
+				@include snap-icon-color-blogger($snap-color-blogger);
+			}
+		}
+
+		&.link-facebook {
+			@if $snap-widget-communities-icon-coloration == 2 {
+				@include snap-icon-color-facebook($snap-widget-communities-icon-color);
+			}@else{
+				@include snap-icon-color-facebook($snap-color-facebook);
+			}
+		}
+
+		&.link-instagram {
+			@if $snap-widget-communities-icon-coloration == 2 {
+				@include snap-icon-color-instagram($snap-widget-communities-icon-color);
+			}@else{
+				@include snap-icon-color-instagram($snap-color-instagram);
+			}
+		}
+
+		&.link-linkedin {
+			@if $snap-widget-communities-icon-coloration == 2 {
+				@include snap-icon-color-linkedin($snap-widget-communities-icon-color);
+			}@else{
+				@include snap-icon-color-linkedin($snap-color-linkedin);
+			}
+		}
+
+		&.link-pinterest {
+			@if $snap-widget-communities-icon-coloration == 2 {
+				@include snap-icon-color-pinterest($snap-widget-communities-icon-color);
+			}@else{
+				@include snap-icon-color-pinterest($snap-color-pinterest);
+			}
+		}
+
+		&.link-tiktok {
+			@if $snap-widget-communities-icon-coloration == 2 {
+				@include snap-icon-color-tiktok($snap-widget-communities-icon-color);
+			}@else{
+				@include snap-icon-color-tiktok($snap-color-tiktok);
+			}
+		}
+
+		&.link-twitter {
+			@if $snap-widget-communities-icon-coloration == 2 {
+				@include snap-icon-color-twitter($snap-widget-communities-icon-color);
+			}@else{
+				@include snap-icon-color-twitter($snap-color-twitter);
+			}
+		}
+
+
+		&.link-whatsapp {
+			@if $snap-widget-communities-icon-coloration == 2 {
+				@include snap-icon-color-whatsapp($snap-widget-communities-icon-color);
+			}@else{
+				@include snap-icon-color-whatsapp($snap-color-whatsapp);
+			}
+		}
+
+		&.link-youtube {
+			@if $snap-widget-communities-icon-coloration == 2 {
+				@include snap-icon-color-youtube($snap-widget-communities-icon-color);
+			}@else{
+				@include snap-icon-color-youtube($snap-color-youtube);
+			}
+		}
+	}
+}
+
+.snap-communities-item{
+	padding: 0 10px 10px 0 !important;
+}
+
+// in sidebar 
+@if $snap-widget-communities-position == 1 { 
+	.snap-widget-communities {
+		padding: 20px 0 20px 20px;
+	}
+}
+
+
+@media (min-width:992px) {
+    .snap-communities-item{
+		.icon {
+			width: $snap-widget-communities-icon-size + px;
+			height: $snap-widget-communities-icon-size + px;
+		}	
+	}
+}
+
+@media (max-width:992px) {
+    .snap-communities-item{
+		.icon{
+			width: ($snap-widget-communities-icon-size - 5) + px;
+			height: ($snap-widget-communities-icon-size - 5) + px;
+		}
+	}
+}
+
+@media (max-width:768px) {
+    .snap-communities-item{
+		.icon{
+			width: ($snap-widget-communities-icon-size - 10) + px;
+			height: ($snap-widget-communities-icon-size - 10) + px;
+		}
+    }
+}
+
+@media (max-width:575px) {
+    .snap-communities-item{
+		.icon{
+			width: ($snap-widget-communities-icon-size - 15) + px;
+			height: ($snap-widget-communities-icon-size - 15) + px;
+		}
+    }
+}
+

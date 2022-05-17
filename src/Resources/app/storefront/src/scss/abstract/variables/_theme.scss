@@ -1,0 +1,54 @@
+
+/*  Floating communities */
+$snap-floating-communities: 2 !default; // TODO...
+
+/*  Social icons color definition */
+$snap-color-blog: #0073aa;
+$snap-color-blogger: #f38936;
+$snap-color-facebook: #1877f2;
+$snap-color-flickr: #0063dc;
+$snap-color-flickr3: #ff0084;
+$snap-color-instagram: #dd2a7b;
+$snap-color-linkedin: #0a66c2;
+$snap-color-pinterest: #e60023;
+$snap-color-tiktok: #000000;
+$snap-color-tiktok3: #25f4ee;
+$snap-color-tiktok4: #fe2c55;
+$snap-color-twitter: #1da1f2;
+$snap-color-vimeo: #1ab7ea;
+$snap-color-whatsapp: #25d366;
+$snap-color-xing: #005a5f;
+$snap-color-xing3: #cfdc00;
+$snap-color-youtube: #ff0000;
+$snap-color-website: #32373c;
+$snap-color-email: #758ca3;
+
+/*  Basegrid */
+$snap-basegrid-spacing: 20px !default;
+$snap-cms-block-margin-bottom: $snap-basegrid-spacing; // replaces: margin-bottom: $snap-basegrid-spacing;
+
+/*  Border radius */
+$snap-border-radius-light: 2px !default;
+$snap-border-radius-bold: 100px !default;
+
+/*  Breadcrumb */
+$snap-breadcrumb-margin-bottom: 20px !default;
+
+/*  Container */
+$snap-container-main-min-height-mobile: 80px !default;
+$snap-container-main-min-height-desktop: 80px !default;
+
+/*  Header */
+$snap-fixed-overlay-z-index: 100 !default;
+
+/*  TopBar */
+$snap-header-top-bar-height: $snap-header-top-bar-line-height !default;
+
+/*  Header minimal */
+$snap-header-minimal-logo-width: 140px !default;
+$snap-header-minimal-logo-height: auto !default;
+
+/*  Main navigation */
+// $snap-nav-main-margin-left: -#{$snap-nav-main-padding + px} !default; // negative value of $snap-nav-main-padding
+$snap-nav-main-icon-size: 18px !default;
+

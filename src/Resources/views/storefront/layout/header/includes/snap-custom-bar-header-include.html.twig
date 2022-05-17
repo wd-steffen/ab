@@ -1,0 +1,110 @@
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# SnapTheme: Set theme variables #}
+{# Lable variables #}
+{% set snapcustomFooterBarLabelItem1 = theme_config('snap-custom-bar-header-label-item-1') %}
+{% set snapcustomheaderBarLabelItem2 = theme_config('snap-custom-bar-header-label-item-2') %}
+{% set snapcustomheaderBarLabelItem3 = theme_config('snap-custom-bar-header-label-item-3') %}
+{% set snapcustomheaderBarLabelItem4 = theme_config('snap-custom-bar-header-label-item-4') %}
+{% set snapcustomheaderBarLabelItem5 = theme_config('snap-custom-bar-header-label-item-5') %}
+
+{#  Set theme variables #}
+{% set snapHeaderTopBarCurrenciesMenuShow = theme_config('snap-header-top-bar-currencies-menu-show') %}
+{% set snapHeaderTopBarLanguagesMenuShow = theme_config('snap-header-top-bar-languages-menu-show') %}
+{% set snapHeaderTopBarServiceMenuShow = theme_config('snap-header-top-bar-service-menu-show') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{% block custom_header_bar_items %}
+	<div class="custom-bar-container">
+		{% if theme_config('snap-custom-bar-header') == 1 or theme_config('snap-custom-bar-header') == 3  %} 
+			{% block snap_custom_bar %}
+				<div class="header-bar header-item-1">
+					<div class="header-icon">
+							{% sw_include '@Storefront/storefront/snaptheme/snap-icons.html.twig'
+								with {
+									iconname: "snap.extension.customBar.icon1"|trans
+								}
+							%}
+						</div>
+						<div class="item-label headliine-1">{{ "snap.extension.customBar.item1"|trans|raw }}</div>
+					</div>
+
+					<div class="header-bar header-item-2">
+						<div class="header-icon">
+							{% sw_include '@Storefront/storefront/snaptheme/snap-icons.html.twig'
+								with {
+									iconname: "snap.extension.customBar.icon2"|trans
+								}
+							%}
+						</div>
+						<div class="item-label headliine-2">{{ "snap.extension.customBar.item2"|trans|raw }}</div>
+					</div>
+					
+					<div class="header-bar header-item-3">
+						<div class="header-icon">
+							{% sw_include '@Storefront/storefront/snaptheme/snap-icons.html.twig'
+								with {
+									iconname: "snap.extension.customBar.icon3"|trans
+								}
+							%}
+						</div>
+						<div class="item-label headliine-3">{{ "snap.extension.customBar.item3"|trans|raw }}</div>
+					</div>
+
+					<div class="header-bar header-item-4">
+						<div class="header-icon">
+							{% sw_include '@Storefront/storefront/snaptheme/snap-icons.html.twig'
+								with {
+									iconname: "snap.extension.customBar.icon4"|trans
+								}
+							%}
+						</div>
+						<div class="item-label headliine-4">{{ "snap.extension.customBar.item4"|trans|raw }}</div>
+					</div>
+
+					<div class="header-bar header-item-5">
+						<div class="header-icon">
+							{% sw_include '@Storefront/storefront/snaptheme/snap-icons.html.twig' ignore missing with {
+									iconname: "snap.extension.customBar.icon5"|trans
+								}
+							%}
+						</div>
+						<div class="item-label headliine-5">{{ "snap.extension.customBar.item5"|trans|raw }}</div>
+					</div>	
+				</div>
+			{% endblock %}
+		{% endif %}
+
+		{% if theme_config('snap-custom-bar-header') == 2 or theme_config('snap-custom-bar-header') == 3 %} 
+			{% block snap_top_bar %}
+				<div class="custom-top-bar">
+					{# Language menu #}
+					{% block layout_header_top_bar_language %}
+						{% if snapHeaderTopBarLanguagesMenuShow == 1 %}
+							{% sw_include '@Storefront/storefront/layout/header/actions/language-widget.html.twig' %}
+						{% endif %}
+					{% endblock %}
+					
+					{# Currency menu #}
+					{% block layout_header_top_bar_currency %}
+						{% if snapHeaderTopBarCurrenciesMenuShow == 2 %}
+							{% sw_include '@Storefront/storefront/layout/header/actions/currency-widget.html.twig' %}
+						{% endif %}
+					{% endblock %}
+					
+					{# Service menu anzeigen als Dropdown oder Liste #}
+					{% block layout_header_top_bar_service %}
+						{% if snapHeaderTopBarServiceMenuShow == 2 %}
+							{#  Service menu dropdown (default) #}
+							{% sw_include '@Storefront/storefront/layout/header/actions/service-menu-widget.html.twig' %}
+						{% elseif snapHeaderTopBarServiceMenuShow == 3 %}
+							{#  Service menu list #}
+							{% sw_include '@Storefront/storefront/layout/header/actions/snap-service-menu-list-widget.html.twig' %}
+						{% endif %}
+					{% endblock %}	
+				</div>
+			{% endblock %}
+		{% endif %}
+	</div>
+{% endblock %}

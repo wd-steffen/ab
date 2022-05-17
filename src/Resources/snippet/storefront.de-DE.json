@@ -1,0 +1,332 @@
+{
+	"snap": {
+		"header": {
+			"cartText": "Warenkorb",
+			"accountText": "Mein Konto",
+			"searchText": "Suche",
+			"wishlistText": "Wunschzettel",
+			"offcanvasMenuText": "Navigation",
+			"searchHelpText": "Service-Hotline Mo-Fr, 09:00 - 17:00 Uhr <hr>",
+			"searchHelpTextUrl": "tel:+490000000",
+			"searchHelpTextTime": ""
+		},
+		"breadcrumb": {
+			"furtherInformation": "Sie sind hier:"
+		},
+		"custom": {
+			"css": ""
+		},
+		"listing": {
+			"ordernumberLabel": "Produktnummer:",
+			"manufacturerLabel": "Hersteller:",
+			"boxLabelSale": "Sale",
+			"boxLabelTopseller": "TopSeller",
+			"boxLabelNew": "New"
+
+		},
+		"detail": {
+			"headlineProperties": "Eigenschaften",
+			"infoProperties": "Angaben gemäß Hersteller. Irrtum und Änderung vorbehalten.",
+			"tabProperties": {
+				"title": "Eigenschaften"
+			},
+			"tabManufacturer": {
+				"title": "Hersteller",
+				"moreInformation": "Weiterführende Links des Herstellers",
+				"linkProducts": {
+					"label": "Weitere Produkte von %manufacturer%"
+				},
+				"linkWebsite": {
+					"label": "Hersteller-Webseite"
+				}
+			},
+			"eanLabel": "EAN:",
+			"manufacturernumberLabel": "Hersteller-Nr.:",
+			"manufacturerLabel": "Hersteller:",
+			"weightLabel": "Gewicht:",
+			"lengthLabel": "Länge:",
+			"widthLabel": "Breite:",
+			"heightLabel": "Höhe:",
+			"qualityLabel": "Qualität",
+			"freeShippingLabel": "Versandfrei",
+			"limitedAvailabilityLabel": "Begrenzte Verfügung",
+			"seatHeightLabel": "Sitzhöhe",
+			"backrestLabel": "Rückenlehne",
+			"armrestLabel": "Armlehne",
+			"tableHeightLabel": "Tischhöhe",
+			"availableStockLabel": "Lagerbestand:",
+			"minpurchaseLabel": "Mindestabnahme:",
+			"maxpurchaseLabel": "Maximalabnahme:",
+			"stockLabel": {
+				"noStock": "Derzeit nicht auf Lager.",
+				"lowStock": {
+					"label": "Nur noch %stock% lieferbar.",
+					"prefix": "Nur noch",
+					"suffix": "lieferbar."
+				},
+				"inStock": "Auf Lager.",
+				"availableStock": "auf Lager.",
+				"highStock": {
+					"label": "Über %stock% lieferbar.",
+					"prefix": "Über",
+					"suffix": "lieferbar."
+				}
+			},
+			"customPreis": {
+				"title": "Auf Anfrage",
+				"email": "example@gmail.com"
+			},
+			"customLength": {
+				"title": "Länge auf Schild auf Anfrage",
+				"email": "example@gmail.com"
+			},
+			"customTime": {
+				"title": "Uhrzeit auf Schild auf Anfrage",
+				"email": "example@gmail.com"
+			},
+			"imageSimilarNote": "Abbildung ähnlich",
+			"isCloseoutNote": "Abverkauf",
+			"backordersNote": {
+				"backordersPossible": "Nachbestellungen möglich",
+				"backordersDenied": "Keine Nachbestellungen möglich"
+			},
+			"socialSharingLinks": {
+				"headline": "Dieses Produkt weiterempfehlen:",
+				"facebook": {
+					"label": "Facebook",
+					"title": "Bei Facebook teilen"
+				},
+				"twitter": {
+					"label": "Twitter",
+					"title": "Bei Twitter teilen"
+				},
+				"pinterest": {
+					"label": "Pinterest",
+					"title": "Bei Pinterest teilen"
+				},
+				"whatsapp": {
+					"label": "WhatsApp",
+					"title": "Bei WhatsApp teilen"
+				},
+				"email": {
+					"label": "E-Mail",
+					"title": "Per E-Mail empfehlen",
+					"salutation": "Hallo,",
+					"body": "schau mal was ich entdeckt habe!",
+					"closing": "Viele Grüße"
+				}
+			}
+		},
+		"extension": {
+			"announcementBanner": {
+				"content": "<span class=\"label label-info\">Info</span> <span class=\"text\">Bitte beachten Sie, unsere geänderten Lieferzeiten während wir uns im <strong>Betriebsurlaub</strong> befinden.</span>",
+				"link": "/#"
+			},
+			"customAnnouncement": {
+				"content": "<span>Bitte beachten Sie, dass wir uns in der Zeit vom XX.YY. bis XX.YY. im <strong>Betriebsurlaub</strong> befinden. Die bei unseren Artikeln angegebenen Lieferzeiten verlängern sich daher jeweils um XX Tage. – Wir bedanken uns für Ihr Verständnis.</span>"
+			},
+			"customBar": {
+				"item1": "Kostenloser Versand",
+				"icon1": "rocket",
+				"tooltip1": "",
+				"item2": "Versand innerhalb von 24h",
+				"icon2": "clock",
+				"tooltip2": "",
+				"item3": "30 Tage Geld-Zurück-Garantie",
+				"icon3": "thumb-up",
+				"tooltip3": "",
+				"item4": "Bequemer Kauf auf Rechnung",
+				"icon4": "briefcase",
+				"tooltip4": "",
+				"item5": "Direkt vom Hersteller",
+				"icon5": "home",
+				"tooltip5": "",
+				"item6": "Hotline 0800 123 454 321",
+				"icon6": "headset",
+				"tooltip6": ""
+			},
+			"stockBadge": {
+				"noStock": "Ausverkauft",
+				"lowStock": {
+					"label": "Nur %stock% auf Lager!",
+					"prefix": "Nur",
+					"suffix": "auf Lager!"
+				},
+				"inStock": "Auf Lager.",
+				"availableStock": "auf Lager.",
+				"highStock": {
+					"label": "> %stock% lagernd",
+					"prefix": "> ",
+					"suffix": "lagernd"
+				}
+			},
+			"discountBadge": {
+				"percentageShort": "%discount%%",
+				"percentage": "%discount%% gespart",
+				"discountShort": "%discount% %currency%",
+				"discount": "%discount% %currency% gespart",
+				"suffix": "gespart"
+			},
+			"floatingWidget": {
+				"title": "Floating-Widget",
+				"body": "Das ist das Floating-Widget.",
+				"link": "#"
+			}
+		},
+		"widget": {
+			"about": {
+				"headline": "Über uns",
+				"content": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>Gadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>"
+			},
+			"payment": {
+				"headline": "Zahlungsarten",
+				"link": "/#payment",
+				"customImages": {
+					"title1": "Benutzerdefiniertes Bild 1",
+					"title2": "Benutzerdefiniertes Bild 2",
+					"title3": "Benutzerdefiniertes Bild 3"
+				}
+			},
+			"shipping": {
+				"headline": "Versandarten",
+				"link": "/#shipping",
+				"customImages": {
+					"title1": "Benutzerdefiniertes Bild 1",
+					"title2": "Benutzerdefiniertes Bild 2",
+					"title3": "Benutzerdefiniertes Bild 3"
+				}
+			},
+			"paymentshipping": {
+				"headline": "Zahlungs- und Versandarten"
+			},
+			"communities": {
+				"headline": "Unsere Communities",
+				"additionalText": "Über unsere Social Media Plattformen verpassen Sie keine Neuigkeiten mehr.",
+				"facebook": {
+					"name": "Facebook",
+					"link": "/#facebook"
+				},
+				"instagram": {
+					"name": "Instagram",
+					"link": "/#instagram"
+				},
+				"twitter": {
+					"name": "Twitter",
+					"link": "/#twitter"
+				},
+				"youtube": {
+					"name": "YouTube",
+					"link": "/#youtube"
+				},
+				"vimeo": {
+					"name": "Vimeo",
+					"link": "/#vimeo"
+				},
+				"flickr": {
+					"name": "Flickr",
+					"link": "/#flickr"
+				},
+				"pinterest": {
+					"name": "Pinterest",
+					"link": "/#pinterest"
+				},
+				"tiktok": {
+					"name": "TikTok",
+					"link": "/#tiktok"
+				},
+				"blogger": {
+					"name": "Blogger",
+					"link": "/#blogger"
+				},
+				"blog": {
+					"name": "Blog",
+					"link": "/#blog"
+				},
+				"whatsapp": {
+					"name": "WhatsApp",
+					"link": "/#whatsapp"
+				},
+				"linkedin": {
+					"name": "LinkedIn",
+					"link": "/#linkedin"
+				},
+				"website": {
+					"name": "Website",
+					"link": "/#website"
+				}
+			},
+			"hotline": "Service-Hotline",
+			"benefits": {
+				"headline": "Unsere Vorteile",
+				"content": "Lorem ipsum dolor sit amet; Lorem ipsum dolor sit amet; Lorem ipsum dolor sit amet; Lorem ipsum dolor sit amet; Lorem ipsum dolor sit amet"
+			},
+			"location": {
+				"headline": "Ladengeschäft",
+				"content": "<p>Demoshop Store im Gewerbepark<br>Muster Straße 10-12<br>12345 Musterhausen</p><p><strong>Öffnungszeiten:</strong><br>Mo - Fr: 09:00 - 20:00 Uhr<br>Sa: 09:00 - 18:00 Uhr</p>",
+				"route": {
+					"name": "Routenplaner starten",
+					"link": "/#google-maps-link"
+				}
+			},
+			"awards": {
+				"headline": "Sicher Einkaufen",
+				"content": "Mehrfach ausgezeichnet und zertifiziert!",
+				"sslSeal": {
+					"url": "app/storefront/src/assets/awards/ssl-secure.png"
+				},
+				"customImages": {
+					"title1": "Benutzerdefiniertes Bild 1",
+					"title2": "Benutzerdefiniertes Bild 2",
+					"title3": "Benutzerdefiniertes Bild 3",
+					"title4": "Benutzerdefiniertes Bild 4",
+					"title5": "Benutzerdefiniertes Bild 5",
+					"title6": "Benutzerdefiniertes Bild 6"
+				}
+			},
+			"specialIcons": {
+				"customImages": {
+					"url1": "app/storefront/src/assets/stuhlwerk/special-icons/gastronomie.svg",
+					"url2": "app/storefront/src/assets/stuhlwerk/special-icons/gastronomie.svg",
+					"url3": "app/storefront/src/assets/stuhlwerk/special-icons/gastronomie.svg",
+					"url4": "app/storefront/src/assets/stuhlwerk/special-icons/gastronomie.svg",
+					"url5": "app/storefront/src/assets/stuhlwerk/special-icons/gastronomie.svg"
+					
+				}
+			},
+			"addDetails": { 
+				"deliveryLine": "Lieferung in",
+				"headline": "Fragen zum Artikel",
+				"email": "example@gmail.com",
+				"phone": "1234 56789876"
+			},
+			"sidebar": {
+				"element1": {
+					"url": "https://www.gamified.uk/wp-content/uploads/2014/04/wikipedia-logo.jpg"				
+				},
+				"element2": {
+					"url": "https://www.gamified.uk/wp-content/uploads/2014/04/wikipedia-logo.jpg"				
+				},
+				"element3": {
+					"url": "https://www.gamified.uk/wp-content/uploads/2014/04/wikipedia-logo.jpg"				
+				},
+				"element4": {
+					"title": "Wertvolle Zeit sparen",
+					"text": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it.",
+					"url": "https://www.gamified.uk/wp-content/uploads/2014/04/wikipedia-logo.jpg"								
+				}	
+			},
+			"newsletter": {
+				"headline": "Newsletter",
+				"content": "Abonnieren Sie jetzt einfach unseren regelmäßig erscheinenden Newsletter und Sie werden stets unter den Ersten sein, über neue Produkte und Angebote informiert werden.",
+				"formInput": "Ihre E-Mail-Adresse",
+				"formSubmit": "Newsletter abonnieren",
+				"formPrivacy": "Ich habe die <a data-toggle=\"modal\" data-url=\"%url%\" href=\"%url%\" title=\"Datenschutzbestimmungen\">Datenschutzbestimmungen</a> zur Kenntnis genommen."
+			},
+			"aboutUs": {
+				"headline": "About us",
+				"content": "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p<p>Fmet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd em ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p><p>At vero eos et accusam et justo duo dolores et eargren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p><p>Dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gunctus est Lorem ipsum dolor sit amet.</p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>"
+			}
+		}
+	}
+}
+ 

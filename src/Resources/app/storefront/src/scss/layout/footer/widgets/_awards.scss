@@ -1,0 +1,26 @@
+/*
+	SnapTheme: Widget > Awards
+	==================================================
+*/
+
+// SnapTheme: General widget styling
+.snap-widget-awards {
+  .snap-awards-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    img {
+      max-width: $snap-widget-awards-image-max-width + px;
+    }
+  }
+}
+
+// SnapTheme: Sidebar specific styling
+.cms-section-sidebar-sidebar-content {
+  .snap-awards-container {
+    img {
+      margin: 0 20px 20px 0;
+    }
+  }
+}

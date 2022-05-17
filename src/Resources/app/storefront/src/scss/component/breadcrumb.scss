@@ -1,0 +1,195 @@
+/*
+Breadcrumb
+==============================================
+Advanced styling for breadcrumb component
+*/
+
+
+    @mixin breadcrumbMargin( $snap-breadcrumb-background-color ) {
+        @if $snap-breadcrumb-background-color == $snap-background-body-color {
+            margin-bottom: 0;
+        } @else {
+            margin-bottom: $spacer-lg;
+        }
+    }
+
+
+
+    .breadcrumb-item{
+        min-width: max-content;
+    }   
+
+
+//TO SHOW BREADCRUM AT HOME PAGE
+// @if $snap-breadcrumb-show-home == 1 {
+    .is-ctl-navigation.is-act-home {
+		.breadcrumb {
+			display: none;
+		}
+    }
+// }
+
+
+//cms
+    .cms-breadcrumb{
+        background-color: $snap-breadcrumb-background-color;
+        width: 1400px;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        nav{
+            width: 100%;
+        }
+    }
+//cms
+
+
+
+        
+div.breadcrumb{
+    min-width: max-content;
+    background-color: $snap-breadcrumb-background-color;
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    @if $snap-breadcrumb-position == 1 {
+        justify-content: flex-start;
+
+    }@else if $snap-breadcrumb-position == 2 { 
+        justify-content: flex-end;
+    }
+
+}
+
+ol.breadcrumb{
+    padding: 15px 20px;
+    background-color: $snap-breadcrumb-background-color;
+    border: 1px solid #eee;
+    border-bottom: none;
+    width: 100%;
+}
+
+// .is-ctl-product{
+    ol.breadcrumb{
+        margin-bottom: 0;
+    }
+// }
+
+.breadcrumb {
+    .breadcrumb-home {
+        svg {
+            width: 100%;
+            color: $snap-breadcrumb-text-color;
+
+            &:hover {
+                color: $sw-color-brand-primary;
+            }
+        }
+    }
+
+    .breadcrumb-container {
+        display: flex;
+
+        &.penultimate {
+            display: none;
+        }
+    }
+
+    .breadcrumb-placeholder-simple {
+        margin-right: $spacer-sm;
+
+
+    }
+
+    .breadcrumb-placeholder {
+        margin: 0 $spacer-sm;
+
+        .icon{
+            width: max-content;
+        }
+        &.penultimate {
+            display: none;
+        }
+    }
+
+    a {
+        color: $snap-breadcrumb-text-color;
+        font-size: $snap-font-size-base + px;
+        font-family: $sw-font-family-base;
+        text-transform: $snap-breadcrumb-text-transformation;
+
+        &.is-active {
+            color: $snap-breadcrumb-text-color;
+            font-weight: $font-weight-normal;
+            text-decoration: underline;
+        }
+
+        &:hover {
+            color: $sw-color-brand-primary;
+            text-decoration: none;
+        }
+    }
+
+    svg {
+        height: $snap-font-size-base + px;
+        width: 10px;
+        top: rem(2);
+        color: $snap-breadcrumb-text-color;
+    }
+
+}
+
+
+
+@include media-breakpoint-up(sm) {
+    .breadcrumb {
+        // padding: $spacer $order-grid-gutter-width;
+        // padding-left: 0px;
+
+        .breadcrumb-container {
+            &.penultimate {
+                display: flex;
+            }
+        }
+
+        .breadcrumb-placeholder-simple {
+            display: none;
+        }
+
+        .breadcrumb-placeholder {
+            &.penultimate {
+                display: block;
+            }
+        }
+
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .breadcrumb {
+        margin: 0;
+        max-width: 100%;
+        // padding: 10px 50px !important;
+        }
+} 
+
+// @media (max-width:768px) {
+//     ol.breadcrumb {
+//         padding: 10px 20px;
+//     }
+// }
+
+
+@media (max-width: 450px){
+    .breadcrumb{
+        display: none;
+    }
+}
+
+@media (max-width: 1400px){
+    .cms-breadcrumb{
+        width: 100%;
+    }
+
+}

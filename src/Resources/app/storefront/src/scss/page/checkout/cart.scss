@@ -1,0 +1,81 @@
+/*
+
+Cart
+==============================================
+Contains custom styles for the cart page.
+
+*/
+
+
+
+
+.is-ctl-checkout,
+.is-act-cartpage{
+    
+    .cart-main-header {
+        // font-size: $snap-font-size-h1;
+        color: $sw-headline-color;
+    }
+    
+    .cart-add-product-container {
+        @extend .col-12;
+        @extend .col-md-8;
+        @extend .col-lg-6;
+    
+        .btn {
+            width: 93px;
+        }
+    }
+    
+    .cart-shipping-costs-container {
+        @extend .col-12;
+        @extend .col-md-4;
+        @extend .col-lg-6;
+    }
+    
+    .cart-add-product {
+        max-width: 100%;
+    }
+    
+    .cart-add-promotion {
+        .btn {
+            width: 93px;
+        }
+    }
+    
+    @include media-breakpoint-up(md) {
+        .checkout-product-table {
+            margin-bottom: $spacer-xl;
+        }
+    }
+    
+    @media screen and (max-width: 992px){
+
+        .add-product-outer-container {
+            margin-bottom: 0;
+            margin-top: $spacer;
+        }
+    }
+}
+
+
+.cart-header-info,
+.cart-header-quantity,
+.cart-header-unit-price,
+.cart-header-total-price{
+    font-size: 20px;
+} 
+
+
+@media (max-width: 1200px){    
+    .cart-header-info,
+    .cart-header-quantity,
+    .cart-header-unit-price,
+    .cart-header-total-price{
+        font-size: 18px;
+    } 
+}
+
+
+
+

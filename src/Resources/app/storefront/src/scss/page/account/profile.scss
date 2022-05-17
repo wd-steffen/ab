@@ -1,0 +1,17 @@
+/*
+
+Profile
+==============================================
+Contains custom styles for the user profile area.
+
+*/
+
+.profile-content {
+    .card-actions {
+        margin-bottom: $spacer;
+    }
+
+    .profile-form-submit {
+        width: 100%;
+    }
+}

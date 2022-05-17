@@ -1,0 +1,68 @@
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# SnapTheme: Set theme variables #}
+{# Lable variables #}
+{% set snapcustomFooterBarLabelItem1 = theme_config('snap-custom-bar-footer-label-item-1') %}
+{% set snapcustomFooterBarLabelItem2 = theme_config('snap-custom-bar-footer-label-item-2') %}
+{% set snapcustomFooterBarLabelItem3 = theme_config('snap-custom-bar-footer-label-item-3') %}
+{% set snapcustomFooterBarLabelItem4 = theme_config('snap-custom-bar-footer-label-item-4') %}
+{% set snapcustomFooterBarLabelItem5 = theme_config('snap-custom-bar-footer-label-item-5') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{% block custom_footer_bar_items %}
+	<div class="footer-bar footer-item-1">
+		<div class="footer-icon">
+			{% sw_include '@Storefront/storefront/snaptheme/snap-icons.html.twig'
+				with {
+					iconname: "snap.extension.customBar.icon1"|trans
+				}
+			%}
+		</div>
+		<div class="item-label headliine-1">{{ "snap.extension.customBar.item1"|trans|raw }}</div>
+	</div>
+
+	<div class="footer-bar footer-item-2">
+		<div class="footer-icon">
+			{% sw_include '@Storefront/storefront/snaptheme/snap-icons.html.twig'
+				with {
+					iconname: "snap.extension.customBar.icon2"|trans
+				}
+			%}
+		</div>
+		<div class="item-label headliine-2">{{ "snap.extension.customBar.item2"|trans|raw }}</div>
+	</div>
+	
+	<div class="footer-bar footer-item-3">
+		<div class="footer-icon">
+			{% sw_include '@Storefront/storefront/snaptheme/snap-icons.html.twig'
+				with {
+					iconname: "snap.extension.customBar.icon3"|trans
+				}
+			%}
+		</div>
+		<div class="item-label headliine-3">{{ "snap.extension.customBar.item3"|trans|raw }}</div>
+	</div>
+
+	<div class="footer-bar footer-item-4">
+		<div class="footer-icon">
+			{% sw_include '@Storefront/storefront/snaptheme/snap-icons.html.twig'
+				with {
+					iconname: "snap.extension.customBar.icon4"|trans
+				}
+			%}
+		</div>
+		<div class="item-label headliine-4">{{ "snap.extension.customBar.item4"|trans|raw }}</div>
+	</div>
+
+	<div class="footer-bar footer-item-5">
+		<div class="footer-icon">
+			{% sw_include '@Storefront/storefront/snaptheme/snap-icons.html.twig'
+				with {
+					iconname: "snap.extension.customBar.icon5"|trans
+				}
+			%}
+		</div>
+		<div class="item-label headliine-5">{{ "snap.extension.customBar.item5"|trans|raw }}</div>
+	</div>
+{% endblock %}

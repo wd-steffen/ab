@@ -1,0 +1,20 @@
+
+.snap-custom-seo-text-container{
+    font-family: "Open Sans",sans-serif;
+    font-size: .9375rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #111;
+    text-align: left;
+    padding: 0 20px 10px 0;
+        
+    p {
+        color: $snap-custom-seo-text-color;
+    }
+} 
+
+.seo-container{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+

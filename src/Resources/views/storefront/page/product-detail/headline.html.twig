@@ -1,0 +1,55 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/headline.html.twig' %}
+{% block page_product_detail_headline_inner %}
+    {# <div class=" product-detail-headline-inner"> #}
+        {% block page_product_detail_name_container %}
+            <div class="col product-detail-name-container">
+                {% block page_product_detail_name %}
+                    {%  if theme_config('snap-product-detail-name-size') == 3 %}
+                        <h3 class="product-detail-name"
+                            itemprop="name">
+                            {{ page.product.translated.name }}
+                        </h3>
+                    {% elseif theme_config('snap-product-detail-name-size') == 2 %}
+                        <h2 class="product-detail-name"
+                            itemprop="name">
+                            {{ page.product.translated.name }}
+                        </h2>
+                    {% else %}
+                         <h1 class="product-detail-name"
+                            itemprop="name">
+                            {{ page.product.translated.name }}
+                        </h1>
+                    {% endif %}
+                {% endblock %}
+            </div>
+        {% endblock %}
+        
+        {% block page_product_detail_manufacturer %}
+            {% if page.product.manufacturer and theme_config('snap-detail-show-manufacturer') == 1 %}
+                <div class="col-md-auto product-detail-manufacturer">
+                    {% block page_product_detail_manufacturer_inner %}
+                        {% block page_product_detail_manufacturer_link %}
+                            <a href="{{ page.product.manufacturer.link }}"
+                            class="product-detail-manufacturer-link"
+                            rel="noreferrer noopener"
+                            target="_blank"
+                            title="{{ page.product.manufacturer.translated.name }}">
+                                {% if page.product.manufacturer.media %}
+                                    {% block page_product_detail_manufacturer_logo %}
+                                        <img src="{{ page.product.manufacturer.media|sw_encode_media_url }}"
+                                            class="product-detail-manufacturer-logo"
+                                            alt="{{ page.product.manufacturer.translated.name }}"/>
+                                    {% endblock %}
+                                {% else %}
+                                    {% block page_product_detail_manufacturer_text %}
+                                        {{ page.product.manufacturer.translated.name }}
+                                    {% endblock %}
+                                {% endif %}
+                            </a>
+                        {% endblock %}
+                    {% endblock %}
+                </div>
+            {% endif %}
+        {% endblock %}
+    {# </div> #}
+{% endblock %}

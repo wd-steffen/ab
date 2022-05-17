@@ -1,0 +1,79 @@
+/*
+CMS blocks
+==============================================
+General styling for cms blocks and
+specific styling for elements dependent on their parent block
+
+*/
+
+.cms-block-snap-listing-navigation-wrapper,
+.cms-section-default {
+    overflow: visible;
+}
+
+@include media-breakpoint-down(md) {
+    .cms-block-category-navigation {
+        display: none;
+    }
+}
+
+// CMS-SECTION
+
+.cms-section {
+    border-top: none;
+    border-bottom: none;
+    margin: 0 auto;
+    width: 1400px;
+}
+
+.cms-section-sidebar{
+    background: #fff;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+
+    .cms-section-sidebar-sidebar-content{
+        border: 1px solid #eee;
+        border-right: none;
+    }
+
+    .cms-section-sidebar-main-content{
+        border: 1px solid #eee;
+        border-left: none;
+
+    }
+}
+
+
+.cms-section-default{
+    &.boxed{
+        .cms-block-product-listing{
+            border: 1px solid #eee;
+        }
+    }
+}
+
+.cms-block-image-text{
+    background: #fff;
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+@media (max-width:1440px) {
+    .cms-section{
+        width: 100%;
+    }   
+}
+
+@media (max-width:991px) {
+    .cms-section-sidebar{
+    
+        .cms-section-sidebar-sidebar-content{
+            border: 1px solid #eee;
+        }
+    
+        .cms-section-sidebar-main-content{
+            border: 1px solid #eee;
+            border-top: none;
+        }
+    }
+}

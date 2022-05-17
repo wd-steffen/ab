@@ -1,0 +1,41 @@
+/*
+ht (c) digital.manufaktur GmbH
+
+Offcanvas
+==============================================
+Styling for offcanvas component.
+
+*/
+
+.btn.js-offcanvas-close {
+    .icon > svg {
+        top: 5px;
+    }
+}
+
+.offcanvas {
+    &.is-left {
+        .btn.js-offcanvas-close {
+            .icon > svg {
+                top: 0;
+            }
+        }
+    }
+}
+
+.offcanvas {
+    .btn{
+        font-size: 12.8px;
+    }
+}
+
+.navigation-offcanvas{
+    .offcanvas-close{
+        box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+        padding: 8px;
+
+        .icon{
+            width: 30px;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+
+{% block snap_custom_header_bar %}
+	{# SnapTheme: custom in Header #}
+	{% if theme_config('snap-custom-top-bar-header') == 1  %} 
+		<div class="snap-custom-bar-header">
+			{% block snap_custom_header_bar_container %}
+				<div class="container">
+					{% sw_include '@Storefront/storefront/layout/header/includes/snap-custom-bar-header-include.html.twig' %}
+				</div>
+			{% endblock %}
+		</div>
+	{% else %}
+		{# empty block #}
+	{% endif %}
+{% endblock %}
+

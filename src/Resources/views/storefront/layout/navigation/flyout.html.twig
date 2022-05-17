@@ -1,0 +1,89 @@
+{% sw_extends '@Storefront/storefront/layout/navigation/flyout.html.twig' %}
+
+
+{% block layout_navigation_flyout %}
+    {% set category = navigationTree.category %}
+    {% set name = category.translated.name %}
+
+
+    {% block layout_navigation_flyout_bar %}
+    {% endblock %}
+
+    {% block layout_navigation_flyout_content %}
+        <div class="row navigation-flyout-content">
+        {# {{ dump() }} #}
+            {% block layout_navigation_flyout_categories %}
+                <div class="{% if category.media %}col nav-categories{% else %}col{% endif %}">
+                    <div class="navigation-flyout-categories">
+                        {% block layout_navigation_flyout_categories_recoursion %}
+                            {% sw_include '@Storefront/storefront/layout/navigation/categories.html.twig' with {
+                                navigationTree: navigationTree.children,
+                                navigationMedia: category.media,
+                                page: page
+                            } only %}
+                        {% endblock %}
+                    </div>
+                </div>
+            {% endblock %}
+
+            {% block layout_navigation_flyout_menu_delimeter %}
+                <div class="menu--delimiter"></div>
+            {% endblock %}
+    
+            {% block layout_navigation_flyout_teaser %}
+                {% if category.media and theme_config('snap-flyout-navigation-category-images') == 2 %}
+                
+                    <div class="col-4 col-xl-4 nav-teaser" >
+                        <div class="navigation-flyout-teaser">
+                            {% block layout_navigation_flyout_teaser_image %}
+                                <a class="navigation-flyout-teaser-image-container"
+                                href="{{ category_url(category) }}"
+                                {% if category_linknewtab(category) %}target="_blank"{% endif %}
+                                title="{{ name }}">
+                                    {% sw_thumbnails 'navigation-flyout-teaser-image-thumbnails' with {
+                                        media: category.media,
+                                        sizes: {
+                                            'default': '310px'
+                                        },
+                                        attributes: {
+                                            'class': 'navigation-flyout-teaser-image',
+                                            'alt': (category.media.translated.alt ?: ''),
+                                            'title': (category.media.translated.title ?: ''),
+                                            'data-object-fit': 'cover'
+                                        }
+                                    } %}
+                                </a>
+                            {% endblock %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endblock %}
+
+            {% block nav_link_undeline %}
+                <div class="nav-bar-underline">
+                    <div class="column">
+                        <a class="nav-link flyout-navigation-link{% if category.id == page.header.navigation.active.id or category.id in activePath %} active{% endif %}"
+                            href="{{ category_url(category) }}"
+                            itemprop="url"
+                            {% if treeItem.children|length > 0 %}data-flyout-menu-trigger="{{ category.id }}"{% endif %}
+                            {% if category_linknewtab(category) %}target="_blank"{% endif %}
+                            title="{{ name }}">
+                    
+                            <div class="main-navigation-link-text" data-hover="{{ name }}">
+                                <span data-hover="{{ name }}" itemprop="name">{{ name }}</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-auto">
+                        <div class="navigation-flyout-close js-close-flyout-menu">                                              
+                            <span class="icon icon-x">
+                                {% sw_icon 'x' %}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+        </div>
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA;;;;;;;;;;;;;;EAcE;AAEF,AACI,IADA,AAAA,mBAAmB,CACnB,KAAK,GAAG,GAAG,CAAC;EACR,GAAG,EAAE,GAAG;CACX;;AAGL,AAGY,UAHF,AACL,QAAQ,CACL,IAAI,AAAA,mBAAmB,CACnB,KAAK,GAAG,GAAG,CAAC;EACR,GAAG,EAAE,CAAC;CACT",
+    "sources": [
+        "offcanvas.scss"
+    ],
+    "names": [],
+    "file": "offcanvas.css"
+}

@@ -1,0 +1,98 @@
+{% sw_extends '@Storefront/storefront/component/checkout/offcanvas-item.html.twig' %}
+
+{% block component_offcanvas_product_details %}
+    <div class="col-7 cart-item-details">
+        {% block component_offcanvas_product_details_inner %}
+            <div class="cart-item-details-container">
+                {% block component_offcanvas_product_label %}
+                    <div class="cart-item-details">
+                        {% if type == 'product' %}
+                            <a href="{{ seoUrl('frontend.detail.page', {'productId': referencedId}) }}"
+                            class="cart-item-label"
+                            title="{{ label }}">
+                                {{ label|u.truncate(60) }}
+                            </a>
+                        {% else %}
+                            <div class="cart-item-label">
+                                {{ label|u.truncate(60) }}
+                            </div>
+                        {% endif  %}
+                    </div>
+                {% endblock %}
+
+                {% block cart_item_variant_characteristics %}
+                    <div class="cart-item-characteristics">
+                        {% for option in lineItem.payload.options %}
+                            {{ option.group }}:
+                            <span class="cart-item-characteristics-option">{{ option.option }}</span>
+
+                            {% if lineItem.payload.options|last != option %}
+                                {{ " | " }}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endblock %}
+
+                {% block component_offcanvas_product_details_features %}
+                    {% if lineItem.type == 'product' and lineItem.payload.features is not null %}
+                        {% sw_include '@Storefront/storefront/component/product/feature/list.html.twig' with {
+                            'features': lineItem.payload.features
+                        } %}
+                    {% endif %}
+                {% endblock %}
+
+                {% block component_offcanvas_product_quantity_price %}
+                    <div class="cart-quantity-price">
+                        {% block component_offcanvas_product_quantity %}
+                                {{ parent() }}
+                        {% endblock %}
+
+                        {% block component_offcanvas_product_total_price %}
+                            <div class="cart-item-price">
+                                {{ price.totalPrice|currency }}{{ "general.star"|trans|sw_sanitize }}
+                                {% set referencePrice = price.referencePrice %}
+                                {% if referencePrice is not null %}
+                                    <small class="cart-item-reference-price">
+                                        ({{ referencePrice.price|currency }}{{ "general.star"|trans|sw_sanitize }} / {{ referencePrice.referenceUnit }}&nbsp;{{ referencePrice.unitName }})
+                                    </small>
+                                {% endif %}
+                            </div>
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+    {% block component_offcanvas_product_remove %}
+        <div class="cart-item-remove">
+            {% block component_offcanvas_product_remove_form %}
+                {% if lineItem.removable %}
+                    <form action="{{ path('frontend.checkout.line-item.delete', {'id': id}) }}"
+                            class="cart-item-remove js-offcanvas-cart-remove-product"
+                            method="post">
+
+                        {% block component_offcanvas_product_remove_form_csrf %}
+                            {{ sw_csrf('frontend.checkout.line-item.delete') }}
+                        {% endblock %}
+
+                        {% block component_offcanvas_product_remove_redirect %}
+                            <input type="hidden"
+                                    name="redirectTo"
+                                    value="frontend.cart.offcanvas"/>
+                        {% endblock %}
+
+                        {% block component_offcanvas_product_remove_submit %}
+                            <button type="submit"
+                                    title="{{ "checkout.removeLineItem"|trans|striptags }}"
+                                    data-product-id="{{ lineItem.id }}"
+                                    class="btn btn-light cart-item-remove-button">
+                                {% sw_icon 'x' style { 'size': 'sm' } %}
+                            </button>
+                        {% endblock %}
+                    </form>
+                {% endif %}
+            {% endblock %}
+        </div>
+    {% endblock %}

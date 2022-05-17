@@ -1,0 +1,235 @@
+/*
+Copyright (c) digital.manufaktur GmbH
+
+Filter Panel
+==============================================
+Custom styling for filter panel.
+*/
+
+.filter-panel-item {
+    .filter-panel-item-toggle {
+        // background-color: $sw-color-brand-secondary;
+        color: unset;
+        border-color: $sw-color-brand-secondary;
+        z-index: 201;
+        position: relative;
+
+        &[aria-expanded="true"] {
+            color: unset;
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        &:not(:last-child){
+            border-top: none;
+        }
+    }
+
+    &.show {
+        ~ .filter-overlay {
+            opacity: 0.2;
+            display: none;
+        }
+    }
+}
+
+.filter-panel-item-dropdown {
+    transition: all 0.2s;
+    color: unset;
+    border: none;
+    //changed
+    max-height: 30vh;
+    // max-height: max-content;
+    padding: 0;
+}
+
+.dropdown-menu{
+    border: 1px solid #e0e0e0;
+}
+
+@include media-breakpoint-up(lg) {
+    .filter-panel-items-container {
+        .filter-overlay {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: $gray-800;
+            opacity: 0;
+            top: 0;
+            left: 0;
+            z-index: 200;
+        }
+    }
+}
+
+//snap-view for toggle filter
+.filter-panel {
+    margin-bottom: 0;
+    padding: 20px 20px 0;
+    background: #eee;
+
+    .filter-panel-items-container {
+        // margin-bottom: 10px;
+        .filter-multi-select {
+            // margin-bottom: 8px;
+            .filter-panel-item-toggle {
+                color: $snap-toggle-filter-panel-item-color;
+                background: $snap-toggle-filter-panel-item-background-color;
+                border-color: $snap-toggle-filter-panel-item-border-color;
+                transition: all 0.1s;
+            }
+            .show {
+                background: $snap-toggle-filter-panel-background-color-active;
+                color: $snap-toggle-filter-panel-item-color-active;
+            }
+
+            .filter-multi-select-dropdown {
+                color: $snap-toggle-filter-panel-item-color;
+                border-radius: 0;
+
+                .filter-multi-select-list {
+                    .filter-multi-select-list-item {
+                        color: $snap-toggle-filter-panel-item-color;
+                        // border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                        background: $snap-toggle-filter-panel-background-color-hover;
+                        &:hover {
+                            background: $snap-toggle-filter-select-item-background-color-hover;
+                            transition: all 0.1s;
+                        }
+                    }
+                }
+            }
+        }
+
+        .filter-panel-item,
+        .filter-panel-item-toggle {
+            color: $snap-toggle-filter-panel-item-color;
+            background: $snap-toggle-filter-panel-item-background-color;
+            border-color: $snap-toggle-filter-panel-item-border-color;
+            border-radius: 0;
+            transition: all 0.1s;
+
+            &:hover {
+                background: $snap-toggle-filter-panel-background-color-hover;
+                color: $snap-toggle-filter-panel-item-color-hover;
+                transition: all 0.1s;
+            }
+
+
+            .filter-range-container {
+                background: $snap-toggle-filter-panel-background-color-active;
+                color: $snap-sidebar-filter-panel-item-color;
+
+                border-radius: 0;
+                border: none;
+
+                .form-control {
+                    border: none;
+                    border-radius: 0;
+                    background:  #e0e0e0;
+                    // border-bottom: 1px solid  $snap-sidebar-filter-panel-item-border-color;
+                    border-bottom: 1px solid  #cdcdcd;
+                    // color: $snap-sidebar-filter-panel-item-color;
+
+                }
+                .filter-range-currency-symbol {
+                    color: $snap-sidebar-filter-panel-item-color;
+                    background: transparent;
+                }
+            }
+        }
+        .filter-panel-item-toggle[aria-expanded="true"] {
+            background: $snap-toggle-filter-panel-background-color-active;
+            color: $snap-toggle-filter-panel-item-color-active;
+
+            .icon {
+                svg {
+                    transition: all 0.2s;
+                    transform: rotate(45deg);
+                    color: $snap-toggle-filter-panel-item-color-active;
+                }
+            }
+        }
+
+        .filter-panel-item-toggle {
+            display: flex;
+            .icon {
+                height: max-content;
+                margin-left: 11px;
+                display: block;
+
+                svg {
+                    transition: all 0.2s;
+                    width: 16px;
+                    height: 16px;
+                    top: 0;
+                }
+            }
+        }
+
+        .filter-boolean {
+            border-color: $snap-toggle-filter-panel-item-border-color;
+        }
+    }
+
+    .filter-panel-active-container {
+        .filter-active {
+            background: $snap-toggle-filter-panel-background-color-hover;
+            color: #fff;
+            border: none;
+            .filter-active-remove {
+                color: #fff;
+            }
+        }
+        .filter-reset-all {
+            color: #444;
+            border-radius: 0;
+            border: none;
+            &:hover {
+                background: #ecedec;
+                transition: all 0.1s;
+            }
+        }
+    }
+
+
+}
+
+.custom-checkbox{
+    width: 100%;
+    
+    input {
+        height: auto;
+    }
+}
+
+
+
+
+@media (min-width:1200px) {
+    .filter-panel {
+        .btn-container{
+            font-size: $font-size-xl;
+        }
+    }
+}
+
+@media (max-width:1200px) {
+    .filter-panel {
+        .btn-container{
+            font-size: $font-size-lg;
+        }
+    }
+}
+
+// @media (max-width:576px) {
+
+//     font-size: $font-size-sm;
+
+// }
+
+
+

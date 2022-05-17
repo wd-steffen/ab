@@ -1,0 +1,145 @@
+/*
+
+Register
+==============================================
+Contains custom styles for the register page.
+
+*/
+.is-act-checkoutregisterpage{
+    .content-main{
+        .container{
+            padding: 0;
+            
+            .container-main{
+                background: #fff;
+            }
+        }
+    }
+}
+
+.is-act-checkoutregisterpage {
+    .checkout {
+        padding: 20px;
+    }
+}
+
+.register-submit {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+
+    .btn {
+        width: 125px;
+
+        @extend .btn-block;
+    }
+}
+
+.country-and-state-form-elements {
+    .col-md-6 {
+        @extend .col-md-12;
+        @extend .col-12;
+        padding-right: $form-grid-gutter-width / 2;
+        padding-left: $form-grid-gutter-width / 2;
+    }
+}
+
+.checkout-container{
+    .checkout-left{
+        .register-login-collapse-toogle{
+            margin-top: 25px;
+        }
+        .register-card{
+            .card-body{
+                .card-title{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+//mobile 
+@include media-breakpoint-down(sm) {
+    .is-act-checkoutregisterpage{
+        .header-minimal{
+            .container{
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
+
+        .header-main{
+            padding: 0 10px;
+        }
+        .content-main{
+            padding: 0;     
+            .container{
+                padding: 0%;
+
+                .container-main{
+                    padding: 0;
+                }
+            }
+
+   
+
+            .checkout-aside-action{
+                padding: 0;
+
+            }
+
+            // .flashbags{
+            //     padding: 10px;
+            // }
+
+            #personalSalutation,
+            #shippingAddresspersonalSalutation{
+                width: 100%;
+            }
+
+            .checkout-aside-summary{
+                order: 0;
+            }
+
+            .checkout-aside-products{
+                order: 1;
+            }
+
+            .checkout-aside-summary, 
+            .checkout-aside-products{
+                padding: 10px;
+
+            }
+
+            .register-card{
+                padding-bottom: 50px;
+            }
+        }
+    }
+}
+
+
+
+
+
+@media (min-width:1200px) {
+    .register-required-info,
+    .register-login-collapse-toogle{
+        font-size: $font-size-xl;
+    }
+}
+
+@media (max-width:1200px) {
+    .register-required-info,
+    .register-login-collapse-toogle{
+        font-size: $font-size-lg;
+    }
+}
+
+@media (max-width:576px) {
+    .register-required-info,
+    .register-login-collapse-toogle{
+        font-size: $font-size-sm;
+    }
+}

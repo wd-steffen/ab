@@ -1,0 +1,101 @@
+/*
+
+Checkout
+==============================================
+Contains custom styles for the checkout page.
+
+*/
+
+
+    
+.checkout{
+    padding: 20px;
+    border: 1px solid #eee;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+
+.cart-item-details{
+    padding-top: 5px;
+}
+
+
+.bottom-actions{
+    display: flex;
+    justify-content: space-between;
+
+
+    .checkout-button-container{
+        .begin-checkout-btn{
+            max-width: 100%;
+            border-radius: 0;
+        }
+    }
+}
+
+@media (min-width: 1200px){
+    .container-main{
+        min-height: 100%;
+    }
+}
+@media (max-width: 576px){
+    .checkout-main{
+        margin: 0;
+
+        .checkout{
+            padding: 8px;
+
+            .checkout-main{
+                padding: 0;
+            }
+        }
+
+        .checkout-aside-container{
+            padding: 0;
+        }
+    }
+}
+
+
+
+//CHECKOUT_ITEM
+@media (min-width:1200px) {
+    .quantity-select{
+        font-size: 15px;
+    }
+    .cart-item-total-price-label,
+    .cart-item-unit-price,
+    .cart-item-total-price{
+        font-size: $font-size-xl;
+    }
+    .cart-item-ordernumber{
+        font-size: $font-size-lg;
+    }
+}
+
+@media (max-width:1200px) {
+    .cart-item-total-price,
+    .quantity-select,
+    .cart-item-unit-price,
+    .cart-item-total-price{
+        font-size: $font-size-lg;
+    }
+    .cart-item-ordernumber{
+        font-size: $font-size-sm;
+    }
+}
+
+@media (max-width:576px) {
+    .cart-item-total-price,
+    .quantity-select,
+    .cart-item-unit-price,
+    .cart-item-total-price{
+        font-size: $font-size-sm;
+    }
+}
+
+
+
+

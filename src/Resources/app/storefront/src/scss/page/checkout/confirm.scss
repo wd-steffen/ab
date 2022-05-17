@@ -1,0 +1,42 @@
+/*
+Confirm
+==============================================
+Contains custom styles for the confirm page.
+*/
+
+.is-act-confirmpage,
+.is-ctl-accountorder {
+    .checkout {
+        padding-top: $spacer;
+     
+        .checkout-main {
+            margin-left: 0;
+        }
+    }
+}
+
+.is-act-confirmpage {
+    .checkout-aside-container  {
+        flex-direction: column-reverse;
+
+        .checkout-aside-action {
+            order: 1;
+            margin-top: $spacer;
+        }
+
+        .checkout-aside-summary{
+            order: 2;
+        }
+    }
+
+    .cart-item-price, .cart-item-total-price {
+        margin-left: auto;
+    }
+}
+
+.is-act-confirmpage {
+    .main-container{
+        background: #fff;
+    }
+}
+

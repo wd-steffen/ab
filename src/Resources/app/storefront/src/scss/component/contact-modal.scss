@@ -1,0 +1,31 @@
+.js-pseudo-modal-template-content-element{
+    .form-content{
+        height: 630px;
+    }
+}
+
+.modal-body{
+    .form-content{
+        .form-row{
+            .form-group{
+                button{
+                    display: none;
+                }
+            }
+        }
+        .custom-control{
+            margin-top: 1.25rem;
+        }
+
+        input{
+            @include snap-input;
+        }
+
+        button.btn-primary{
+            position: absolute;
+            width: 80px;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}

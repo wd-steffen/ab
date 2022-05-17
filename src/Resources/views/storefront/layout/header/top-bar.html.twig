@@ -1,0 +1,54 @@
+﻿{% sw_extends '@Storefront/storefront/layout/header/top-bar.html.twig' %}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{#  Set theme variables #}
+{% set snapHeaderTopBarShow = theme_config('snap-header-top-bar-show') %}
+{% set snapHeaderTopBarCurrenciesMenuShow = theme_config('snap-header-top-bar-currencies-menu-show') %}
+{% set snapHeaderTopBarLanguagesMenuShow = theme_config('snap-header-top-bar-languages-menu-show') %}
+{% set snapHeaderTopBarServiceMenuShow = theme_config('snap-header-top-bar-service-menu-show') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{#  Adjustments on the top bar #}
+{# TODO:
+	- Default-Konfiguration ergänzen...
+#}
+
+{% block layout_header_top_bar %}
+	{% if snapHeaderTopBarShow == 0 %}
+		{#  Block cleared #}
+	{% else %}
+
+		<div class="top-bar d-none d-lg-block">
+			<div class="top-bar-wrapper">'
+				<nav class="top-bar-nav">
+					{# Language menu #}
+					{% block layout_header_top_bar_language %}
+						{% if snapHeaderTopBarLanguagesMenuShow == 1 %}
+							{% sw_include '@Storefront/storefront/layout/header/actions/language-widget.html.twig' %}
+						{% endif %}
+					{% endblock %}
+					
+					{# Currency menu #}
+					{% block layout_header_top_bar_currency %}
+						{% if snapHeaderTopBarCurrenciesMenuShow == 2 %}
+							{% sw_include '@Storefront/storefront/layout/header/actions/currency-widget.html.twig' %}
+						{% endif %}
+					{% endblock %}
+					
+					{# Service menu anzeigen als Dropdown oder Liste #}
+					{% block layout_header_top_bar_service %}
+						{% if snapHeaderTopBarServiceMenuShow == 2 %}
+							{#  Service menu dropdown (default) #}
+							{% sw_include '@Storefront/storefront/layout/header/actions/service-menu-widget.html.twig' %}
+						{% elseif snapHeaderTopBarServiceMenuShow == 3 %}
+							{#  Service menu list #}
+							{% sw_include '@Storefront/storefront/layout/header/actions/snap-service-menu-list-widget.html.twig' %}
+						{% endif %}
+					{% endblock %}
+				</nav>
+			</div>
+		</div>
+	{% endif %}
+{% endblock %}

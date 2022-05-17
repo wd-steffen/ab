@@ -1,0 +1,56 @@
+{% sw_extends '@Storefront/storefront/section/cms-section-sidebar.html.twig' %}
+
+{% set snapSidebarElement1 = theme_config('snap-sidebar-element-1') %}
+{% set snapSidebarElement2 = theme_config('snap-sidebar-element-2') %}
+{% set snapSidebarElement3 = theme_config('snap-sidebar-element-3') %}
+{% set snapSidebarElement4 = theme_config('snap-sidebar-element-4') %}
+
+{% set snapWidgetCommunitiesPosition = theme_config('snap-widget-communities-position') %}
+
+
+{% block section_sidebar_content %}
+    <div class="cms-section-sidebar-sidebar-content col-lg-4 col-xl-3">
+
+        {% for block in sidebarBlocks %}
+            {% block section_sidebar_content_block %}
+                {% sw_include "@Storefront/storefront/section/cms-section-block-container.html.twig" %}
+            {% endblock %}
+        {% endfor %}
+
+        {# SnapTheme: sidebar widgets start  #}
+        {% block snap_section_sidebar_block %}
+            {% if snapSidebarElement1 == 1 %}
+                {% block snap_sidebar_first_element_widget %}
+                    {% sw_include "@Storefront/storefront/section/snap-sidebar-element-1.html.twig"  %}
+                {% endblock %}
+            {% endif %}
+
+            {% if snapSidebarElement2 == 1 %}
+                {% block snap_sidebar_second_element_widget %}
+                    {% sw_include "@Storefront/storefront/section/snap-sidebar-element-2.html.twig"  %}
+                {% endblock %}
+            {% endif %}
+
+            {% if snapSidebarElement3 == 1 %}
+                {% block snap_sidebar_third_element_widget %}
+                    {% sw_include "@Storefront/storefront/section/snap-sidebar-element-3.html.twig"  %}
+                {% endblock %}
+            {% endif %}
+
+            {% if snapSidebarElement4 == 1 %}
+                {% block snap_sidebar_fourth_element_widget %}
+                    {% sw_include "@Storefront/storefront/section/snap-sidebar-element-4.html.twig"  %}
+                {% endblock %}
+            {% endif %}
+
+            {# community widget #}
+            {% if snapWidgetCommunitiesPosition == 1 %}
+                {% block snap_sidebar_communities_widget %}
+                    {% sw_include "@Storefront/storefront/layout/footer/widgets/snap-communities-include.html.twig"  %}
+                {% endblock %}
+            {% endif %}
+        {% endblock %}
+        {# SnapTheme: sidebar widgets end #}
+
+    </div>
+{% endblock %}

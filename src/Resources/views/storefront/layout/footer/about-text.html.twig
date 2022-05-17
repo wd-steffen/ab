@@ -1,0 +1,33 @@
+{# SnapTheme: ABOUT-Text using custom fields  #}
+
+{# set variables start #}
+{% set snapAboutEnable = theme_config('snap-about-text-enable') %}
+{% set snapCommunitieWidgetEnable = theme_config('snap-about-text-communitie-widget-enable') %}
+
+{% block snap_about_text_widget %}
+    {% if snapAboutEnable == 1 %}
+        <div class="about-text-main">
+        {# {{ dump() }} #}
+            {% block snap_about_text_body %}
+                <div class="container">
+                    <div class="about-text-wrapper">
+                        <h4 class="snap-about-text-headline"> 
+                            {{ "snap.widget.aboutUs.headline"|trans|raw }}
+                        </h4>
+                        <div class="snap-about-text-container">
+                            {{ "snap.widget.aboutUs.content"|trans|raw }}
+                        </div>
+                    </div>
+                    {% block snap_about_text_communities %}
+                        {% if snapCommunitieWidgetEnable == 1 %}
+                            <div class="about-text-communitie-wrapper">
+                                <h4 class="about-text-communities-headline">{{ 'snap.widget.communities.headline'|trans|sw_sanitize }}</h4>
+                                {% sw_include '@Storefront/storefront/layout/footer/widgets/snap-communities-include.html.twig' %}
+                            </div>
+                        {% endif %}
+                    {% endblock %}
+                </div>
+            {% endblock %}
+        </div>
+    {% endif %}
+{% endblock %}

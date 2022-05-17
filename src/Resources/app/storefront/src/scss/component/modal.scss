@@ -1,0 +1,61 @@
+/*
+Modal
+==============================================
+Custom styling for bootstrap modal component.
+
+*/
+
+.modal-header {
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 10px 10px;
+    border-bottom: 1px solid #eaeaf0;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.modal-body {
+    .cms-section{
+        width: auto;
+        border: none;
+
+        p{
+            font-size: $font-size-sm;
+        }
+    }
+}
+
+.modal-dialog{
+    max-width: 800px;
+
+    .modal-content{
+        .cms-element-text{
+            p{
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.model-content{
+    position: relative;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 2px;
+    outline: 0;
+    border: 0;
+    box-shadow: 0 43px 43px -6px rgb(0 0 0 / 20%);
+}

@@ -1,0 +1,114 @@
+/*
+Sorting
+==============================================
+Custom styling for sorting component.
+*/
+
+.cms-element-product-listing-actions {
+    padding: 0 20px;
+
+
+}
+// .cms-element-product-listing{
+//     // .pagination{
+//     //     margin-top: 20px;
+//     // }
+
+    .pagination-bottom{
+        .pagination{
+            margin: 20px 0;
+        }
+    }
+// }
+
+
+div.sorting {
+    position: relative;
+
+    select.custom-select {
+        // color: $snap-toggle-filter-panel-item-color;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2px solid #ccc;
+
+
+        &.sorting {
+            width: 100%;
+            // background: $snap-toggle-filter-panel-item-background-color;
+            padding-top: $input-btn-padding-y;
+            padding-right: $input-btn-padding-x;
+            border-radius: $snap-btn-border-radius;
+            border-bottom: 2px solid #ccc;
+
+            &:hover{
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-radius: $snap-btn-border-radius;
+                border-bottom: 2px solid  $sw-color-brand-primary;
+            }
+            &:focus {
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-bottom: 2px solid $sw-color-brand-primary;
+            }
+            &:invalid {
+                color: $input-placeholder-color;
+            }
+
+        }
+
+        option {
+            &:hover {
+                background: $snap-toggle-filter-select-item-background-color-hover;
+                // color: $snap-toggle-filter-panel-item-color-active;
+                color: $sw-color-brand-primary;
+
+            }
+        }
+    }
+
+    &:hover .custom-select {
+        // background: $snap-toggle-filter-panel-background-color-hover;
+        // color: $snap-toggle-filter-panel-item-color-hover;
+        color: $sw-color-brand-primary;
+        transition: all 0.1s;
+    }
+
+    &:hover .icon {
+        color: $sw-color-brand-primary;
+
+    }
+
+    .icon {
+        height: 12px;
+        position: absolute;
+        right: 10px;
+        top: 26%;
+        color: $input-placeholder-color;
+    }
+}
+
+input{
+    @include snap-input;
+}
+
+select,
+.custom-select{
+    @include snap-select;
+}
+
+
+@media (min-width:992px) and (max-width:1200px) {
+
+    .cms-element-product-listing-actions{
+        .col-md-auto{
+            padding: 0;    
+        }
+    }   
+}
+
+
+

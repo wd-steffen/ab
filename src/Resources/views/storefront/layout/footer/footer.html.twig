@@ -1,0 +1,284 @@
+{% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
+
+{% block layout_footer_inner_container %}
+    <div class="container">
+        {% set footCol = theme_config('snap-footer-columns') %}
+
+        {% block snap_footer_logos %}
+            {% block snap_footer_second_row %}
+                <div class="row footer-columns" id="footerColumnsLogos" data-collapse-footer="true">
+                    {% block layout_footer_navigation_hotline %}
+                        <div class="col-xl-{{ footCol }} col-lg-4 col-sm-12 col-md-4 footer-column js-footer-column">
+
+                            {% block layout_footer_navigation_hotline_headline %}
+                                <div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger"
+                                    id="collapseFooterHotlineTitle"
+                                    data-target="#collapseFooterHotline"
+                                    aria-expanded="true"
+                                    aria-controls="collapseFooterHotline">
+
+                                   {{ 'footer.serviceHotlineHeadline'|trans|sw_sanitize }}
+
+                                    {% block layout_footer_navigation_hotline_icons %}
+                                        <div class="footer-column-toggle">
+                                            <span class="footer-plus-icon">
+                                                {% sw_icon 'plus' %}
+                                            </span>
+                                            <span class="footer-minus-icon">
+                                                {% sw_icon 'minus' %}
+                                            </span>
+                                        </div>
+                                    {% endblock %}
+                                </div>
+                            {% endblock %}
+
+                            {% block layout_footer_navigation_hotline_content %}
+                                <div class="footer-column-content collapse js-footer-column-content footer-contact"
+                                    id="collapseFooterHotline"
+                                    aria-labelledby="collapseFooterHotlineTitle">
+                                    
+                                    <div class="footer-column-content-inner">
+                                        <p class="footer-contact-hotline">
+                                            {{ 'footer.serviceHotline'|trans|sw_sanitize }}
+                                        </p>
+                                    </div>
+                                    <div class="footer-contact-form footer-column-content-inner">
+                                        {{ 'footer.serviceContactLink'|trans({
+                                            '%url%': path('frontend.cms.page', { id: config('core.basicInformation.contactPage') })
+                                        })|raw }}
+                                    </div>
+                                </div>
+                            {% endblock %}
+                        </div>
+                    {% endblock %}
+
+                    {% block layout_footer_navigation_columns %}
+                        {% for root in page.footer.navigation.tree %}
+                            {% block layout_footer_navigation_column %}
+                                <div class="col-xl-{{ footCol }} col-lg-4 col-sm-12 col-md-4  footer-column js-footer-column">
+                                    {% block layout_footer_navigation_information_headline %}
+                                        {{ parent() }}
+                                    {% endblock %}
+                                    {% block layout_footer_navigation_information_content %}
+                                        {{ parent() }}
+                                    {% endblock %}
+                                </div>
+                            {% endblock %}
+                        {% endfor %}
+                    {% endblock %}
+                   
+                    {# Add shipping #}
+                    {% if theme_config('snap-shipping-logos-enable') == 1  %}
+                        {% block layout_footer_shipping_logos %}
+                            <div class="col-xl-{{ footCol }} col-lg-4 col-sm-12 col-md-4  footer-column js-footer-column footer-shipping-column">
+                                <div class="snap-footer-logos-shipping-methods">
+
+                                    {% block snap_layout_footer_shipping_headline %}
+                                        <div class="snap-footer-logos-headline footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger" 
+                                            id="collapseFooterShippingTitle" 
+                                            data-target="#collapseFooterShipping"
+                                            aria-expanded="true" 
+                                            aria-controls="collapseFooterShipping">
+
+                                            {{ "snap.widget.shipping.headline"|trans|sw_sanitize }}
+
+                                            {% block snap_layout_footer_shipping_icons %}
+                                                <div class="footer-column-toggle">
+                                                    <span class="footer-plus-icon">
+                                                        {% sw_icon 'plus' %}
+                                                    </span>
+                                                    <span class="footer-minus-icon">
+                                                        {% sw_icon 'minus' %}
+                                                    </span>
+                                                </div>
+                                            {% endblock %}
+                                        </div>
+                                    {% endblock %}
+
+                                    {% block snap_layout_footer_shipping_content %}
+                                        <div class="snap-widget-paymentshipping footer-column-content collapse js-footer-column-content footer-shipping" 
+                                            id="collapseFooterShipping" 
+                                            aria-labelledby="collapseFooterShippingTitle">
+
+                                            <div class="snap-widget-shipping shipping-container footer-column-content-inner">
+                                                {% sw_include '@Storefront/storefront/layout/footer/includes/snap-shipping-logos-include.html.twig' %}                        
+                                            </div>    
+                                        </div> 
+                                    {% endblock %}
+                                </div>
+                            </div>
+                        {% endblock %}
+                    {% endif %}
+
+                    {# Add payment #}
+                    {% if theme_config('snap-payment-logos-enable') == 1 %}
+                        {% block layout_footer_payment_logos %}
+                            <div class="col-xl-{{ footCol }} col-lg-4 col-sm-12 col-md-4 footer-column js-footer-column footer-payment-column">
+                                {# <div class="snap-footer-logos-payment-methods"> #}
+
+                                    {% block snap_layout_footer_payment_headline %}
+                                        <div class="snap-footer-logos-headline footer-column-headline footer-headline is-payment js-footer-column-headline js-collapse-footer-column-trigger"
+                                            id="collapseFooterPaymentTitle" 
+                                            data-target="#collapseFooterPayment" 
+                                            aria-expanded="true"
+                                            aria-controls="collapseFooterPayment">
+
+                                            {{ "snap.widget.payment.headline"|trans|sw_sanitize }}
+
+                                            {% block snap_layout_footer_payment_icons %}
+                                                <div class="footer-column-toggle">
+                                                    <span class="footer-plus-icon">
+                                                        {% sw_icon 'plus' %}
+                                                    </span>
+                                                    <span class="footer-minus-icon">
+                                                        {% sw_icon 'minus' %}
+                                                    </span>
+                                                </div>
+                                            {% endblock %}
+                                        </div>
+                                    {% endblock %}
+
+                                    {% block snap_layout_footer_payment_content %}
+                                        <div id="collapseFooterPayment" 
+                                            class="snap-widget-paymentshipping footer-column-content collapse js-footer-column-content footer-shipping"
+                                            aria-labelledby="collapseFooterPaymentTitle">
+
+                                            <div class="snap-widget-payment payment-container footer-column-content-inner">
+                                                {% sw_include '@Storefront/storefront/layout/footer/includes/snap-payment-logos-include.html.twig' %}                        
+                                            </div>    
+                                        </div> 
+                                    {% endblock %}
+                                {# </div> #}
+                            </div>
+                        {% endblock %}
+                    {% endif %}
+                    
+                    {# Add communities #}
+                    {% if theme_config('snap-social-media-enable') == 1 %}
+                        <div class="col-xl-{{ footCol }} col-lg-4 col-sm-12 col-md-4 snap-element-communities footer-column js-footer-column footer-column-communities">
+
+                            {% block snap_layout_footer_communities_headline %}
+                                <div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger" 
+                                    id="collapseFooterCommunitiesTitle" 
+                                    data-target="#collapseFooterCommunities" 
+                                    aria-expanded="true" 
+                                    aria-controls="collapseFooterCommunities">
+
+                                    {{ 'snap.widget.communities.headline'|trans|sw_sanitize }}
+
+                                    {% block snap_layout_footer_communities_icons %}
+                                        <div class="footer-column-toggle">
+                                            <span class="footer-plus-icon">
+                                                {% sw_icon 'plus' %}
+                                            </span>
+                                            <span class="footer-minus-icon">
+                                                {% sw_icon 'minus' %}
+                                            </span>
+                                        </div>
+                                    {% endblock %}
+                                </div>
+                            {% endblock %}
+
+                            {% block snap_layout_footer_communities_content %}
+                                <div id="collapseFooterCommunities" 
+                                    class="footer-column-content collapse js-footer-column-content" 
+                                    aria-labelledby="collapseFooterCommunitiesTitle">
+
+                                    <div class="footer-column-content-inner">
+                                        {% sw_include '@Storefront/storefront/layout/footer/widgets/snap-communities-include.html.twig' %}
+                                    </div>
+                                </div>
+                            {% endblock %}
+                        </div>
+                    {% endif %}
+
+                    {# Add awards #}
+                    {% if theme_config('snap-awards-widget-enable') == 1 %}  
+                        {% block snap_layout_footer_awards_widget %}
+                            <div class="col-xl-{{ footCol }} col-lg-4 col-sm-12 col-md-4 snap-element-awards js-footer-column footer-column footer-column-awards">
+                                
+                                {% block snap_layout_footer_awards_headline %}
+                                    <div class="footer-column-headline footer-headline js-footer-column-headline js-collapse-footer-column-trigger" 
+                                        id="collapseFooterAwardsTitle" 
+                                        data-target="#collapseFooterAwards" 
+                                        aria-expanded="true" 
+                                        aria-controls="collapseFooterAwards">
+
+                                        {{ "snap.widget.awards.headline"|trans|sw_sanitize }}
+
+                                        {% block snap_layout_footer_awards_icons %}
+                                            {# {% if toggle == "3" %} #}
+                                                <div class="footer-column-toggle">
+                                                    <span class="footer-plus-icon">
+                                                        {% sw_icon 'plus' %}
+                                                    </span>
+                                                    <span class="footer-minus-icon">
+                                                        {% sw_icon 'minus' %}
+                                                    </span>
+                                                </div>
+                                            {# {% endif %} #}
+                                        {% endblock %}
+                                    </div>
+                                {% endblock %}
+
+                                {% block snap_layout_footer_awards_content %}
+                                    <div id="collapseFooterAwards" 
+                                        class="footer-column-content collapse js-footer-column-content" 
+                                        aria-labelledby="collapseFooterAwardsTitle">
+
+                                        <div class="footer-column-content-inner">
+                                            {% sw_include '@Storefront/storefront/layout/footer/widgets/snap-awards-include.html.twig' %}
+                                        </div>
+                                    </div>
+                                {% endblock %}
+                            </div>
+                        {% endblock %}
+                    {% endif %}
+
+                    {% block base_newsletter %}
+                        {% if theme_config('snap-newsletter-position') == 2 and theme_config('snap-newsletter-enable') == 1 %}
+                            <div class="main-newsletter">
+                                {% block base_newsletter_inner %}
+                                    {# <div class="container"> #}
+                                        {% sw_include '@Storefront/storefront/layout/newsletter/newsletter.html.twig' %}
+                                    {# </div> #}
+                                {% endblock %}
+                            </div>
+                        {% endif %}
+                    {% endblock %}
+
+                     {% block footer_about_text %}
+                        {% sw_include '@Storefront/storefront/layout/footer/about-text.html.twig' %}
+                    {% endblock %}
+
+                </div>
+            {% endblock %}
+        {% endblock %}
+
+  
+
+        {# footer navigation #}        
+        {% block layout_footer_service_menu %}
+            <div class="service-container">
+                {% block layout_footer_service_menu_content %}
+                    {% apply spaceless %}
+                        <ul class="footer-service-menu-list list-unstyled">
+                            {% for serviceMenuItem in page.header.serviceMenu %}
+                                {% block layout_footer_service_menu_item %}
+                                    <li class="footer-service-menu-item">
+                                        <a class="footer-service-menu-link"
+                                            href="{{ category_url(serviceMenuItem) }}"
+                                            {% if category_linknewtab(serviceMenuItem) %}target="_blank"{% endif %}
+                                            title="{{ serviceMenuItem.translated.name }}">
+                                            {{ serviceMenuItem.translated.name }}
+                                        </a>
+                                    </li>
+                                {% endblock %}
+                            {% endfor %}
+                        </ul>
+                    {% endapply %}
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

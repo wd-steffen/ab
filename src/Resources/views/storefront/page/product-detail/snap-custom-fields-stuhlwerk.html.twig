@@ -1,0 +1,177 @@
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# Set theme variables #}
+{% set snapProductDetailWeightShow = theme_config('snap-product-detail-weight-show') %}
+{% set snapProductDetailLengthShow = theme_config('snap-product-detail-length-show') %}
+{% set snapProductDetailHeightShow = theme_config('snap-product-detail-height-show') %}
+{% set snapProductDetailWidthShow = theme_config('snap-product-detail-width-show') %}
+{% set snapProductDetailSeatHeightShow = theme_config('snap-product-detail-seat-height-show') %}
+{% set snapProductDetailBackrestHeightShow = theme_config('snap-product-detail-backrest-height-show') %}
+{% set snapProductDetailArmrestHeightShow = theme_config('snap-product-detail-armrest-height-show') %}
+{% set snapProductDetailTableHeightShow = theme_config('snap-product-detail-table-height-show') %}
+
+
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+    {# SnapTheme: Add weight #}
+    {% if page.product.translated.customFields.stuhlwerk_eigene_weight and snapProductDetailWeightShow == 2 %}
+        <div class="snap-detail-container snap-product-detail-weight-container">
+            {% block snap_page_product_detail_weight_label %}
+                <span class="product-detail-label snap-product-detail-weight-label">
+                    {{ "snap.detail.weightLabel"|trans|sw_sanitize }}
+                </span>
+            {% endblock %}
+
+            {% block snap_page_product_detail_weight %}
+                <span class="product-detail-value snap-product-detail-weight"
+                    itemprop="sku">
+                    {{ page.product.translated.customFields.stuhlwerk_eigene_weight }} kg
+                </span>
+            {% endblock %}
+        </div>
+    {% endif %}
+
+    {# SnapTheme: Add length #}
+    {% if page.product.translated.customFields.stuhlwerk_eigene_length and snapProductDetailLengthShow == 2 %}
+        <div class="snap-detail-container snap-product-detail-length-container">
+            {% block snap_page_product_detail_length_label %}
+                <span class="product-detail-label snap-product-detail-length-label">
+                    {{ "snap.detail.lengthLabel"|trans|sw_sanitize }}
+                </span>
+            {% endblock %}
+
+            {% block snap_page_product_detail_length %}
+                <span class="product-detail-value snap-product-detail-length"
+                    itemprop="sku">
+                    {{ page.product.translated.customFields.stuhlwerk_eigene_length }} cm
+                </span>
+            {% endblock %}
+        </div>
+    {% endif %}
+
+    {# SnapTheme: Add width #}
+    {% if page.product.translated.customFields.stuhlwerk_eigene_width and snapProductDetailWidthShow == 2 %}
+        <div class="snap-detail-container snap-product-detail-width-container">
+            {% block snap_page_product_detail_width_label %}
+                <span class="product-detail-label snap-product-detail-width-label">
+                    {{ "snap.detail.widthLabel"|trans|sw_sanitize }}
+                </span>
+            {% endblock %}
+
+            {% block snap_page_product_detail_width %}
+                <span class="product-detail-value snap-product-detail-width"
+                    itemprop="sku">
+                    {{ page.product.translated.customFields.stuhlwerk_eigene_width }} cm
+                </span>
+            {% endblock %}
+        </div>
+    {% endif %}
+
+    {# SnapTheme: Add height #}
+     {% if page.product.translated.customFields.stuhlwerk_eigene_height and snapProductDetailHeightShow == 2 %}
+        <div class="snap-detail-container snap-product-detail-height-container">
+            {% block snap_page_product_detail_height_label %}
+                <span class="product-detail-label snap-product-detail-height-label">
+                    {{ "snap.detail.heightLabel"|trans|sw_sanitize }}
+                </span>
+            {% endblock %}
+
+            {% block snap_page_product_detail_height %}
+                <span class="product-detail-value snap-product-detail-height"
+                    itemprop="sku">
+                    {{ page.product.translated.customFields.stuhlwerk_eigene_height }} cm
+                </span>
+            {% endblock %}
+        </div>
+    {% endif %}
+
+    {# SnapTheme: Add availableStock #}
+    {% if page.product.availableStock > 0 %}
+        <div class="snap-detail-container snap-product-detail-availablestock-container">
+            {% block snap_page_product_detail_availablestock_label %}
+                <span class="product-detail-label snap-product-detail-availablestock-label">
+                    {{ "snap.detail.availableStockLabel"|trans|sw_sanitize }}
+                </span>
+            {% endblock %}
+
+            {% block snap_page_product_detail_availablestock %}
+                <span class="product-detail-value snap-product-detail-availablestock"
+                    itemprop="sku">
+                    {{ page.product.availableStock }}
+                </span>
+            {% endblock %}
+        </div>
+    {% endif %}
+
+    {# SnapTheme: Add seat height #}
+    {% if page.product.translated.customFields.stuhlwerk_eigene_sitzhoehe and snapProductDetailSeatHeightShow == 2 %}
+        <div class="snap-detail-container snap-product-detail-seat-height-container">
+            {% block snap_page_product_detail_seat_height_label %}
+                <span class="product-detail-label snap-product-detail-seat-height-label">
+                    {{ "snap.detail.seatHeightLabel"|trans|sw_sanitize }}
+                </span>
+            {% endblock %}
+
+            {% block snap_page_product_detail_seat_height %}
+                <span class="product-detail-value snap-product-detail-seat-height"
+                    itemprop="sku">
+                    {{ page.product.translated.customFields.stuhlwerk_eigene_sitzhoehe }} cm
+                </span>
+            {% endblock %}
+        </div>
+    {% endif %}
+    
+    {# SnapTheme: Add backrest height #}
+    {% if page.product.translated.customFields.stuhlwerk_eigene_heightlehne and snapProductDetailBackrestHeightShow == 2 %}
+        <div class="snap-detail-container snap-product-detail-backrest-height-container">
+            {% block snap_page_product_detail_backrest_height_label %}
+                <span class="product-detail-label snap-product-detail-backrest-height-label">
+                    {{ "snap.detail.backrestLabel"|trans|sw_sanitize }}
+                </span>
+            {% endblock %}
+
+            {% block snap_page_product_detail_backrest_height %}
+                <span class="product-detail-value snap-product-detail-backrest-height"
+                    itemprop="sku">
+                    {{ page.product.translated.customFields.stuhlwerk_eigene_heightlehne }} cm
+                </span>
+            {% endblock %}
+        </div>
+    {% endif %}
+
+    {# SnapTheme: Add armrest height #}
+    {% if page.product.translated.customFields.stuhlwerk_eigene_heightlehne and snapProductDetailArmrestHeightShow == 2 %}
+        <div class="snap-detail-container snap-product-detail-armrest-height-container">
+            {% block snap_page_product_detail_armrest_height_label %}
+                <span class="product-detail-label snap-product-detail-armrest-height-label">
+                    {{ "snap.detail.armrestLabel"|trans|sw_sanitize }}
+                </span>
+            {% endblock %}
+
+            {% block snap_page_product_detail_armrest_height %}
+                <span class="product-detail-value snap-product-detail-armrest-height"
+                    itemprop="sku">
+                    {{ page.product.translated.customFields.stuhlwerk_eigene_heightlehne }} cm
+                </span>
+            {% endblock %}
+        </div>
+    {% endif %}
+
+    {# SnapTheme: Add table height #}
+    {% if page.product.translated.customFields.stuhlwerk_eigene_heighttable and snapProductDetailTableHeightShow == 2 %}
+        <div class="snap-detail-container snap-product-detail-table-height-container">
+            {% block snap_page_product_detail_table_height_label %}
+                <span class="product-detail-label snap-product-detail-table-height-label">
+                    {{ "snap.detail.tableHeightLabel"|trans|sw_sanitize }}
+                </span>
+            {% endblock %}
+
+            {% block snap_page_product_detail_table_height %}
+                <span class="product-detail-value snap-product-detail-table-height"
+                    itemprop="sku">
+                    {{ page.product.translated.customFields.stuhlwerk_eigene_heighttable }} cm
+                </span>
+            {% endblock %}
+        </div>
+    {% endif %}

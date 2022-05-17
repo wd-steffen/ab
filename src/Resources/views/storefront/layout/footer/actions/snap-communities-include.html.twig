@@ -1,0 +1,337 @@
+{# ThemeWare "Communities" widget #}
+{# TW communities widget and content #}
+
+{# TODO: prüfen... #}
+{# TODO:
+	- Add floating option...
+	- Add usp-bar option...
+#}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# ThemeWare: Set theme variables #}
+{% set snapWidgetCommunitiesAdditionalTextShow = theme_config('snap-widget-communities-additional-text-show') %}
+{% set snapWidgetCommunitiesBlog = theme_config('snap-widget-communities-blog') %}
+{% set snapWidgetCommunitiesBlogger = theme_config('snap-widget-communities-blogger') %}
+{% set snapWidgetCommunitiesFacebook = theme_config('snap-widget-communities-facebook') %}
+{% set snapWidgetCommunitiesFlickr = theme_config('snap-widget-communities-flickr') %}
+{% set snapWidgetCommunitiesIconStyle = theme_config('snap-widget-communities-icon-style') %}
+{% set snapWidgetCommunitiesInstagram = theme_config('snap-widget-communities-instagram') %}
+{% set snapWidgetCommunitiesLinkedin = theme_config('snap-widget-communities-linkedin') %}
+{% set snapWidgetCommunitiesPinterest = theme_config('snap-widget-communities-pinterest') %}
+{% set snapWidgetCommunitiesTiktok = theme_config('snap-widget-communities-tiktok') %}
+{% set snapWidgetCommunitiesTwitter = theme_config('snap-widget-communities-twitter') %}
+{% set snapWidgetCommunitiesVimeo = theme_config('snap-widget-communities-vimeo') %}
+{% set snapWidgetCommunitiesWebsite = theme_config('snap-widget-communities-website') %}
+{% set snapWidgetCommunitiesWhatsapp = theme_config('snap-widget-communities-whatsapp') %}
+{% set snapWidgetCommunitiesYoutube = theme_config('snap-widget-communities-youtube') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{% if snapWidgetCommunitiesIconStyle == 1 %}
+	{% set style = 'default' %}
+{% elseif snapWidgetCommunitiesIconStyle == 2 %}
+	{% set style = 'isolated' %}
+{% elseif snapWidgetCommunitiesIconStyle == 3 %}
+	{% set style = 'badge' %}
+{% elseif snapWidgetCommunitiesIconStyle == 4 %}
+	{% set style = 'square' %}
+{% elseif snapWidgetCommunitiesIconStyle == 5 %}
+	{% set style = 'circle' %}
+{% elseif snapWidgetCommunitiesIconStyle == 6 %}
+	{% set style = 'default-mono' %}
+{% elseif snapWidgetCommunitiesIconStyle == 7 %}
+	{% set style = 'isolated-mono' %}
+{% elseif snapWidgetCommunitiesIconStyle == 8 %}
+	{% set style = 'badge-mono' %}
+{% elseif snapWidgetCommunitiesIconStyle == 9 %}
+	{% set style = 'square-mono' %}
+{% elseif snapWidgetCommunitiesIconStyle == 10 %}
+	{% set style = 'circle-mono' %}
+{% endif %}
+
+{# ThemeWare: Overwrite icon style when its floating #}
+{% if type == 'floating' %}
+    {% set style = 'square' %}
+{% endif %}
+
+{# ThemeWare: Social icons #}
+{% block snap_widget_communities %}
+	<div class="snap-widget-communities{% if type == 'floating' %} is--floating{% endif %}{% if type == 'sidebar' %} is--sidebar{% endif %}">
+
+		{% block snap_widget_communities_content %}
+			{% if snapWidgetCommunitiesAdditionalTextShow == 2 %}
+				<div class="snap-communities-additional-text">
+					<p>{{ "snap.widget.communities.additionalText"|trans|sw_sanitize }}</p>
+				</div>
+			{% endif %}
+
+			<ul class="snap-communities-list">
+				{# ThemeWare: Facebook logo #}
+				{% if snapWidgetCommunitiesFacebook == 2 %}
+					{% block snap_widget_communities_facebook %}
+						{% set icon = 'facebook' %}
+						<li class="snap-communities-item item-{{ icon }}">
+							<a href="{{ "snap.widget.communities.facebook.link"|trans|sw_sanitize }}"
+							   aria-label="{{ "snap.widget.communities.facebook.name"|trans|sw_sanitize }}"
+							   title="{{ "snap.widget.communities.facebook.name"|trans|sw_sanitize }}"
+							   class="snap-communities-link link-facebook"
+							   rel="noopener"
+							   target="_blank">
+								{% sw_include '@Storefront/storefront/themeware/snap-social-icons.html.twig' with { icon: icon, style: style } %}
+								<span class="snap-communities-label">
+									{{ "snap.widget.communities.facebook.name"|trans|sw_sanitize }}
+								</span>
+							</a>
+						</li>
+					{% endblock %}
+				{% endif %}
+
+				{# ThemeWare: Instagram #}
+				{% if snapWidgetCommunitiesInstagram == 2 %}
+					{% block snap_widget_communities_instagram %}
+						{% set icon = 'instagram' %}
+						<li class="snap-communities-item item-{{ icon }}">
+							<a href="{{ "snap.widget.communities.instagram.link"|trans|sw_sanitize }}"
+							   aria-label="{{ "snap.widget.communities.instagram.name"|trans|sw_sanitize }}"
+							   title="{{ "snap.widget.communities.instagram.name"|trans|sw_sanitize }}"
+							   class="snap-communities-link link-instagram"
+							   rel="noopener"
+							   target="_blank">
+								{% sw_include '@Storefront/storefront/themeware/snap-social-icons.html.twig' with { icon: icon, style: style } %}
+								<span class="snap-communities-label">
+									{{ "snap.widget.communities.instagram.name"|trans|sw_sanitize }}
+								</span>
+							</a>
+						</li>
+					{% endblock %}
+				{% endif %}
+
+				{# ThemeWare: Twitter #}
+				{% if snapWidgetCommunitiesTwitter == 2 %}
+					{% block snap_widget_communities_twitter %}
+						{% set icon = 'twitter' %}
+						<li class="snap-communities-item item-{{ icon }}">
+							<a href="{{ "snap.widget.communities.twitter.link"|trans|sw_sanitize }}"
+							   aria-label="{{ "snap.widget.communities.twitter.name"|trans|sw_sanitize }}"
+							   title="{{ "snap.widget.communities.twitter.name"|trans|sw_sanitize }}"
+							   class="snap-communities-link link-twitter"
+							   rel="noopener"
+							   target="_blank">
+								{% sw_include '@Storefront/storefront/themeware/snap-social-icons.html.twig' with { icon: icon, style: style } %}
+								<span class="snap-communities-label">
+									{{ "snap.widget.communities.twitter.name"|trans|sw_sanitize }}
+								</span>
+							</a>
+						</li>
+					{% endblock %}
+				{% endif %}
+
+				{# ThemeWare: Youtbe #}
+				{% if snapWidgetCommunitiesYoutube == 2 %}
+					{% block snap_widget_communities_youtube %}
+						{% set icon = 'youtube' %}
+						<li class="snap-communities-item item-{{ icon }}">
+							<a href="{{ "snap.widget.communities.youtube.link"|trans|sw_sanitize }}"
+							   aria-label="{{ "snap.widget.communities.youtube.name"|trans|sw_sanitize }}"
+							   title="{{ "snap.widget.communities.youtube.name"|trans|sw_sanitize }}"
+							   class="snap-communities-link link-youtube"
+							   rel="noopener"
+							   target="_blank">
+								{% sw_include '@Storefront/storefront/themeware/snap-social-icons.html.twig' with { icon: icon, style: style } %}
+								<span class="snap-communities-label">
+									{{ "snap.widget.communities.youtube.name"|trans|sw_sanitize }}
+								</span>
+							</a>
+						</li>
+					{% endblock %}
+				{% endif %}
+
+				{# ThemeWare: Vinmeo #}
+				{% if snapWidgetCommunitiesVimeo == 2 %}
+					{% block snap_widget_communities_vimeo %}
+						{% set icon = 'vimeo' %}
+						<li class="snap-communities-item item-{{ icon }}">
+							<a href="{{ "snap.widget.communities.vimeo.link"|trans|sw_sanitize }}"
+							   aria-label="{{ "snap.widget.communities.vimeo.name"|trans|sw_sanitize }}"
+							   title="{{ "snap.widget.communities.vimeo.name"|trans|sw_sanitize }}"
+							   class="snap-communities-link link-vimeo"
+							   rel="noopener"
+							   target="_blank">
+								{% sw_include '@Storefront/storefront/themeware/snap-social-icons.html.twig' with { icon: icon, style: style } %}
+								<span class="snap-communities-label">
+									{{ "snap.widget.communities.vimeo.name"|trans|sw_sanitize }}
+								</span>
+							</a>
+						</li>
+					{% endblock %}
+				{% endif %}
+
+				{# ThemeWare: Flickr #}
+				{% if snapWidgetCommunitiesFlickr == 2 %}
+					{% block snap_widget_communities_flickr %}
+						{% set icon = 'flickr' %}
+						<li class="snap-communities-item item-{{ icon }}">
+							<a href="{{ "snap.widget.communities.flickr.link"|trans|sw_sanitize }}"
+							   aria-label="{{ "snap.widget.communities.flickr.name"|trans|sw_sanitize }}"
+							   title="{{ "snap.widget.communities.flickr.name"|trans|sw_sanitize }}"
+							   class="snap-communities-link link-flickr"
+							   rel="noopener"
+							   target="_blank">
+								{% sw_include '@Storefront/storefront/themeware/snap-social-icons.html.twig' with { icon: icon, style: style } %}
+								<span class="snap-communities-label">
+									{{ "snap.widget.communities.flickr.name"|trans|sw_sanitize }}
+								</span>
+							</a>
+						</li>
+					{% endblock %}
+				{% endif %}
+
+				{# ThemeWare: Pinterest #}
+				{% if snapWidgetCommunitiesPinterest == 2 %}
+					{% block snap_widget_communities_pinterest %}
+						{% set icon = 'pinterest' %}
+						<li class="snap-communities-item item-{{ icon }}">
+							<a href="{{ "snap.widget.communities.pinterest.link"|trans|sw_sanitize }}"
+							   aria-label="{{ "snap.widget.communities.pinterest.name"|trans|sw_sanitize }}"
+							   title="{{ "snap.widget.communities.pinterest.name"|trans|sw_sanitize }}"
+							   class="snap-communities-link link-pinterest"
+							   rel="noopener"
+							   target="_blank">
+								{% sw_include '@Storefront/storefront/themeware/snap-social-icons.html.twig' with { icon: icon, style: style } %}
+								<span class="snap-communities-label">
+									{{ "snap.widget.communities.pinterest.name"|trans|sw_sanitize }}
+								</span>
+							</a>
+						</li>
+					{% endblock %}
+				{% endif %}
+
+				{# ThemeWare: TikTok #}
+				{% if snapWidgetCommunitiesTiktok == 2 %}
+					{% block snap_widget_communities_tiktok %}
+						{% set icon = 'tiktok' %}
+						<li class="snap-communities-item item-{{ icon }}">
+							<a href="{{ "snap.widget.communities.tiktok.link"|trans|sw_sanitize }}"
+							   aria-label="{{ "snap.widget.communities.tiktok.name"|trans|sw_sanitize }}"
+							   title="{{ "snap.widget.communities.tiktok.name"|trans|sw_sanitize }}"
+							   class="snap-communities-link link-tiktok"
+							   rel="noopener"
+							   target="_blank">
+								{% sw_include '@Storefront/storefront/themeware/snap-social-icons.html.twig' with { icon: icon, style: style } %}
+								<span class="snap-communities-label">
+									{{ "snap.widget.communities.tiktok.name"|trans|sw_sanitize }}
+								</span>
+							</a>
+						</li>
+					{% endblock %}
+				{% endif %}
+
+				{# ThemeWare: Blogger #}
+				{% if snapWidgetCommunitiesBlogger == 2 %}
+					{% block snap_widget_communities_blogger %}
+						{% set icon = 'blogger' %}
+						<li class="snap-communities-item item-{{ icon }}">
+							<a href="{{ "snap.widget.communities.blogger.link"|trans|sw_sanitize }}"
+							   aria-label="{{ "snap.widget.communities.blogger.name"|trans|sw_sanitize }}"
+							   title="{{ "snap.widget.communities.blogger.name"|trans|sw_sanitize }}"
+							   class="snap-communities-link link-blogger"
+							   rel="noopener"
+							   target="_blank">
+								{% sw_include '@Storefront/storefront/themeware/snap-social-icons.html.twig' with { icon: icon, style: style } %}
+								<span class="snap-communities-label">
+									{{ "snap.widget.communities.blogger.name"|trans|sw_sanitize }}
+								</span>
+							</a>
+						</li>
+					{% endblock %}
+				{% endif %}
+
+				{# ThemeWare: Blog (WordPress) #}
+				{% if snapWidgetCommunitiesBlog == 2 %}
+					{% block snap_widget_communities_blog %}
+						{% set icon = 'wordpress' %}
+						<li class="snap-communities-item item-blog">
+							<a href="{{ "snap.widget.communities.blog.link"|trans|sw_sanitize }}"
+							   aria-label="{{ "snap.widget.communities.blog.name"|trans|sw_sanitize }}"
+							   title="{{ "snap.widget.communities.blog.name"|trans|sw_sanitize }}"
+							   class="snap-communities-link link-blog"
+							   rel="noopener"
+							   target="_blank">
+								{% sw_include '@Storefront/storefront/themeware/snap-social-icons.html.twig' with { icon: icon, style: style } %}
+								<span class="snap-communities-label">
+									{{ "snap.widget.communities.blog.name"|trans|sw_sanitize }}
+								</span>
+							</a>
+						</li>
+					{% endblock %}
+				{% endif %}
+
+				{# ThemeWare: WhatsApp #}
+				{% if snapWidgetCommunitiesWhatsapp == 2 %}
+					{% block snap_widget_communities_whatsapp %}
+						{% set icon = 'whatsapp' %}
+						<li class="snap-communities-item item-{{ icon }}">
+							<a href="{{ "snap.widget.communities.whatsapp.link"|trans|sw_sanitize }}"
+							   aria-label="{{ "snap.widget.communities.whatsapp.name"|trans|sw_sanitize }}"
+							   title="{{ "snap.widget.communities.whatsapp.name"|trans|sw_sanitize }}"
+							   class="snap-communities-link link-whatsapp"
+							   rel="noopener"
+							   target="_blank">
+								{% sw_include '@Storefront/storefront/themeware/snap-social-icons.html.twig' with { icon: icon, style: style } %}
+								<span class="snap-communities-label">
+									{{ "snap.widget.communities.whatsapp.name"|trans|sw_sanitize }}
+								</span>
+							</a>
+						</li>
+					{% endblock %}
+				{% endif %}
+
+				{# ThemeWare: LinkedIn #}
+				{% if snapWidgetCommunitiesLinkedin == 2 %}
+					{% block snap_widget_communities_linkedin %}
+						{% set icon = 'linkedin' %}
+						<li class="snap-communities-item item-{{ icon }}">
+							<a href="{{ "snap.widget.communities.linkedin.link"|trans|sw_sanitize }}"
+							   aria-label="{{ "snap.widget.communities.linkedin.name"|trans|sw_sanitize }}"
+							   title="{{ "snap.widget.communities.linkedin.name"|trans|sw_sanitize }}"
+							   class="snap-communities-link link-linkedin"
+							   rel="noopener"
+							   target="_blank">
+								{% sw_include '@Storefront/storefront/themeware/snap-social-icons.html.twig' with { icon: icon, style: style } %}
+								<span class="snap-communities-label">
+									{{ "snap.widget.communities.linkedin.name"|trans|sw_sanitize }}
+								</span>
+							</a>
+						</li>
+					{% endblock %}
+				{% endif %}
+
+				{# ThemeWare: Xing #}
+
+				{# ThemeWare: eMail #}
+
+				{# ThemeWare: Website #}
+				{% if snapWidgetCommunitiesWebsite == 2 %}
+					{% block snap_widget_communities_website %}
+						{% set icon = 'website' %}
+						<li class="snap-communities-item item-{{ icon }}">
+							<a href="{{ "snap.widget.communities.website.link"|trans|sw_sanitize }}"
+							   aria-label="{{ "snap.widget.communities.website.name"|trans|sw_sanitize }}"
+							   title="{{ "snap.widget.communities.website.name"|trans|sw_sanitize }}"
+							   class="snap-communities-link link-website"
+							   rel="noopener"
+							   target="_blank">
+								{% sw_include '@Storefront/storefront/themeware/snap-social-icons.html.twig' with { icon: icon, style: style } %}
+								<span class="snap-communities-label">
+									{{ "snap.widget.communities.website.name"|trans|sw_sanitize }}
+								</span>
+							</a>
+						</li>
+					{% endblock %}
+				{% endif %}
+			</ul>
+		{% endblock %}
+		
+	</div>
+{% endblock %}

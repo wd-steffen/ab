@@ -1,0 +1,108 @@
+{# SnapTheme "Awards" widget #}
+{# TW awards widget and content #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# SnapTheme: Set theme variables #}
+{% set snapWidgetAwardsCustomImage1 = theme_config('snap-widget-awards-custom-image-1') %}
+{% set snapWidgetAwardsCustomImage1Url = theme_config('snap-widget-awards-custom-image-1-url') %}
+{% set snapWidgetAwardsCustomImage2 = theme_config('snap-widget-awards-custom-image-2') %}
+{% set snapWidgetAwardsCustomImage2Url = theme_config('snap-widget-awards-custom-image-2-url') %}
+{% set snapWidgetAwardsCustomImage3 = theme_config('snap-widget-awards-custom-image-3') %}
+{% set snapWidgetAwardsCustomImage3Url = theme_config('snap-widget-awards-custom-image-3-url') %}
+{% set snapWidgetAwardsCustomImage4 = theme_config('snap-widget-awards-custom-image-4') %}
+{% set snapWidgetAwardsCustomImage4Url = theme_config('snap-widget-awards-custom-image-4-url') %}
+{% set snapWidgetAwardsCustomImage5 = theme_config('snap-widget-awards-custom-image-5') %}
+{% set snapWidgetAwardsCustomImage5Url = theme_config('snap-widget-awards-custom-image-5-url') %}
+{% set snapWidgetAwardsCustomImage6 = theme_config('snap-widget-awards-custom-image-6') %}
+{% set snapWidgetAwardsCustomImage6Url = theme_config('snap-widget-awards-custom-image-6-url') %}
+{% set snapWidgetAwardsStandardSsl = theme_config('snap-widget-awards-standard-ssl') %}
+{% set snapWidgetAwardsTextShow = theme_config('snap-widget-awards-text-show') %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{% block snap_widget_awards %}
+    <div class="snap-widget-awards">
+
+        {% block snap_widget_awards_content %}
+            {% if snapWidgetAwardsTextShow == 2 %}
+                <p>{{ "snap.widget.awards.content"|trans|sw_sanitize }}</p>
+            {% endif %}
+
+            <div class="snap-awards-container">
+                {# SnapTheme: SSL seal #}
+                {% if snapWidgetAwardsStandardSsl == 2 %}
+                    <img src="{{ asset("snap.widget.awards.sslSeal.url"|trans, 'theme') }}" alt="SSL" />
+                {% endif %}
+
+                {# SnapTheme: Custom image 1 #}
+                {% if snapWidgetAwardsCustomImage1 %}
+                    {% if snapWidgetAwardsCustomImage1Url %}
+                        <a href="{{ snapWidgetAwardsCustomImage1Url }}" target="_blank" rel="noopener" title="{{ "snap.widget.awards.customImages.title1"|trans }}">
+                    {% endif %}
+                    
+                    <img src="{{ snapWidgetAwardsCustomImage1|sw_encode_url }}" alt="{{ "snap.widget.awards.customImages.title1"|trans }}" title="{{ "snap.widget.awards.customImages.title1"|trans }}"/>
+                    {% if snapWidgetAwardsCustomImage1Url %}
+                        </a>
+                    {% endif %}
+                {% endif %}
+
+                {# SnapTheme: Custom image 2 #}
+                {% if snapWidgetAwardsCustomImage2 %}
+                    {% if snapWidgetAwardsCustomImage2Url %}
+                        <a href="{{ snapWidgetAwardsCustomImage2Url }}" target="_blank" rel="noopener" title="{{ "snap.widget.awards.customImages.title2"|trans }}">
+                    {% endif %}
+                    <img src="{{ snapWidgetAwardsCustomImage2|sw_encode_url }}" alt="{{ "snap.widget.awards.customImages.title2"|trans }}" title="{{ "snap.widget.awards.customImages.title2"|trans }}"/>
+                    {% if snapWidgetAwardsCustomImage2Url %}
+                        </a>
+                    {% endif %}
+                {% endif %}
+
+                {# SnapTheme: Custom image 3 #}
+                {% if snapWidgetAwardsCustomImage3 %}
+                    {% if snapWidgetAwardsCustomImage3Url %}
+                        <a href="{{ snapWidgetAwardsCustomImage3Url }}" target="_blank" rel="noopener" title="{{ "snap.widget.awards.customImages.title3"|trans }}">
+                    {% endif %}
+                    <img src="{{ snapWidgetAwardsCustomImage3|sw_encode_url }}" alt="{{ "snap.widget.awards.customImages.title3"|trans }}" title="{{ "snap.widget.awards.customImages.title3"|trans }}"/>
+                    {% if snapWidgetAwardsCustomImage3Url %}
+                        </a>
+                    {% endif %}
+                {% endif %}
+
+                {# SnapTheme: Custom image 4 #}
+                {% if snapWidgetAwardsCustomImage4 %}
+                    {% if snapWidgetAwardsCustomImage4Url %}
+                        <a href="{{ snapWidgetAwardsCustomImage4Url }}" target="_blank" rel="noopener" title="{{ "snap.widget.awards.customImages.title4"|trans }}">
+                    {% endif %}
+                    <img src="{{ snapWidgetAwardsCustomImage4|sw_encode_url }}" alt="{{ "snap.widget.awards.customImages.title4"|trans }}" title="{{ "snap.widget.awards.customImages.title4"|trans }}"/>
+                    {% if snapWidgetAwardsCustomImage4Url %}
+                        </a>
+                    {% endif %}
+                {% endif %}
+
+                {# SnapTheme: Custom image 5 #}
+                {% if snapWidgetAwardsCustomImage5 %}
+                    {% if snapWidgetAwardsCustomImage5Url %}
+                        <a href="{{ snapWidgetAwardsCustomImage5Url }}" target="_blank" rel="noopener" title="{{ "snap.widget.awards.customImages.title5"|trans }}">
+                    {% endif %}
+                    <img src="{{ snapWidgetAwardsCustomImage5|sw_encode_url }}" alt="{{ "snap.widget.awards.customImages.title5"|trans }}" title="{{ "snap.widget.awards.customImages.title5"|trans }}"/>
+                    {% if snapWidgetAwardsCustomImage5Url %}
+                        </a>
+                    {% endif %}
+                {% endif %}
+
+                {# SnapTheme: Custom image 6 #}
+                {% if snapWidgetAwardsCustomImage6 %}
+                    {% if snapWidgetAwardsCustomImage6Url %}
+                        <a href="{{ snapWidgetAwardsCustomImage6Url }}" target="_blank" rel="noopener" title="{{ "snap.widget.awards.customImages.title6"|trans }}">
+                    {% endif %}
+                    <img src="{{ snapWidgetAwardsCustomImage6|sw_encode_url }}" alt="{{ "snap.widget.awards.customImages.title6"|trans }}" title="{{ "snap.widget.awards.customImages.title6"|trans }}"/>
+                    {% if snapWidgetAwardsCustomImage6Url %}
+                        </a>
+                    {% endif %}
+                {% endif %}
+            </div>
+        {% endblock %}
+
+    </div>
+{% endblock %}

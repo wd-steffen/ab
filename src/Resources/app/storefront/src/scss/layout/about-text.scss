@@ -1,0 +1,18 @@
+.about-text-main {
+    .snap-custom-seo-text-container {
+        padding: 20px;
+        margin: 0 auto;
+        text-align: center;
+        // @if $snap-container-max-width == 100 {
+        //     max-width: 100%;
+        // } @else if $snap-container-max-width == 80 {
+        //     max-width: 80%;
+        // } @else if $snap-container-max-width > 100 {
+        //     width: ($snap-container-max-width + px);
+        // }
+
+        .snap-about-text {
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,105 @@
+{# ThemeWare "Shipping logos" #}
+{# TW shipping logos/content #}
+
+{# ---------------- START: SET TEMPLATE VARS ---------------- #}
+
+{# ThemeWare: Set theme variables #}
+{% set snapWidgetShippingLogoLink = theme_config('snap-widget-shipping-logo-link') %}
+{% set snapCustomShippingImage1 = theme_config('snap-widget-shipping-logo-custom-image-1') %}
+{% set snapCustomShippingImage2 = theme_config('snap-widget-shipping-logo-custom-image-2') %}
+{% set snapCustomShippingImage3 = theme_config('snap-widget-shipping-logo-custom-image-3') %}
+{% set snapCustomShippingImagesOnly = theme_config('snap-widget-shipping-logo-custom-images-only') %}
+{% set snapWidgetShippingLogoFallbackBadge = theme_config('snap-widget-shipping-logo-fallback-badge') %}
+
+{% if snapCustomShippingImagesOnly is empty %}
+	{% set snapCustomShippingImagesOnly = 1 %}
+{% endif %}
+
+{# ---------------- END: SET TEMPLATE VARS ---------------- #}
+
+{# ThemeWare: Add shipping logos #}
+{% block snap_shipping_logos_content %}
+	{% if snapCustomShippingImagesOnly == 1 %}
+		{% for shippingMethod in page.salesChannelShippingMethods %}
+			{% if shippingMethod.media %}
+				{# ThemeWare: Add logo #}
+				<div class="footer-logo is-shipping-logo">
+					{% if snapWidgetShippingLogoLink == 2 %}
+						<a href="{{ "snap.widget.shipping.link"|trans }}" title="{{ shippingMethod.name }}">
+					{% endif %}
+						{% sw_thumbnails 'footer-shipping-image-thumbnails' with {
+							media: shippingMethod.media,
+							sizes: {
+								 'default': '100px'
+							},
+							attributes: {
+								 'class': 'footer-logo-image',
+								 'alt': (shippingMethod.media.translated.alt ?: shippingMethod.translated.name),
+								 'title': (shippingMethod.media.translated.title ?: shippingMethod.translated.name)
+							}
+						} %}
+					{% if snapWidgetShippingLogoLink == 2 %}
+						</a>
+					{% endif %}
+				</div>
+			{% else %}
+				{# ThemeWare: Add fallback badge #}
+				{% if snapWidgetShippingLogoFallbackBadge == 2 %}
+					<div  class="footer-logo is-shipping-logo is-fallback-badge">
+						{% if snapWidgetShippingLogoLink == 2 %}
+							<a href="{{ "snap.widget.shipping.link"|trans }}" title="{{ shippingMethod.name }}">
+								<span>{{ shippingMethod.name }}</span>
+							</a>
+						{% else %}
+							<div title="{{ shippingMethod.name }}">
+								<span>{{ shippingMethod.name }}</span>
+							</div>
+						{% endif %}
+					</div>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+{% endblock %}
+
+{# ThemeWare: Add custom shipping logos #}
+{% block snap_shipping_logos_custom %}
+	{# ThemeWare: Add custom image 1 #}
+	{% if snapCustomShippingImage1 %}
+		<div class="footer-logo is-shipping-logo is-custom-logo">
+			{% if snapWidgetShippingLogoLink == 2 %}
+				<a href="{{ "snap.widget.shipping.link"|trans }}" title="{{ "snap.widget.shipping.customImages.title1"|trans }}">
+			{% endif %}
+				<img src="{{ snapCustomShippingImage1 |sw_encode_url }}" class="footer-logo-image" alt="{{ "snap.widget.shipping.customImages.title1"|trans }}" title="{{ "snap.widget.shipping.customImages.title1"|trans }}"/>
+			{% if snapWidgetShippingLogoLink == 2 %}
+				</a>
+			{% endif %}
+		</div>
+	{% endif %}
+
+	{# ThemeWare: Add custom image 2 #}
+	{% if snapCustomShippingImage2 %}
+		<div class="footer-logo is-shipping-logo is-custom-logo">
+			{% if snapWidgetShippingLogoLink == 2 %}
+				<a href="{{ "snap.widget.shipping.link"|trans }}" title="{{ "snap.widget.shipping.customImages.title2"|trans }}">
+			{% endif %}
+				<img src="{{ snapCustomShippingImage2 |sw_encode_url }}" class="footer-logo-image" alt="{{ "snap.widget.shipping.customImages.title2"|trans }}" title="{{ "snap.widget.shipping.customImages.title2"|trans }}"/>
+			{% if snapWidgetShippingLogoLink == 2 %}
+				</a>
+			{% endif %}
+		</div>
+	{% endif %}
+
+	{# ThemeWare: Add custom image 3 #}
+	{% if snapCustomShippingImage3 %}
+		<div class="footer-logo is-shipping-logo is-custom-logo">
+			{% if snapWidgetShippingLogoLink == 2 %}
+				<a href="{{ "snap.widget.shipping.link"|trans }}" title="{{ "snap.widget.shipping.customImages.title3"|trans }}">
+			{% endif %}
+				<img src="{{ snapCustomShippingImage3 |sw_encode_url }}" class="footer-logo-image" alt="{{ "snap.widget.shipping.customImages.title3"|trans }}" title="{{ "snap.widget.shipping.customImages.title3"|trans }}"/>
+			{% if snapWidgetShippingLogoLink == 2 %}
+				</a>
+			{% endif %}
+		</div>
+	{% endif %}
+{% endblock %}

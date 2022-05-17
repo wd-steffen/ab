@@ -1,0 +1,81 @@
+.about-text-main {
+
+    @if $snap-about-text-enable==0 {
+        display: none;
+    }
+
+    min-height: 250px;
+    width: 1400px;
+    background: $snap-about-text-bg-color;
+    margin: 0 auto;
+    padding: 20px 0;
+
+    .container {
+        padding: 0 20px;
+    }
+    
+    .snap-about-text-headline {
+        margin: 0 auto 10px;
+        color: $snap-about-text-headline-color;
+        width: max-content;
+    }
+
+    .snap-about-text-container {
+        text-align: $snap-about-text-align;
+        color: $snap-about-text-color;
+        font-size: $snap-about-text-font-size;
+    }
+
+    
+    .about-text-communitie-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-direction: column;
+
+        .about-text-communities-headline{
+            width: max-content;
+            margin: 0 auto 10px;
+            color: $snap-about-text-headline-color;
+        }
+        .snap-widget-communities{
+            display: flex;
+            justify-content: center;
+        }
+        
+    }
+
+}
+
+@media (min-width:1200px) {
+    .about-text-communities-wrapper {
+        p {
+            font-size: $font-size-xl;
+        }
+    }
+
+}
+
+@media (max-width:1200px) {
+    .about-text-communities-wrapper {
+        p {
+            font-size: $font-size-lg;
+        }
+    }
+
+}
+
+@media (max-width:1440px) {
+    .about-text-main {
+        width: 100%;
+    }
+}
+
+@media (max-width:576px) {
+    .about-text-communities-wrapper {
+        p {
+            font-size: $font-size-sm;
+        }
+    }
+}
+

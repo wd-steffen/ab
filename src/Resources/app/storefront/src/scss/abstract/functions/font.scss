@@ -1,0 +1,23 @@
+
+
+
+@function rem($size) {
+    $value: strip-unit($size) / 16 * 1rem;
+    @return $value;
+}
+
+
+@mixin snap-font-size($size) {
+	font-size: strip-unit($size) + px; // Fallback in px
+	font-size: rem($size);
+}
+
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+      @return $number / ($number * 0 + 1);
+    }
+  
+    @return $number;
+  }
+  

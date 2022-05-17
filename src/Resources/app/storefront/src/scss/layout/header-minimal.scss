@@ -1,0 +1,64 @@
+/*
+Header minimal
+==================================================
+Contains custom styles for the minimal header which is used on checkout pages.
+*/
+
+.header-minimal {
+    // background: $snap-header-background-color;
+    background-color: $snap-background-body-color;
+
+    border-bottom: 0;
+    color: $snap-header-text-color;
+    padding: 7px 0;
+
+    .container {
+        width: 100%;
+    }
+}
+
+.header-minimal-wrapper{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.header-minimal-back-to-shop {
+    &-button {
+        color: $sw-color-brand-primary;
+    }
+}
+
+.header-minimal-logo {
+    margin-bottom: 0;
+}
+
+.header-minimal-contact {
+    text-align: center;
+    color: $snap-header-text-color;
+
+    a {
+        color: $snap-header-text-color;
+    }
+}
+
+
+@media (min-width:1200px) {
+    .header-minimal-contact {
+        font-size: $font-size-xl;
+    }
+}
+
+@media (max-width:1200px) {
+    .header-minimal-contact {
+        font-size: $font-size-lg;
+    }
+}
+
+@media (max-width:576px) {
+    .header-minimal-contact {
+        font-size: $font-size-sm;
+    }
+}
+
+
+

@@ -1,0 +1,21 @@
+/*
+
+Footer minimal
+==================================================
+Contains custom styles for the minimal footer which is used on checkout pages.
+
+*/
+
+.footer-minimal {
+    background: $snap-footer-background-color;
+    color: $snap-footer-text-color;
+
+    a {
+        color: $snap-footer-text-color;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

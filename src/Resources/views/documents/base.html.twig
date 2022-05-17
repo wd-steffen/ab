@@ -1,0 +1,19 @@
+{% sw_extends '@Framework/documents/base.html.twig' %}
+
+{% block document_footer_first_column %}
+    {{ parent() }}
+    <ul>
+        {% block document_footer_companyEmail %}
+            {% if config.companyEmail %} 
+                <li class="bold">E-Mail</li>
+                <li><a href="mailto:{{ config.companyEmail }}">{{ config.companyEmail }}</a></li>
+            {% endif %}
+        {% endblock %}
+        {% block document_footer_companyUrl %}
+            {% if config.companyUrl  %} 
+                <li class="bold">Webseite</li>
+            <li ><a href="{{ config.companyUrl }}"> {{ config.companyUrl }}</a></li>
+            {% endif %}
+        {% endblock %}
+</ul>
+{% endblock %}

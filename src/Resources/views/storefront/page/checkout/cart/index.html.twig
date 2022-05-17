@@ -1,0 +1,100 @@
+{% sw_extends '@Storefront/storefront/page/checkout/cart/index.html.twig' %}
+
+{% block page_checkout_container_checkout_btn %}
+    {% if theme_config('snap-cart-checkoutbtn-layout') == "topbottom" or theme_config('snap-cart-checkoutbtn-layout') == "top" %}
+        <div class="col-12 checkout-aside-action d-lg-none mb-3">
+            <a href="{{ path('frontend.checkout.confirm.page') }}"
+               class="btn btn-primary btn-block btn-lg begin-checkout-btn"
+               title="{{ "checkout.proceedLink"|trans|striptags }}">
+                {{ "checkout.proceedLink"|trans|sw_sanitize }}
+            </a>
+        </div>
+    {% endif %}
+{% endblock %}
+
+
+{% block page_checkout_cart_add_product %}
+    {% if theme_config('snap-cart-addproductcontainer-enable') == 1 %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block page_checkout_cart_shipping_costs %}
+    {% if theme_config('snap-cart-shippingcostcontainer-enable') == 1 %}
+        {{ parent() }}
+    {% endif %}
+{% endblock %}
+
+{% block page_checkout_cart_add_promotion %}
+    {# {% set promotionText = theme_config('snap-promotion-text-label-checkout') %}
+    <p class="promotion-text">{{ promotionText|trans|sw_sanitize }}</p> #}
+    {{ parent() }}
+{% endblock %}
+
+{% block page_checkout_cart_action_proceed %}
+    <div class="checkout-aside-action">
+        <a href="{{ path('frontend.checkout.confirm.page') }}"
+            class="btn btn-primary btn-block btn-lg begin-checkout-btn"
+            title="{{ "checkout.proceedLink"|trans|striptags }}">
+            {{ "checkout.proceedLink"|trans|sw_sanitize }}
+        </a>
+    </div>
+{% endblock %}
+
+{% block page_checkout_cart_add_promotion_submit %}
+    <div class="input-group-append">
+        <button class="btn btn-primary"
+                type="submit"
+                id="addPromotion">
+            {% sw_icon 'checkmark' %}
+        </button>
+    </div>
+{% endblock %}
+
+{% block page_checkout_cart_add_product_submit %}
+    <div class="input-group-append">
+        <button class="btn btn-primary-alt"
+                type="submit"
+                id="addProductButton">
+            {% sw_icon 'checkmark' %}
+        </button>
+    </div>
+{% endblock %}
+
+{# {% block page_checkout_aside_checkout_btn %}
+    {% if theme_config('snap-cart-checkoutbtn-layout') == "topbottom" or theme_config('snap-cart-checkoutbtn-layout') == "top" %}
+        <div class="checkout-aside-action d-none d-lg-block mb-5">
+            <a href="{{ path('frontend.checkout.confirm.page') }}"
+               class="btn btn-primary btn-block btn-lg ml-auto begin-checkout-btn"
+               title="{{ "checkout.proceedLink"|trans|striptags }}">
+                {{ "checkout.proceedLink"|trans|sw_sanitize }}
+            </a>
+        </div>
+    {% endif %}
+{% endblock %}  #}
+
+{% block page_checkout_bottom_actions %}
+    {% set continueShoppingLabel = theme_config('snap-continue-shopping-label-checkout') %}
+
+    <div class="col-12 mt-3 mt-md-5">
+        <div class="row bottom-actions">
+            <div class="col-md-6 continue-shopping">
+                <a href="{{ path('frontend.home.page') }}"
+                   class="btn btn-secondary btn-block btn-lg mr-auto continue-shopping-btn"
+                   title="{{ continueShoppingLabel|trans|sw_sanitize }}">
+                    {{ continueShoppingLabel|trans|sw_sanitize }}
+                </a>
+            </div>
+
+            <div class="col-md-4 mt-3 mt-md-0 checkout-button-container">
+                {% if theme_config('snap-cart-checkoutbtn-layout') == "topbottom" or theme_config('snap-cart-checkoutbtn-layout') == "bottom" %}
+                    <a href="{{ path('frontend.checkout.confirm.page') }}"
+                       class="btn btn-primary btn-block btn-lg ml-auto begin-checkout-btn"
+                       title="{{ "checkout.proceedLink"|trans|striptags }}">
+                        {{ "checkout.proceedLink"|trans|sw_sanitize }}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,49 @@
+/*
+
+Login
+==============================================
+Contains custom styles for the login area.
+
+*/
+
+.is-act-loginpage {
+    .container-main {
+        // padding-top: 0;
+        padding: 20px;
+        background: #fff;
+        max-width: 1400px;
+        border: 1px solid #eee;
+        margin: 0 auto;
+
+    }
+}
+
+// .account-register-col{
+
+    .login-card{
+    
+        .card-body{
+            .login-form {
+                .login-password-recover{
+                    a{
+                        font-size: 12.8px;
+                    }
+                }
+                .form-group {
+                    @extend .col-md-12;
+                    @extend .col-12;
+                    padding-right: $form-grid-gutter-width / 2;
+                    padding-left: $form-grid-gutter-width / 2;
+                }
+            }
+        }
+    }
+// }
+
+@include media-breakpoint-up(md) {
+    .is-act-loginpage {
+        .container-main {
+            padding-top: $spacer-lg;
+        }
+    }
+}
